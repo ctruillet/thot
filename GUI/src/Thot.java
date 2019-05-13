@@ -17,14 +17,15 @@ import java.text.SimpleDateFormat;
 
 import fr.irit.elipse.project.ThotButton;
 
-class Thot extends JFrame
-{ 
+class Thot extends JFrame{ 
+	//Attributs
 	private ThotText T_Text;
 	private String selection; 
 	private ThotTable T_Table;
 	
 	private static final long serialVersionUID = 0L;
 	
+	//Constructeur
 	Thot() {
 		super();
 		double size[][] = {
@@ -54,7 +55,7 @@ class Thot extends JFrame
 		ThotButton B_Ajouter = new ThotButton("<html>A<br/>j<br/>o<br/>u<br/>t<br/>e<br/>r</html>");
 		B_Ajouter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // ajout du texte selectionn√©
+                // ajout du texte selectionnÈ
 				if (!selection.equals("")){
 					System.out.println("ajout de " + selection + " dans la table");
 					T_Table.add(selection);
@@ -65,26 +66,26 @@ class Thot extends JFrame
 		});
 		
 		ThotButton B_Balisage = new ThotButton("Balisage");	
-		// d√©sactivation du bouton 
+		// dÈsactivation du bouton 
 		B_Balisage.setEnabled(false);
 		
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // G√©n√©ration de la Grammaire
+                // GÈnÈration de la Grammaire
 				System.out.println("generation dela grammaire");
 				save_GRXML();
             }
         });
 
-		String txt="<html>C'est alors qu'apparut le <b>renard</b> :<ul><li>Bonjour, dit le renard.</li><li>Bonjour, r\u00e9pondit poliment le petit prince, qui se retourna mais ne vit rien.</li><li>Je suis l\u00e0, dit la voix sous le pommier</li><li>Qui es-tu ? dit le petit prince. Tu es bien joli.</li><li>Je suis un renard, dit le renard.</li></ul>Viens jouer avec moi, lui proposa le petit prince. Je suis tellement triste...</html>";
+		String txt="<html>C'est alors qu'apparut le <b>renard</b> :<ul><li>Bonjour, dit le renard.</li><li>Bonjour, rÈpondit poliment le petit prince, qui se retourna mais ne vit rien.</li><li>Je suis l\u00e0, dit la voix sous le pommier</li><li>Qui es-tu ? dit le petit prince. Tu es bien joli.</li><li>Je suis un renard, dit le renard.</li></ul>Viens jouer avec moi, lui proposa le petit prince. Je suis tellement triste...</html>";
 		
 		T_Text = new ThotText("text/html",txt);
 		T_Text.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseReleased(java.awt.event.MouseEvent e) {  
 				int d = ((ThotText) e.getSource()).getSelectionStart();
 				int f = ((ThotText) e.getSource()).getSelectionEnd();
-				//System.out.println("d " + d + " - " + "f " + f);
+				System.out.println("d " + d + " - " + "f " + f);
 				if(d==f)return; // pas de texte s√©lectionn√© !
 				selection = ((ThotText) e.getSource()).getSelectedText();
 				System.out.println(selection);
@@ -136,7 +137,7 @@ class Thot extends JFrame
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists
-			System.out.println("Le fichier existe d√©j√† !\n");
+			System.out.println("Le fichier existe dÈj‡† !\n");
 		}
 		
 		try{
@@ -148,11 +149,11 @@ class Thot extends JFrame
 			output_xml.write("<grammar  version=\"1.0\"\nmode =\"voice\"\nxmlns=\"http://www.w3.org/2001/06/grammar\"\nxmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\nxsi:schemaLocation=\"http://www.w3.org/2001/06/grammar\nhttp://www.w3.org/TR/speech-grammar/grammar.xsd\"\nxml:lang=\"fr\" root=\"answer\">\n");
 			output_xml.write("\n<rule id=\"answer\" scope=\"public\">\n<one-of>\n");
 			
-			// les mots √† reconnaitre - r√®gle √† cr√©er
+			// les mots ‡ reconnaitre - rËgles ‡† crÈer
 			for (int i=0;i<T_Table.getRowCount();i++){
 				output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
 			}
-			// cr√©er les rules
+			// crÈer les rules
 			// String rules="";
 			// output_xml.write(rules);
 			
@@ -161,7 +162,9 @@ class Thot extends JFrame
 			output_xml.close();
 		}
 		catch (Exception e) {
+			
 		}
+		
 		JOptionPane d = new JOptionPane();
 		d.showMessageDialog(this,
                      "Le Grammaire vient d'\u00eatre g\u00e9n\u00e9r\u00e9e",
@@ -169,8 +172,7 @@ class Thot extends JFrame
                       JOptionPane.INFORMATION_MESSAGE);
 	}
 		
-	public static void main(String[] args)
-	{
+	public static void main(String[] args){
 		Thot t = new Thot();
 		t.setVisible(true);
 	}

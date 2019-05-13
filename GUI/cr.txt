@@ -1,0 +1,6 @@
+Compte-Rendu:
+
+13/05/2019:
+	- Decouverte du Projet
+	- Comprehention de code
+	- Classes (ThotCell, ThotConcept, ThotTypeEvent) -> Elements de la cellule du tableau de mot-balise

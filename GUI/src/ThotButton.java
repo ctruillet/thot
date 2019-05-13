@@ -1,5 +1,5 @@
 /**
-* @author Philippe Truillet (Philippe.Truillet@irit.fr)
+ * @author Philippe Truillet (Philippe.Truillet@irit.fr)
 * @version 0.1 du 04/01/2019
 */
 
