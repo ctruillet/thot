@@ -10,7 +10,7 @@ public class ThotConcept {
 	protected String content;
 	
 	//Constructeur
-	public ThotEvent(String content) {
+	public ThotConcept(String content) {
 		this.content = content;
 	}
 

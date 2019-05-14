@@ -4,3 +4,9 @@ Compte-Rendu:
 	- Decouverte du Projet
 	- Comprehention de code
 	- Classes (ThotCell, ThotConcept, ThotTypeEvent) -> Elements de la cellule du tableau de mot-balise
+	
+14/05/2019
+	- Tests des classes ThotCell, ThotConcept et ThotTypeEvent
+	
+ToDo
+	- Transferer le code de ThotCell dans ThotGrammar
