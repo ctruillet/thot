@@ -21,8 +21,8 @@ class Thot extends JFrame{
 	//Attributs
 	private ThotText T_Text;
 	private String selection; 
-	private ThotTable T_Table;
-	
+	private String txt;
+	private ThotTable T_Table;	
 	private static final long serialVersionUID = 0L;
 	
 	//Constructeur
@@ -33,7 +33,7 @@ class Thot extends JFrame{
 			{20,40,40,100,100,100,20,30,20}
 		};
 		
-		selection = "";
+		this.selection = "";
 		
 		Container contentPane = getContentPane();
 		
@@ -57,7 +57,7 @@ class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // ajout du texte selectionné
 				if (!selection.equals("")){
-					System.out.println("ajout de " + selection + " dans la table");
+					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_Table.add(selection);
 					T_Table.fireTableDataChanged();	
 					selection="";
@@ -73,14 +73,30 @@ class Thot extends JFrame{
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Génération de la Grammaire
-				System.out.println("generation dela grammaire");
+				System.out.println("Generation de la grammaire");
 				save_GRXML();
             }
         });
-
-		String txt="<html>C'est alors qu'apparut le <b>renard</b> :<ul><li>Bonjour, dit le renard.</li><li>Bonjour, répondit poliment le petit prince, qui se retourna mais ne vit rien.</li><li>Je suis l\u00e0, dit la voix sous le pommier</li><li>Qui es-tu ? dit le petit prince. Tu es bien joli.</li><li>Je suis un renard, dit le renard.</li></ul>Viens jouer avec moi, lui proposa le petit prince. Je suis tellement triste...</html>";
 		
-		T_Text = new ThotText("text/html",txt);
+		//Import Text
+		ThotButton B_OpenText = new ThotButton("Import text");
+		B_OpenText.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+				System.out.println("Import text");	
+            }
+        });
+
+		if(this.txt == "")
+			B_OpenText.setVisible(true);
+		
+		
+		
+		//
+		
+		this.txt="<html>C'est alors qu'apparut le <b>renard</b> :<ul><li>Bonjour, dit le renard.</li><li>Bonjour, répondit poliment le petit prince, qui se retourna mais ne vit rien.</li><li>Je suis l\u00e0, dit la voix sous le pommier</li><li>Qui es-tu ? dit le petit prince. Tu es bien joli.</li><li>Je suis un renard, dit le renard.</li></ul>Viens jouer avec moi, lui proposa le petit prince. Je suis tellement triste...</html>";
+
+		
+		T_Text = new ThotText("text/html",this.txt);
 		T_Text.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseReleased(java.awt.event.MouseEvent e) {  
 				int d = ((ThotText) e.getSource()).getSelectionStart();
@@ -112,8 +128,10 @@ class Thot extends JFrame{
 		contentPane.add(B_Ajouter,  "5,4");
 		contentPane.add(B_Balisage, "2,7");
 		contentPane.add(B_Creation, "8,7");
+		contentPane.add(B_OpenText, "1,3,3,5");
 		contentPane.add(SP_Text, "1,3,3,5");
 		contentPane.add(SP_grammar, "7,2,9,5");
+		B_OpenText.setSize(10,10);
 		
 		// finalisation de l'interface
 		addWindowListener ( new WindowAdapter() {
@@ -128,6 +146,14 @@ class Thot extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		setResizable(false);
+	}
+	
+	public void setText(String text) {
+		this.txt=text;
+	}
+	
+	public String getText() {
+		return (this.txt);
 	}
 	
 	void save_GRXML() {
@@ -171,6 +197,7 @@ class Thot extends JFrame{
                      "Confirmation",
                       JOptionPane.INFORMATION_MESSAGE);
 	}
+	
 		
 	public static void main(String[] args){
 		Thot t = new Thot();

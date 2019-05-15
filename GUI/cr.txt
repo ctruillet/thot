@@ -6,7 +6,19 @@ Compte-Rendu:
 	- Classes (ThotCell, ThotConcept, ThotTypeEvent) -> Elements de la cellule du tableau de mot-balise
 	
 14/05/2019
+	- Arrangement de l'espace de travail pour pouvoir faire les tests sous eclipse
 	- Tests des classes ThotCell, ThotConcept et ThotTypeEvent
 	
+15/05/2019
+	- Transfert du code de ThotCell vers ThotGrammar
+	- Début du boutton "Import Text"
+	- Classe ThotImportFrame -> Fenetre d'import de fichier
+	
+	
 ToDo
-	- Transferer le code de ThotCell dans ThotGrammar
+	- Choix du TypeEvent
+	- Entrée du concept
+	- Import du texte
+	- Import image/son/video
+	- Génération de la grammaire
+	

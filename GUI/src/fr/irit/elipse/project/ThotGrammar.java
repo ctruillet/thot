@@ -6,39 +6,75 @@
 package fr.irit.elipse.project;
 
 class ThotGrammar {
+	//Attributs
+	protected String motBalise;
+	protected ThotTypeEvent typeEvent; 
+	protected ThotConcept concept = new ThotConcept("");
 	
-	private String mot;
-	private String evenement;
-	private String balise;
-	
+	//Constructeurs
 	public ThotGrammar() {
-		this.mot="";
-		this.evenement="";
-		this.balise="";
+		this("");
 	}
 	
 	public ThotGrammar(String mot){
-		this.mot = mot;
-		this.evenement="";
-		this.balise="";		
+		this.motBalise = mot;
+		this.typeEvent = null;
 	}
 	
-	public void setMot(String mot) {
-		this.mot = mot;
+	//Méthodes	
+	public boolean hasNoEvent() {
+		return (this.typeEvent==null);
 	}
-	public void setEvenement(String mot) {
-		this.evenement = mot;
+	
+	public void setMotBalise(String motBalise) {
+		this.motBalise = motBalise;
 	}
-	public void setBalise(String mot) {
-		this.balise = mot;
+	
+	public void setTypeEvent(ThotTypeEvent typeEvent) {
+		this.typeEvent = typeEvent;
 	}
-	public String getMot() {
-		return(this.mot);
-	}
-	public String getEvenement() {
-		return(this.evenement);
-	}
-	public String getBalise() {
-		return(this.balise);
+	
+	public void setConcept(ThotConcept concept) {
+		this.concept = concept;
 	}	
+	
+	public String getMotBalise() {
+		return (this.motBalise);
+	}
+		
+	public ThotTypeEvent getTypeEvent() {
+		return (this.typeEvent);
+	}
+
+	public String getTypeEventName() {
+		return((this.getTypeEvent()==null) ? "" : this.getTypeEvent().name());
+	}
+	
+	
+	public ThotConcept getConcept() {
+		return (this.concept);
+	}
+	
+	public String getConceptName() {
+		return (this.concept.toString());
+	}
+		
+	
+	public String toString() {
+		return (this.getMotBalise() + " : " + this.getTypeEventName() + " & " + this.getConcept());
+	}
+	
+	public static void main(String[] args) {
+		ThotGrammar tc = new ThotGrammar("l'abricot du renard");
+		System.out.println(tc.toString() + " + " + tc.hasNoEvent());
+		tc.setTypeEvent(ThotTypeEvent.Media);
+		System.out.println(tc.toString());
+		ThotConcept tc2 = new ThotConcept("corbeau");
+		tc.setConcept(tc2);
+		tc.setMotBalise("Petit Prince");
+		System.out.println(tc.toString() + " + " + tc.hasNoEvent());
+		
+		ThotGrammar tc3 = new ThotGrammar();
+		System.out.println(tc3.toString());
+	}
 }

@@ -33,11 +33,11 @@ class ThotTable extends AbstractTableModel {
 	public String getValueAt(int rowIndex, int columnIndex) {
 		switch(columnIndex) {
 			case 0: 
-				return ((liste.get(rowIndex)).getMot());
+				return ((liste.get(rowIndex)).getMotBalise());
 			case 1: 
-				return ((liste.get(rowIndex)).getEvenement());
+				return ((liste.get(rowIndex)).getTypeEventName());
 			case 2: 
-				return ((liste.get(rowIndex)).getBalise());
+				return ((liste.get(rowIndex)).getConceptName());
 			default:
 				return("");
 		}
