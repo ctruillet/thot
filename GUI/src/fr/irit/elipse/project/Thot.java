@@ -16,6 +16,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 import fr.irit.elipse.project.ThotButton;
+import fr.irit.elipse.project.ThotImportFrame.importType;
 
 class Thot extends JFrame{ 
 	//Attributs
@@ -83,6 +84,14 @@ class Thot extends JFrame{
 		B_OpenText.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 				System.out.println("Import text");	
+				ThotImportFrame tif = new ThotImportFrame();
+				tif.setImportType(importType.TEXT);
+				try {
+					tif.openFrame(contentPane);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
             }
         });
 

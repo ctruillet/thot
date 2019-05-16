@@ -14,11 +14,12 @@ Compte-Rendu:
 	- Début du boutton "Import Text"
 	- Classe ThotImportFrame -> Fenetre d'import de fichier
 	
+16/05/2019
+	- Filtres d'import (inner class de ThotImportFrame)
+	- Import de fichier + copier le fichier dans ./data
 	
 ToDo
-	- Choix du TypeEvent
+	- Choix du TypeEvent -> JComboBox
 	- Entrée du concept
-	- Import du texte
-	- Import image/son/video
 	- Génération de la grammaire
 	
