@@ -18,12 +18,14 @@ public class ThotImportFrame extends JFrame{
 	//Attribut
 	protected JFileChooser fenetre;
 	protected File fichier;
+	protected String parentDirectory;
 	protected importType typeImport;
 	
 	//Constructeur
-	public ThotImportFrame() {
+	public ThotImportFrame(String directory) {
 		this.fenetre = new JFileChooser();
 		this.typeImport = importType.ALL;
+		this.parentDirectory = directory;
 	}
 	//Enum
 	enum importType {
@@ -38,8 +40,7 @@ public class ThotImportFrame extends JFrame{
 	protected class ThotFilterText extends FileFilter{
 		public boolean accept(File f) {
 			if(f.isDirectory() ||(f.getName().endsWith(".txt") 
-							   || f.getName().endsWith(".md")
-							   || f.getName().endsWith(".html")))
+							   || f.getName().endsWith(".md")))
 				return true;
 			return false;
 		}
@@ -132,12 +133,12 @@ public class ThotImportFrame extends JFrame{
 			this.fichier = this.fenetre.getSelectedFile();
 			
 			try {
-				Files.copy(this.fichier.toPath(), Paths.get("./data",this.getFileName()));
+				Files.copy(this.fichier.toPath(), Paths.get(this.parentDirectory,this.getFileName()));
 			} catch(Exception e) {
 				
 			}
 			
-			this.fichier = new File((Paths.get("./data",this.getFileName())).toString());
+			this.fichier = new File((Paths.get(this.parentDirectory,this.getFileName())).toString());
 
 		}
 	}
@@ -164,7 +165,7 @@ public class ThotImportFrame extends JFrame{
 	
 	
 	public static void main(String[] args) throws IOException {
-		ThotImportFrame tif = new ThotImportFrame();
+		ThotImportFrame tif = new ThotImportFrame("./data");
 		tif.openFrame(null);
 		System.out.println(tif.getFileName());
 		System.out.println(tif.getFilePath());

@@ -18,12 +18,13 @@ import java.text.SimpleDateFormat;
 import fr.irit.elipse.project.ThotButton;
 import fr.irit.elipse.project.ThotImportFrame.importType;
 
-class Thot extends JFrame{ 
+public class Thot extends JFrame{ 
 	//Attributs
-	private ThotText T_Text;
+	private ThotText T_Text = new ThotText();
 	private String selection; 
 	private String txt;
 	private ThotTable T_Table;	
+	private String directory;
 	private static final long serialVersionUID = 0L;
 	
 	//Constructeur
@@ -33,6 +34,8 @@ class Thot extends JFrame{
 			{20,120,120,120,20,40,20,120,120,120,20},
 			{20,40,40,100,100,100,20,30,20}
 		};
+		
+		this.createNewDirectory();
 		
 		this.selection = "";
 		
@@ -56,25 +59,25 @@ class Thot extends JFrame{
 		ThotButton B_Ajouter = new ThotButton("<html>A<br/>j<br/>o<br/>u<br/>t<br/>e<br/>r</html>");
 		B_Ajouter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // ajout du texte selectionnï¿½
+                // ajout du texte selectionné
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_Table.add(selection);
 					T_Table.fireTableDataChanged();
-					T_Text.surligne(selection);
+					T_Text.highlight(selection);
 					selection="";
 				}		
             }
 		});
 		
 		ThotButton B_Balisage = new ThotButton("Balisage");	
-		// dï¿½sactivation du bouton 
+		// désactivation du bouton 
 		B_Balisage.setEnabled(false);
 		
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Gï¿½nï¿½ration de la Grammaire
+                // Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
             }
@@ -85,10 +88,12 @@ class Thot extends JFrame{
 		B_OpenText.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 				System.out.println("Import text");	
-				ThotImportFrame tif = new ThotImportFrame();
+				ThotImportFrame tif = new ThotImportFrame(getParentDirectory());
 				tif.setImportType(importType.TEXT);
 				try {
 					tif.openFrame(contentPane);
+					T_Text.displayText(tif.getFilePath());
+					
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -97,8 +102,6 @@ class Thot extends JFrame{
         });
 		//
 
-		T_Text = new ThotText();
-		T_Text.affichageText("./data/texte.txt");
 		/*SimpleAttributeSet styleGras = new SimpleAttributeSet();
 		StyleConstants.setBold(styleGras, true);
 		StyledDocument doc = T_Text.getStyledDocument();
@@ -109,14 +112,14 @@ class Thot extends JFrame{
 				int d = ((ThotText) e.getSource()).getSelectionStart();
 				int f = ((ThotText) e.getSource()).getSelectionEnd();
 				System.out.println("d " + d + " - " + "f " + f);
-				if(d==f)return; // pas de texte sÃ©lectionnÃ© !
+				if(d==f)return; // pas de texte sélectionné !
 				selection = ((ThotText) e.getSource()).getSelectedText();
 				System.out.println(selection);
 			}
 		});
 		
 		JScrollPane SP_Text = new JScrollPane(T_Text);
-		
+		this.T_Text.setText("Veuillez importer un fichier texte.");
 		
 		T_Table = new ThotTable(){
 			@Override
@@ -154,6 +157,7 @@ class Thot extends JFrame{
 		setResizable(false);
 	}
 	
+	//Méthodes
 	public void setText(String text) {
 		this.txt=text;
 	}
@@ -162,7 +166,17 @@ class Thot extends JFrame{
 		return (this.txt);
 	}
 	
-	void save_GRXML() {
+	public void createNewDirectory() {
+		this.directory = "./data/" + new SimpleDateFormat("dd-MM-yyyy_H.mm.s").format(new Date());
+		File directory = new File(this.directory);
+		directory.mkdir();
+		System.out.println(this.directory);
+	}
+	
+	public String getParentDirectory() {
+		return (this.directory);
+	}
+	public void save_GRXML() {
 		Date curDate = new Date();
 		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
 		String output = "grammar_" + SDFDate.format(curDate) + ".grxml";

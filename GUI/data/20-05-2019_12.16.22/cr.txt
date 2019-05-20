@@ -21,7 +21,7 @@ Compte-Rendu:
 
 20/05/2019
 	- Affichage du texte importé
-	- Création d'un dossier unique à chaque lancement du programme où sont stockés les documents
+	
 	
 ToDo
 	- Choix du TypeEvent -> JComboBox

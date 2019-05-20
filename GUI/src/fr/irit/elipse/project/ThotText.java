@@ -27,20 +27,26 @@ import javax.swing.JSpinner;
 import javax.swing.JTextPane;
 import javax.swing.text.*;
 
-class ThotText extends JTextPane {
+
+public class ThotText extends JTextPane {
+	//Attributs
+	
+	//Constructeur
     public ThotText() {
         super();
         this.setEditable(false);
     }
-
-    /*public ThotText(String mime, String label){
-        super(mime, label);
-
-    }*/
-
-    //throw exeception
-    public StringBuffer readText(String nomFichier)
-    {
+    
+    //Inner Class
+    protected class MyHighlightPainter extends DefaultHighlighter.DefaultHighlightPainter{
+        public MyHighlightPainter(Color color){
+            super(color);
+        }
+    }
+    
+    
+    //Méthodes
+    public StringBuffer readText(String nomFichier){
         File fichier = new File(nomFichier);
         StringBuffer texte = new StringBuffer();
 
@@ -51,75 +57,38 @@ class ThotText extends JTextPane {
                 texte.append(lecteur.nextLine());
                 texte.append("\n");
             }
-            //voire si il ne faudrait pas mettre un finally a cause du clause !
+            //voir si il ne faudrait pas mettre un finally a cause du close !
             lecteur.close();
         }
         catch (FileNotFoundException exc) {
             System.out.println("Fichier inexistant");
         }
         System.out.println(texte);
-        return texte;
+        
+        return (texte);
     }
 
-    public void affichageText(String nomFichier){
+    public void displayText(String nomFichier){
         this.setText(new String(readText(nomFichier)));
     }
+    
+    public void highlight(String pattern){
+        Highlighter.HighlightPainter mhp = new MyHighlightPainter(Color.CYAN);
 
-    public void selection(String mot){
-        //String text = this.getText().replaceAll("\\s"+mot+"[\\s.?!]", " **"+mot+"** ");
-        //this.setText(text);
-
-    }
-
-    public void modification(String mot,String nomFichier)
-    {
-        final String chemin = nomFichier;
-        final File fichier =new File(chemin);
-        //int n = 5;
-        try {
-            // creation d'un writer (un Ã©crivain)
-            final FileWriter writer = new FileWriter(fichier);
-            try {
-                writer.write(this.getText());
-            } finally {
-
-                writer.close();
-            }
-        } catch (Exception e) {
-            System.out.println("Impossible de modifier le fichier");
-        }
-    }
-    class MyHighlightPainter extends DefaultHighlighter.DefaultHighlightPainter
-    {
-        public MyHighlightPainter(Color color)
-        {
-            super(color);
-        }
-    }
-    public void surligne(String pattern)
-    		/*SimpleAttributeSet styleGras = new SimpleAttributeSet();
-		StyleConstants.setBold(styleGras, true);
-		StyledDocument doc = T_Text.getStyledDocument();
-		doc.setCharacterAttributes(0, 50, styleGras, false);*/
-    {
-        Highlighter.HighlightPainter myHighlightPainter = new MyHighlightPainter(Color.CYAN);
-
-        try
-        {
-
+        try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
             String text = doc.getText(0, doc.getLength());
             int pos = 0;
             // Search for pattern
             // see I have updated now its not case sensitive
-            while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0)
-            {
+            while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0){
                 // Create highlighter using private painter and apply around pattern
-                hilite.addHighlight(pos, pos+pattern.length(), myHighlightPainter);
+                hilite.addHighlight(pos, pos+pattern.length(), mhp);
                 pos += pattern.length();
             }
-        } catch (BadLocationException e) {
+        }catch (BadLocationException e) {
+        	System.out.println("Pas de texte sélectionné");
         }
     }
 
