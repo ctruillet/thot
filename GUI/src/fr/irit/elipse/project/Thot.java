@@ -60,7 +60,8 @@ class Thot extends JFrame{
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_Table.add(selection);
-					T_Table.fireTableDataChanged();	
+					T_Table.fireTableDataChanged();
+					T_Text.surligne(selection);
 					selection="";
 				}		
             }
@@ -97,7 +98,7 @@ class Thot extends JFrame{
 		//
 
 		T_Text = new ThotText();
-		T_Text.affichageText("C:\\Users\\amiloudi\\Desktop\\thot-master5\\GUI\\data\\texte.txt");
+		T_Text.affichageText("./data/texte.txt");
 		/*SimpleAttributeSet styleGras = new SimpleAttributeSet();
 		StyleConstants.setBold(styleGras, true);
 		StyledDocument doc = T_Text.getStyledDocument();

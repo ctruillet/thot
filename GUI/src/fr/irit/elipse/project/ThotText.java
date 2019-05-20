@@ -57,7 +57,7 @@ class ThotText extends JTextPane {
         catch (FileNotFoundException exc) {
             System.out.println("Fichier inexistant");
         }
-        System.out.println("je suis le texte"+texte);
+        System.out.println(texte);
         return texte;
     }
 
