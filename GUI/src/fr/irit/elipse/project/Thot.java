@@ -52,11 +52,11 @@ class Thot extends JFrame{
 		
 		JLabel grammar_part = new JLabel("Mots-balises et signification"); 
 		grammar_part.setFont(fPlain);
-		
+
 		ThotButton B_Ajouter = new ThotButton("<html>A<br/>j<br/>o<br/>u<br/>t<br/>e<br/>r</html>");
 		B_Ajouter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // ajout du texte selectionné
+                // ajout du texte selectionnï¿½
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_Table.add(selection);
@@ -67,13 +67,13 @@ class Thot extends JFrame{
 		});
 		
 		ThotButton B_Balisage = new ThotButton("Balisage");	
-		// désactivation du bouton 
+		// dï¿½sactivation du bouton 
 		B_Balisage.setEnabled(false);
 		
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Génération de la Grammaire
+                // Gï¿½nï¿½ration de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
             }
@@ -94,18 +94,15 @@ class Thot extends JFrame{
 				}
             }
         });
-
-		if(this.txt == "")
-			B_OpenText.setVisible(true);
-		
-		
-		
 		//
-		
-		this.txt="<html>C'est alors qu'apparut le <b>renard</b> :<ul><li>Bonjour, dit le renard.</li><li>Bonjour, répondit poliment le petit prince, qui se retourna mais ne vit rien.</li><li>Je suis l\u00e0, dit la voix sous le pommier</li><li>Qui es-tu ? dit le petit prince. Tu es bien joli.</li><li>Je suis un renard, dit le renard.</li></ul>Viens jouer avec moi, lui proposa le petit prince. Je suis tellement triste...</html>";
 
-		
-		T_Text = new ThotText("text/html",this.txt);
+		T_Text = new ThotText();
+		T_Text.affichageText("C:\\Users\\amiloudi\\Desktop\\thot-master5\\GUI\\data\\texte.txt");
+		/*SimpleAttributeSet styleGras = new SimpleAttributeSet();
+		StyleConstants.setBold(styleGras, true);
+		StyledDocument doc = T_Text.getStyledDocument();
+		doc.setCharacterAttributes(0, 50, styleGras, false);*/
+
 		T_Text.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseReleased(java.awt.event.MouseEvent e) {  
 				int d = ((ThotText) e.getSource()).getSelectionStart();
@@ -135,9 +132,8 @@ class Thot extends JFrame{
 		contentPane.add(thot_part,"1,2,3,2");
 		contentPane.add(grammar_part,"7,0,9,0");		
 		contentPane.add(B_Ajouter,  "5,4");
-		contentPane.add(B_Balisage, "2,7");
+		contentPane.add(B_OpenText, "2,7");
 		contentPane.add(B_Creation, "8,7");
-		contentPane.add(B_OpenText, "1,3,3,5");
 		contentPane.add(SP_Text, "1,3,3,5");
 		contentPane.add(SP_grammar, "7,2,9,5");
 		B_OpenText.setSize(10,10);
@@ -172,7 +168,7 @@ class Thot extends JFrame{
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists
-			System.out.println("Le fichier existe déjà  !\n");
+			System.out.println("Le fichier existe dï¿½jï¿½ !\n");
 		}
 		
 		try{
@@ -184,11 +180,11 @@ class Thot extends JFrame{
 			output_xml.write("<grammar  version=\"1.0\"\nmode =\"voice\"\nxmlns=\"http://www.w3.org/2001/06/grammar\"\nxmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\nxsi:schemaLocation=\"http://www.w3.org/2001/06/grammar\nhttp://www.w3.org/TR/speech-grammar/grammar.xsd\"\nxml:lang=\"fr\" root=\"answer\">\n");
 			output_xml.write("\n<rule id=\"answer\" scope=\"public\">\n<one-of>\n");
 			
-			// les mots à reconnaitre - règles à  créer
+			// les mots ï¿½ reconnaitre - rï¿½gles ï¿½ crï¿½er
 			for (int i=0;i<T_Table.getRowCount();i++){
 				output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
 			}
-			// créer les rules
+			// crï¿½er les rules
 			// String rules="";
 			// output_xml.write(rules);
 			
