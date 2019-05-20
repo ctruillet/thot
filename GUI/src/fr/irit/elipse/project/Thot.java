@@ -174,6 +174,7 @@ public class Thot extends JFrame{
 	}
 	
 	public String getParentDirectory() {
+
 		return (this.directory);
 	}
 	public void save_GRXML() {

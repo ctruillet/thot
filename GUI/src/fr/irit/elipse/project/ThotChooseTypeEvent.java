@@ -21,10 +21,10 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		super();
 		
 		this.addActionListener(this);
+		
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
 		}
-
 	}
 	
 	//Méthodes

@@ -25,14 +25,7 @@ Compte-Rendu:
 	- Menu deroulant du choix de TypeEvent
 	
 ToDo
-	- Affichage du choix du TypeEvent -> JComboBox
+	- Choix du TypeEvent -> JComboBox
 	- Entrée du concept
-	- Suppresion d'un mot balise
 	- Génération de la grammaire
-	- Manuel d'utilisation+scénario
-	- Matérialiser la prosodie (gras pour le cris, italique ...)
-	- Design
 	
-Contextualiser (position du mot dans le texte : dans une tirade, après un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
-Mot-Balise -> Lexique de mot/mot simple
-Mot : nom/verbe ... differencier le mot avec la couleur

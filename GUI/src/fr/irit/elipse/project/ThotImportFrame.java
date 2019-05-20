@@ -27,6 +27,7 @@ public class ThotImportFrame extends JFrame{
 		this.typeImport = importType.ALL;
 		this.parentDirectory = directory;
 	}
+	
 	//Enum
 	enum importType {
 		ALL,
