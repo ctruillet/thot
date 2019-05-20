@@ -8,7 +8,7 @@ package fr.irit.elipse.project;
 import javax.swing.table.AbstractTableModel;
 import java.util.*;
 
-class ThotTable extends AbstractTableModel {
+public class ThotTable extends AbstractTableModel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String[] entetes = { "Mots-Balises", "Type d'\u00e9v\u00e9nement", "Concept associ\u00e9" };;
