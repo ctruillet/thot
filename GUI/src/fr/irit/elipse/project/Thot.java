@@ -39,7 +39,7 @@ public class Thot extends JFrame{
 			{20,40,40,100,100,100,20,30,20}
 		};
 		
-		//this.createNewDirectory();
+		this.createNewDirectory();
 		
 		this.selection = "";
 		
@@ -67,7 +67,6 @@ public class Thot extends JFrame{
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_grammar.add(selection);
-					T_grammar.fireTableDataChanged();
 					T_Text.highlight(selection);
 					selection="";
 				}		
@@ -99,23 +98,16 @@ public class Thot extends JFrame{
 					T_Text.displayText(tif.getFilePath());
 					
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
             }
         });
-		//
-
-		/*SimpleAttributeSet styleGras = new SimpleAttributeSet();
-		StyleConstants.setBold(styleGras, true);
-		StyledDocument doc = T_Text.getStyledDocument();
-		doc.setCharacterAttributes(0, 50, styleGras, false);*/
 
 		T_Text.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseReleased(java.awt.event.MouseEvent e) {  
 				int d = ((ThotText) e.getSource()).getSelectionStart();
 				int f = ((ThotText) e.getSource()).getSelectionEnd();
-				System.out.println("d " + d + " - " + "f " + f);
+				//System.out.println("d " + d + " - " + "f " + f);
 				if(d==f)return; // pas de texte sélectionné !
 				selection = ((ThotText) e.getSource()).getSelectedText();
 				System.out.println(selection);

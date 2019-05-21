@@ -1,6 +1,6 @@
 /**
-* @author Philippe Truillet (Philippe.Truillet@irit.fr)
-* @version 0.1 du 05/01/2019
+* @author Clement Truillet (clement@ctruillet.eu)
+* @version 0.1 du 21/05/2019
 */
 
 package fr.irit.elipse.project;
@@ -33,25 +33,32 @@ public class ThotTable extends JTable {
 		ThotGrammar t = new ThotGrammar(mot);
 		this.model.add(t);
 		liste.add(t);
-		System.out.println(this.getValueAt(this.liste.size()-1, 1));
-		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t));
+
+		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t)); //Nouveau Menu déroulant
 		editor.add(dce);
-		//TableColumn typeEventColumn = this.getColumnModel().getColumn(1);
-		//typeEventColumn.setCellEditor(new DefaultCellEditor(new ThotChooseTypeEvent(t)));
-		
-		for (int i=0; i<liste.size(); i++) {
-			System.out.println(this.liste.get(i).toString());
-		}
+		this.fireTableDataChanged();
 	}
 	
-	public TableCellEditor getCellEditor(int row, int column) {
-		if(row<this.liste.size()) {
+		//Surchage de la méthode de JTable
+	public TableCellEditor getCellEditor(int row, int column) { 
+		if(row<this.liste.size() && column==1) {
 			return editor.get(row);
 		}
 		return super.getCellEditor(row, column);
 	}
 	
+		//Envoit une alerte au modele quand un evenement a lieu
 	public void fireTableDataChanged() {
 		this.model.fireTableDataChanged();
+	}
+	
+	public String toString() {
+		String s= "";
+		
+		for (int i=0;i<this.liste.size(); i++) {
+			s+=this.liste.get(i).toString()+"\n";
+		}
+		
+		return s;
 	}
 }

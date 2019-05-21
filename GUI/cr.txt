@@ -25,7 +25,9 @@ Compte-Rendu:
 	- Menu deroulant du choix de TypeEvent
 	
 21/05/2019
-	-
+	- Classe ThotTable -> ThotTableModel
+	- Classe ThotTable qui concerne la JTable directement
+	- Implemantation du menu déroulant ThotChooseTypeEvent
 	
 	
 ToDo
