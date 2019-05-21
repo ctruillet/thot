@@ -15,11 +15,13 @@ import javax.swing.*;
 public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	//Attributs
 	protected ThotTypeEvent value = ThotTypeEvent.Retranscription;
+	protected ThotGrammar motBalise;
 	
 	//Constructeur
-	public ThotChooseTypeEvent() {
+	public ThotChooseTypeEvent(ThotGrammar motBalise) {
 		super();
 		
+		this.motBalise = motBalise;
 		this.addActionListener(this);
 		
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
@@ -30,6 +32,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	//Méthodes
 	public void actionPerformed(ActionEvent e) {
 		this.value = (ThotTypeEvent) (this.getSelectedItem());
+		this.motBalise.setTypeEvent(this.value);
 	}
 	
 	public ThotTypeEvent getChoice() {
@@ -39,7 +42,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	public static void main(String[] args) {
 		JFrame panel = new JFrame();
 		Container contentPane = panel.getContentPane();
-		ThotChooseTypeEvent tcte = new ThotChooseTypeEvent();
+		ThotChooseTypeEvent tcte = new ThotChooseTypeEvent(null);
 		contentPane.add(tcte);
 		panel.setSize(400, 300);
 		panel.setVisible(true);

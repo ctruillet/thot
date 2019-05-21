@@ -17,25 +17,29 @@ import java.text.SimpleDateFormat;
 
 import fr.irit.elipse.project.ThotButton;
 import fr.irit.elipse.project.ThotImportFrame.importType;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Window.Type;
 
 public class Thot extends JFrame{ 
 	//Attributs
 	private ThotText T_Text = new ThotText();
 	private String selection; 
 	private String txt;
-	private ThotTable T_Table;	
+	private ThotTableModel T_Table;	
+	private ThotTable T_grammar;	
 	private String directory;
 	private static final long serialVersionUID = 0L;
 	
 	//Constructeur
 	Thot() {
 		super();
+		setType(Type.UTILITY);
 		double size[][] = {
 			{20,120,120,120,20,40,20,120,120,120,20},
 			{20,40,40,100,100,100,20,30,20}
 		};
 		
-		this.createNewDirectory();
+		//this.createNewDirectory();
 		
 		this.selection = "";
 		
@@ -62,8 +66,8 @@ public class Thot extends JFrame{
                 // ajout du texte selectionné
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
-					T_Table.add(selection);
-					T_Table.fireTableDataChanged();
+					T_grammar.add(selection);
+					T_grammar.fireTableDataChanged();
 					T_Text.highlight(selection);
 					selection="";
 				}		
@@ -121,14 +125,13 @@ public class Thot extends JFrame{
 		JScrollPane SP_Text = new JScrollPane(T_Text);
 		this.T_Text.setText("Veuillez importer un fichier texte.");
 		
-		T_Table = new ThotTable(){
+		T_Table = new ThotTableModel(){
 			@Override
          	public boolean isCellEditable ( int row, int col) {
 				return true;
          	}						
 		};
-		JTable T_grammar = new JTable(T_Table);
-		T_grammar.setAutoCreateRowSorter(true);
+		T_grammar = new ThotTable(T_Table);
 		
 		JScrollPane SP_grammar = new JScrollPane(T_grammar);
 		
@@ -153,8 +156,21 @@ public class Thot extends JFrame{
 		setForeground(new Color(255,255,255,255));     
 		setBounds(0,0,840,510);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
 		setResizable(false);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setMargin(new Insets(0, 10, 0, 10));
+		setJMenuBar(menuBar);
+		
+		JMenuItem menuConscruct = new JMenuItem("Construction du spectacle");
+		menuConscruct.setSelected(true);
+		menuBar.add(menuConscruct);
+		
+		JMenuItem menuMan = new JMenuItem("Manuel d'utilisatation");
+		menuBar.add(menuMan);
+		
+		JMenuItem menuScenar = new JMenuItem("Scénarios");
+		menuBar.add(menuScenar);
 	}
 	
 	//Méthodes
@@ -174,9 +190,9 @@ public class Thot extends JFrame{
 	}
 	
 	public String getParentDirectory() {
-
 		return (this.directory);
 	}
+	
 	public void save_GRXML() {
 		Date curDate = new Date();
 		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
