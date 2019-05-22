@@ -24,6 +24,12 @@ Compte-Rendu:
 	- Création d'un dossier unique à chaque lancement du programme où sont stockés les documents
 	- Menu deroulant du choix de TypeEvent
 	
+21/05/2019
+	- Classe ThotTable -> ThotTableModel
+	- Classe ThotTable qui concerne la JTable directement
+	- Implemantation du menu déroulant ThotChooseTypeEvent
+	
+	
 ToDo
 	- Affichage du choix du TypeEvent -> JComboBox
 	- Entrée du concept

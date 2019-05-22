@@ -6,12 +6,11 @@
 package fr.irit.elipse.project;
 
 import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
 
 class ThotButton extends JButton {
-    public ThotButton() {
+
+	public ThotButton() {
         super();
     }
 

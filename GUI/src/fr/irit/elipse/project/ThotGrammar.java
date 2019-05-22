@@ -9,7 +9,6 @@ public class ThotGrammar {
 	//Attributs
 	protected String motBalise;
 	protected ThotTypeEvent typeEvent; 
-	protected ThotChooseTypeEvent chooseTypeEvent;
 	protected ThotConcept concept = new ThotConcept("");
 	
 	//Constructeurs
@@ -20,7 +19,6 @@ public class ThotGrammar {
 	public ThotGrammar(String mot){
 		this.motBalise = mot;
 		this.typeEvent = null;
-		this.chooseTypeEvent = new ThotChooseTypeEvent();
 	}
 	
 	//Méthodes	
@@ -39,10 +37,6 @@ public class ThotGrammar {
 	public void setConcept(ThotConcept concept) {
 		this.concept = concept;
 	}	
-	
-	public ThotChooseTypeEvent getChooseMenu() {
-		return (this.chooseTypeEvent);
-	}
 	
 	public String getMotBalise() {
 		return (this.motBalise);

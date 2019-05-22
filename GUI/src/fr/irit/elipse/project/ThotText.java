@@ -31,6 +31,13 @@ import javax.swing.text.*;
 public class ThotText extends JTextPane {
 	//Attributs
 	
+	//Enum
+    enum TypeMot {
+        VERBE,
+        NOM,
+        COMPLEMENT,
+        ADVERBE
+    }
 	//Constructeur
     public ThotText() {
         super();
@@ -72,18 +79,37 @@ public class ThotText extends JTextPane {
         this.setText(new String(readText(nomFichier)));
     }
     
-    public void highlight(String pattern){
-        Highlighter.HighlightPainter mhp = new MyHighlightPainter(Color.CYAN);
+  //Permet de faire la variation de la couleur en fonction du type de mot
+    public Color variationColor(TypeMot mot){
+        switch(mot){
+            case VERBE:
+                return Color.red;
+            case NOM:
+                return Color.blue;
+            case COMPLEMENT:
+                return Color.green;
+            case ADVERBE:
+                return Color.orange;
+            default:
+                return Color.white;
+        }
+    }
 
+    //permet de changer le fond pour chaque mot envoyé en comptant toute les rebondances
+    public void highlight(String pattern,TypeMot mot, boolean etat){
+        Highlighter.HighlightPainter mhp = new MyHighlightPainter(variationColor(mot));
+        if(etat){
+            mhp=new MyHighlightPainter(Color.white);
+        }
         try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
             String text = doc.getText(0, doc.getLength());
+
             int pos = 0;
-            // Search for pattern
-            // see I have updated now its not case sensitive
+
             while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0){
-                // Create highlighter using private painter and apply around pattern
+
                 hilite.addHighlight(pos, pos+pattern.length(), mhp);
                 pos += pattern.length();
             }
@@ -91,5 +117,7 @@ public class ThotText extends JTextPane {
         	System.out.println("Pas de texte sélectionné");
         }
     }
+
+
 
 }

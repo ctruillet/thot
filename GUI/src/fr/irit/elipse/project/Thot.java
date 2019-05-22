@@ -17,19 +17,24 @@ import java.text.SimpleDateFormat;
 
 import fr.irit.elipse.project.ThotButton;
 import fr.irit.elipse.project.ThotImportFrame.importType;
+import fr.irit.elipse.project.ThotText.TypeMot;
 
 public class Thot extends JFrame{ 
 	//Attributs
 	private ThotText T_Text = new ThotText();
+	//private ThotText T_Text2 = new ThotText();
+	//private ThotText T_Text3 = new ThotText();
 	private String selection; 
 	private String txt;
-	private ThotTable T_Table;	
+	private ThotTableModel T_Table;	
+	private ThotTable T_grammar;	
 	private String directory;
 	private static final long serialVersionUID = 0L;
 	
 	//Constructeur
 	Thot() {
 		super();
+		setType(Type.UTILITY);
 		double size[][] = {
 			{20,120,120,120,20,40,20,120,120,120,20},
 			{20,40,40,100,100,100,20,30,20}
@@ -38,7 +43,6 @@ public class Thot extends JFrame{
 		this.createNewDirectory();
 		
 		this.selection = "";
-		
 		Container contentPane = getContentPane();
 		
 		TableLayout layout = new TableLayout(size);
@@ -62,9 +66,8 @@ public class Thot extends JFrame{
                 // ajout du texte selectionné
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
-					T_Table.add(selection);
-					T_Table.fireTableDataChanged();
-					T_Text.highlight(selection);
+					T_grammar.add(selection);
+					T_Text.highlight(selection, TypeMot.VERBE, false);
 					selection="";
 				}		
             }
@@ -79,6 +82,7 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
+				T_Table.delete(1);;
 				save_GRXML();
             }
         });
@@ -95,23 +99,16 @@ public class Thot extends JFrame{
 					T_Text.displayText(tif.getFilePath());
 					
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
             }
         });
-		//
-
-		/*SimpleAttributeSet styleGras = new SimpleAttributeSet();
-		StyleConstants.setBold(styleGras, true);
-		StyledDocument doc = T_Text.getStyledDocument();
-		doc.setCharacterAttributes(0, 50, styleGras, false);*/
 
 		T_Text.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseReleased(java.awt.event.MouseEvent e) {  
 				int d = ((ThotText) e.getSource()).getSelectionStart();
 				int f = ((ThotText) e.getSource()).getSelectionEnd();
-				System.out.println("d " + d + " - " + "f " + f);
+				//System.out.println("d " + d + " - " + "f " + f);
 				if(d==f)return; // pas de texte sélectionné !
 				selection = ((ThotText) e.getSource()).getSelectedText();
 				System.out.println(selection);
@@ -119,16 +116,16 @@ public class Thot extends JFrame{
 		});
 		
 		JScrollPane SP_Text = new JScrollPane(T_Text);
+		//JScrollPane SP_Text2 = new JScrollPane(T_Text2);
 		this.T_Text.setText("Veuillez importer un fichier texte.");
 		
-		T_Table = new ThotTable(){
+		T_Table = new ThotTableModel(){
 			@Override
          	public boolean isCellEditable ( int row, int col) {
 				return true;
          	}						
 		};
-		JTable T_grammar = new JTable(T_Table);
-		T_grammar.setAutoCreateRowSorter(true);
+		T_grammar = new ThotTable(T_Table);
 		
 		JScrollPane SP_grammar = new JScrollPane(T_grammar);
 		
@@ -153,8 +150,21 @@ public class Thot extends JFrame{
 		setForeground(new Color(255,255,255,255));     
 		setBounds(0,0,840,510);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
 		setResizable(false);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setMargin(new Insets(0, 10, 0, 10));
+		setJMenuBar(menuBar);
+		
+		JMenuItem menuConscruct = new JMenuItem("Construction du spectacle");
+		menuConscruct.setSelected(true);
+		menuBar.add(menuConscruct);
+		
+		JMenuItem menuMan = new JMenuItem("Manuel d'utilisatation");
+		menuBar.add(menuMan);
+		
+		JMenuItem menuScenar = new JMenuItem("Scénarios");
+		menuBar.add(menuScenar);
 	}
 	
 	//Méthodes
@@ -174,9 +184,9 @@ public class Thot extends JFrame{
 	}
 	
 	public String getParentDirectory() {
-
 		return (this.directory);
 	}
+	
 	public void save_GRXML() {
 		Date curDate = new Date();
 		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
@@ -200,7 +210,7 @@ public class Thot extends JFrame{
 			for (int i=0;i<T_Table.getRowCount();i++){
 				output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
 			}
-			// crï¿½er les rules
+			// créer les rules
 			// String rules="";
 			// output_xml.write(rules);
 			
