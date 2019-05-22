@@ -17,7 +17,12 @@ import java.text.SimpleDateFormat;
 
 import fr.irit.elipse.project.ThotButton;
 import fr.irit.elipse.project.ThotImportFrame.importType;
+<<<<<<< HEAD
 import fr.irit.elipse.project.ThotText.TypeMot;
+=======
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Window.Type;
+>>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
 
 public class Thot extends JFrame{ 
 	//Attributs
@@ -67,7 +72,11 @@ public class Thot extends JFrame{
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_grammar.add(selection);
+<<<<<<< HEAD
 					T_Text.highlight(selection, TypeMot.VERBE, false);
+=======
+					T_Text.highlight(selection);
+>>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
 					selection="";
 				}		
             }
