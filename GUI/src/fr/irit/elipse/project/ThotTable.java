@@ -54,6 +54,10 @@ public class ThotTable extends JTable {
 		this.model.fireTableDataChanged();
 	}
 	
+	public int getRowCount() {
+		return (this.model.getRowCount());
+	}
+	
 	public String toString() {
 		String s= "";
 		

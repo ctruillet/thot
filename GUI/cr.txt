@@ -28,7 +28,10 @@ Compte-Rendu:
 	- Classe ThotTable -> ThotTableModel
 	- Classe ThotTable qui concerne la JTable directement
 	- Implemantation du menu déroulant ThotChooseTypeEvent
-	
+
+22/05/2019
+	- Menu principal (Onglets Construction de spectable, Manuel, Scenarios)
+	- Embilissement de Thot.java
 	
 ToDo
 	- Affichage du choix du TypeEvent -> JComboBox
