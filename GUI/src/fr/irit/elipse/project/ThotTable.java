@@ -18,11 +18,7 @@ public class ThotTable extends JTable {
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
-<<<<<<< HEAD
-	protected List<TableCellEditor> test = new ArrayList<TableCellEditor>(2);
-=======
-	
->>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
+
 	//Constructeur
 	public ThotTable(ThotTableModel ttm) {
 		super(ttm);
@@ -40,24 +36,16 @@ public class ThotTable extends JTable {
 
 		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t)); //Nouveau Menu déroulant
 		editor.add(dce);
-<<<<<<< HEAD
-	
 		this.fireTableDataChanged();
 	}
-	
-	//Surchage de la méthode de JTable
-=======
-		this.fireTableDataChanged();
-	}
+
 	
 		//Surchage de la méthode de JTable
->>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
 	public TableCellEditor getCellEditor(int row, int column) { 
 		if(row<this.liste.size() && column==1) {
 			return editor.get(row);
 		}
 		return super.getCellEditor(row, column);
-<<<<<<< HEAD
 	}
 	
 
@@ -66,15 +54,6 @@ public class ThotTable extends JTable {
 		this.model.fireTableDataChanged();
 	}
 	
-=======
-	}
-	
-		//Envoit une alerte au modele quand un evenement a lieu
-	public void fireTableDataChanged() {
-		this.model.fireTableDataChanged();
-	}
-	
->>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
 	public String toString() {
 		String s= "";
 		

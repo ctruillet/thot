@@ -15,14 +15,9 @@ import info.clearthought.layout.TableLayout;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-import fr.irit.elipse.project.ThotButton;
-import fr.irit.elipse.project.ThotImportFrame.importType;
-<<<<<<< HEAD
-import fr.irit.elipse.project.ThotText.TypeMot;
-=======
 import java.awt.Dialog.ModalExclusionType;
 import java.awt.Window.Type;
->>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
+
 
 public class Thot extends JFrame{ 
 	//Attributs
@@ -72,8 +67,7 @@ public class Thot extends JFrame{
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_grammar.add(selection);
-					T_Text.highlight(selection, TypeMot.VERBE, false);
-					T_Text.highlight(selection);
+					T_Text.highlight(selection, ThotText.TypeMot.VERBE, false);
 					selection="";
 				}		
             }
@@ -88,7 +82,7 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
-				T_Table.delete(1);;
+				T_Table.remove(1);;
 				save_GRXML();
             }
         });
@@ -99,7 +93,7 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
 				System.out.println("Import text");	
 				ThotImportFrame tif = new ThotImportFrame(getParentDirectory());
-				tif.setImportType(importType.TEXT);
+				tif.setImportType(ThotImportFrame.importType.TEXT);
 				try {
 					tif.openFrame(contentPane);
 					T_Text.displayText(tif.getFilePath());

@@ -5,17 +5,10 @@
 
 package fr.irit.elipse.project;
 
-<<<<<<< HEAD
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.util.*;
 
-
-=======
-import javax.swing.table.AbstractTableModel;
-import java.util.*;
-
->>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
 public class ThotTableModel extends AbstractTableModel {
 	
 	private static final long serialVersionUID = 1L;
@@ -54,13 +47,11 @@ public class ThotTableModel extends AbstractTableModel {
 	public void add(ThotGrammar t) {
 		liste.add(t);
 	}
-<<<<<<< HEAD
 	
 	//suppresion d'une ligne avec mise à jour
-	public void delete(int num){
+	public void remove(int num){
 		this.liste.remove(num);
 		this.fireTableDataChanged();
 	}
-=======
->>>>>>> f6e66ad59e10118f29639df233e60aa0e34828ef
+
 }
