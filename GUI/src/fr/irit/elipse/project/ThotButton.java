@@ -17,6 +17,6 @@ class ThotButton extends JButton {
     public ThotButton(String label){
         super(label);
         Font f = new Font("B612-Regular",Font.BOLD, 10);
-        this.setFont(f);        
+        this.setFont(f);
     }
 }
