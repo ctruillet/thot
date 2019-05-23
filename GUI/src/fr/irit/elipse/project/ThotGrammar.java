@@ -49,14 +49,15 @@ public class ThotGrammar{
 	public String getTypeEventName() {
 		return((this.getTypeEvent()==null) ? "" : this.getTypeEvent().name());
 	}
-	
-	
-	public ThotConcept getConcept() {
-		return (this.concept);
+
+
+	public String getConcept() {
+
+		return (this.concept.getContent());
 	}
-	
+
 	public String getConceptName() {
-		return (this.concept.toString());
+		return ((this.getConcept()==null) ? "" : this.getConcept());
 	}
 		
 	
