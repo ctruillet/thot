@@ -33,9 +33,18 @@ public class Thot extends JFrame{
 	Thot() {
 		super();
 		setType(Type.UTILITY);
-		double size[][] = {
+		double sizeConstructPane[][] = {
 			{20,120,120,120,20,40,20,120,120,120,20},
 			{23,40,40,100,100,100,20,30,20}
+		};
+		
+		double sizeManPane[][] = {
+				{20,250,25,250,25,250,20},
+				{23,40,40,100,100,100,20,30,20}
+		};
+		double sizeScenarPane[][] = {
+				{20,250,25,250,25,250,20},
+				{23,40,40,100,100,100,20,30,20}
 		};
 		
 		this.createNewDirectory();
@@ -47,10 +56,13 @@ public class Thot extends JFrame{
 		Container manPane = new Container();
 		Container scenarPane = new Container();
 		
-		TableLayout layout = new TableLayout(size);
-		constructPane.setLayout(layout);
-		manPane.setLayout(layout);
-		scenarPane.setLayout(layout);
+		TableLayout constructLayout = new TableLayout(sizeConstructPane);
+		TableLayout manLayout = new TableLayout(sizeManPane);
+		TableLayout scenarLayout = new TableLayout(sizeScenarPane);
+		
+		constructPane.setLayout(constructLayout);
+		manPane.setLayout(manLayout);
+		scenarPane.setLayout(scenarLayout);
 		
 		//Composants
 			//Police
@@ -152,10 +164,10 @@ public class Thot extends JFrame{
 		constructPane.add(SP_grammar, "7,2,9,5");
 		
 		//ManPane
-		manPane.add(manPage,"0,1,2,1");
+		manPane.add(manPage,"1,1,4,1");
 		
 		//Scenar Pane
-		scenarPane.add(scenarPage,"0,1,2,1");
+		scenarPane.add(scenarPage,"1,1,4,1");
 		
 		//Close
 		addWindowListener ( new WindowAdapter() {
@@ -350,6 +362,13 @@ public class Thot extends JFrame{
 	
 		
 	public static void main(String[] args){
+		try {
+			UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 		Thot t = new Thot();
 		t.setVisible(true);
 	}

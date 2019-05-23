@@ -5,7 +5,7 @@
 
 package fr.irit.elipse.project;
 
-public class ThotGrammar {
+public class ThotGrammar{
 	//Attributs
 	protected String motBalise;
 	protected ThotTypeEvent typeEvent; 

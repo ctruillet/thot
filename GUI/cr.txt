@@ -1,4 +1,4 @@
-Compte-Rendu:
+## Compte-Rendu:
 
 13/05/2019:
 	- Decouverte du Projet
@@ -11,7 +11,7 @@ Compte-Rendu:
 	
 15/05/2019
 	- Transfert du code de ThotCell vers ThotGrammar
-	- Début du boutton "Import Text"
+	- Dï¿½but du boutton "Import Text"
 	- Classe ThotImportFrame -> Fenetre d'import de fichier
 	
 16/05/2019
@@ -20,28 +20,32 @@ Compte-Rendu:
 	
 
 20/05/2019
-	- Affichage du texte importé
-	- Création d'un dossier unique à chaque lancement du programme où sont stockés les documents
+	- Affichage du texte importÃ©
+	- CrÃ©ation d'un dossier unique Ã  chaque lancement du programme oÃ¹ sont stockÃ©s les documents
 	- Menu deroulant du choix de TypeEvent
 	
 21/05/2019
 	- Classe ThotTable -> ThotTableModel
 	- Classe ThotTable qui concerne la JTable directement
-	- Implemantation du menu déroulant ThotChooseTypeEvent
+	- Implemantation du menu dï¿½roulant ThotChooseTypeEvent
 
 22/05/2019
 	- Menu principal (Onglets Construction de spectable, Manuel, Scenarios)
 	- Embilissement de Thot.java
 	
+23/05/2019
+	- Design
+	- Selection d'une ligne en vue de sa suppression
+	
 ToDo
-	- Affichage du choix du TypeEvent -> JComboBox
-	- Entrée du concept
+						- Affichage du choix du TypeEvent -> JComboBox
+			- EntrÃ©e du concept
 	- Suppresion d'un mot balise
-	- Génération de la grammaire
-	- Manuel d'utilisation+scénario
-	- Matérialiser la prosodie (gras pour le cris, italique ...)
+	- GÃ©nÃ©ration de la grammaire
+	- Manuel d'utilisation+scÃ©nario
+	- MatÃ©rialiser la prosodie (gras pour le cris, italique ...)
 	- Design
 	
-Contextualiser (position du mot dans le texte : dans une tirade, après un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
+Contextualiser (position du mot dans le texte : dans une tirade, aprï¿½s un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
 Mot-Balise -> Lexique de mot/mot simple
 Mot : nom/verbe ... differencier le mot avec la couleur

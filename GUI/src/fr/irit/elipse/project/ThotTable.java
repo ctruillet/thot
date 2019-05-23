@@ -7,13 +7,19 @@ package fr.irit.elipse.project;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JTable;
+import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 
-public class ThotTable extends JTable {
+public class ThotTable extends JTable{
 	//Attributs
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
@@ -24,7 +30,14 @@ public class ThotTable extends JTable {
 		super(ttm);
 		this.liste = new ArrayList<>();
 		this.setAutoCreateRowSorter(true);
+		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.model = ttm;
+		
+		this.addMouseListener(new MouseAdapter( ) {
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Selection de la ligne " + getSelectedRow());
+			}
+		});
 	}
 	
 	
@@ -67,4 +80,5 @@ public class ThotTable extends JTable {
 		
 		return s;
 	}
+
 }
