@@ -9,44 +9,53 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JComboBox;
 import javax.swing.*;
 
 public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	//Attributs
 	protected ThotTypeEvent value = ThotTypeEvent.Retranscription;
 	protected ThotGrammar motBalise;
+	protected ThotTable Table;
+	protected boolean flag;
 	
 	//Constructeur
-	public ThotChooseTypeEvent(ThotGrammar motBalise) {
+	public ThotChooseTypeEvent(ThotGrammar motBalise,ThotTable Table) {
 		super();
-		
+		this.Table=Table;
 		this.motBalise = motBalise;
 		this.addActionListener(this);
-		
+		flag=true;
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
 		}
+		ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),motBalise);
+		Table.listee.add(Table.position, editorText);
+		Table.fireTableDataChanged();
+		
 	}
 	
 	//Méthodes
 	public void actionPerformed(ActionEvent e) {
+		
 		this.value = (ThotTypeEvent) (this.getSelectedItem());
 		this.motBalise.setTypeEvent(this.value);
+		System.out.println(this.value);
+		System.out.println("ici");
+		if(flag) {
+			flag=false;
+			Table.test();
+		}else if(this.value.toString()==ThotTypeEvent.Retranscription.toString()){
+			ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),motBalise);
+			Table.listee.set(Table.position,editorText);
+		}
+		else {
+			Table.update(this.value);
+		}
+		
 	}
 	
 	public ThotTypeEvent getChoice() {
 		return (this.value);
 	}
 	
-	public static void main(String[] args) {
-		JFrame panel = new JFrame();
-		Container contentPane = panel.getContentPane();
-		ThotChooseTypeEvent tcte = new ThotChooseTypeEvent(null);
-		contentPane.add(tcte);
-		panel.setSize(400, 300);
-		panel.setVisible(true);
-		System.out.println(tcte.getChoice());
-		
-	}
 }

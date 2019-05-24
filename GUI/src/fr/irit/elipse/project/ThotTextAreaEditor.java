@@ -9,15 +9,18 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
-public class ThottextAreaEditor extends DefaultCellEditor {
+public class ThotTextAreaEditor extends DefaultCellEditor {
     protected JScrollPane scrollpane;
     protected JTextArea textarea;
-
-    public ThottextAreaEditor(JCheckBox checkBox) {
+    protected ThotGrammar motBalise;
+    
+    public ThotTextAreaEditor(JCheckBox checkBox,ThotGrammar motBalise) {
 
         super(new JCheckBox());
         scrollpane = new JScrollPane();
         textarea = new JTextArea();
+        this.motBalise=motBalise;
+        this.textarea.setText(motBalise.getConcept());
         textarea.setLineWrap(true);
         textarea.setWrapStyleWord(true);
         scrollpane.getViewport().add(textarea);
@@ -30,6 +33,7 @@ public class ThottextAreaEditor extends DefaultCellEditor {
     }
 
     public Object getCellEditorValue() {
+    	motBalise.setConcept(new ThotConcept(textarea.getText()));
         return textarea.getText();
     }
 }

@@ -50,7 +50,6 @@ public class Thot extends JFrame{
 		this.createNewDirectory();
 		
 		this.selection = "";
-		
 		//Container
 		Container constructPane = new Container();
 		Container manPane = new Container();
@@ -99,7 +98,7 @@ public class Thot extends JFrame{
 		
 		
 		//Boutons
-			//Ajouter un nouveau mot-balise
+		//Ajouter un nouveau mot-balise
 		ThotButton B_Ajouter = new ThotButton("<html>A<br/>j<br/>o<br/>u<br/>t<br/>e<br/>r</html>");
 		B_Ajouter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -113,7 +112,7 @@ public class Thot extends JFrame{
             }
 		});
 			
-			//Génération
+		//Génération
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -123,7 +122,7 @@ public class Thot extends JFrame{
             }
         });
 		
-			//Import Text
+		//Import Text
 		ThotButton B_OpenText = new ThotButton("Import text");
 		B_OpenText.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -141,7 +140,7 @@ public class Thot extends JFrame{
         });
 		B_OpenText.setSize(10,10);
 		
-			//Selection d'un mot
+		//Selection d'un mot
 		T_Text.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseReleased(java.awt.event.MouseEvent e) {  
 				int d = ((ThotText) e.getSource()).getSelectionStart();

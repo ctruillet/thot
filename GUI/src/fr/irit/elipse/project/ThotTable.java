@@ -5,14 +5,19 @@
 
 package fr.irit.elipse.project;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JTable;
+import javax.swing.KeyStroke;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
@@ -21,12 +26,19 @@ import java.util.*;
 import javax.swing.JCheckBox;
 
 public class ThotTable extends JTable{
+	
 	//Attributs
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
 	protected List<ThotButtonEditor> listButtonEditor = new ArrayList<ThotButtonEditor>(1);
-
+	protected List<ThotTextAreaEditor> listTextEditor = new ArrayList<ThotTextAreaEditor>(1);
+	protected ArrayList listee= new ArrayList();
+	protected int row;
+	protected int position;
+	protected ThotGrammar t;
+	protected boolean flag=true;
+	
 	//Constructeur
 	public ThotTable(ThotTableModel ttm) {
 		super(ttm);
@@ -35,46 +47,58 @@ public class ThotTable extends JTable{
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.model = ttm;
 		
-		this.addMouseListener(new MouseAdapter( ) {
-			public void mouseClicked(MouseEvent e) {
-				System.out.println("Selection de la ligne " + getSelectedRow());
+		//Suprresion de la ligne en appuyant sur la touche Suprr
+		Action action = new AbstractAction() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				row=getSelectedRow();
+				ttm.remove(row);
+				liste.remove(row);
+				editor.remove(row);
+				listee.remove(row);
+				System.out.println(Arrays.toString(listee.toArray()));
 			}
-		});
+			
+		};
+		String keyStrokeAndKey = "DELETE";
+		KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeAndKey);
+		this.getInputMap().put(keyStroke, keyStrokeAndKey);
+		this.getActionMap().put(keyStrokeAndKey, action);
 	}
-	
-	
-	//Méthode
+
+
 	public void add(String mot) {
 		ThotGrammar t = new ThotGrammar(mot);
 		this.model.add(t);
 		liste.add(t);
-		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t)); //Nouveau Menu déroulant
+		this.t=t;
+		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t,this)); //Nouveau Menu déroulant
 		editor.add(dce);
-		//pour le bouton
-		ThotButtonEditor editorBoutton=new ThotButtonEditor(new JCheckBox(),t);
-		listButtonEditor.add(editorBoutton);
-
+		ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),t);
+		listee.add(position, editorText);
 		this.fireTableDataChanged();
 	}
 
-	
 		//Surchage de la méthode de JTable
 		public TableCellEditor getCellEditor(int row, int column) {
+			this.position=row;
 			if(row<this.liste.size() && column==1) {
 				return editor.get(row);
+				
 			}else if (row<this.liste.size() && column==2) {
-				return listButtonEditor.get(row);
+				return (TableCellEditor) listee.get(row);
 			}
 			return super.getCellEditor(row, column);
 		}
 	
-
-		//Envoit une alerte au modele quand un evenement a lieu
+	//Envoit une alerte au modele quand un evenement a lieu
 	public void fireTableDataChanged() {
 		this.model.fireTableDataChanged();
 	}
 	
 	public int getRowCount() {
+		
 		return (this.model.getRowCount());
 	}
 	
@@ -86,6 +110,24 @@ public class ThotTable extends JTable{
 		}
 		
 		return s;
+	}
+	public void test() {
+		ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),t);
+		listee.add(position, editorText);
+		this.fireTableDataChanged();
+	}
+	
+	public void update(ThotTypeEvent choix) {
+		t.setConcept(new ThotConcept(""));
+		if(t.getTypeEventName()==ThotTypeEvent.Retranscription.toString()) {
+			ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),t);
+			listee.set(position,editorText);
+				
+		}else {
+			ThotButtonEditor editorBoutton=new ThotButtonEditor(new JCheckBox(),t);
+			listee.set(position,editorBoutton);
+		}
+		this.fireTableDataChanged();	
 	}
 
 }

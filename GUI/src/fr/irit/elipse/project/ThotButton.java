@@ -9,11 +9,12 @@ import java.awt.*;
 import javax.swing.*;
 
 class ThotButton extends JButton {
-
+	
+	//Constructeur
 	public ThotButton() {
         super();
     }
-
+	//Methode
     public ThotButton(String label){
         super(label);
         Font f = new Font("B612-Regular",Font.BOLD, 10);
