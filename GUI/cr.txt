@@ -11,7 +11,7 @@
 	
 15/05/2019
 	- Transfert du code de ThotCell vers ThotGrammar
-	- D�but du boutton "Import Text"
+	- Début du boutton "Import Text"
 	- Classe ThotImportFrame -> Fenetre d'import de fichier
 	
 16/05/2019
@@ -36,16 +36,18 @@
 23/05/2019
 	- Design
 	- Selection d'une ligne en vue de sa suppression
+
+24/05/2019
+	- Presentation pour la réunion du 29
 	
 ToDo
-						- Affichage du choix du TypeEvent -> JComboBox
-			- Entrée du concept
+	- Entrée du concept
 	- Suppresion d'un mot balise
 	- Génération de la grammaire
 	- Manuel d'utilisation+scénario
 	- Matérialiser la prosodie (gras pour le cris, italique ...)
 	- Design
 	
-Contextualiser (position du mot dans le texte : dans une tirade, apr�s un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
+Contextualiser (position du mot dans le texte : dans une tirade, aprés un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
 Mot-Balise -> Lexique de mot/mot simple
 Mot : nom/verbe ... differencier le mot avec la couleur
