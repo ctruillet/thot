@@ -16,7 +16,9 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	protected ThotTypeEvent value = ThotTypeEvent.Retranscription;
 	protected ThotGrammar motBalise;
 	protected ThotTable Table;
-	protected boolean flag;
+	protected JCheckBox checkbox =new JCheckBox();
+	protected ThotTypeEvent etat;
+	protected ThotConcept concept;
 	
 	//Constructeur
 	public ThotChooseTypeEvent(ThotGrammar motBalise,ThotTable Table) {
@@ -24,34 +26,38 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.Table=Table;
 		this.motBalise = motBalise;
 		this.addActionListener(this);
-		flag=true;
+		checkbox=new JCheckBox();
+		concept=new ThotConcept("");
+		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
+		Table.listee.add(editorText);
+		etat=this.value;
+		System.out.println("azeaze"+etat.toString());
+		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
 		}
-		ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),motBalise);
-		Table.listee.add(Table.position, editorText);
-		Table.fireTableDataChanged();
-		
 	}
 	
 	//Méthodes
 	public void actionPerformed(ActionEvent e) {
-		
 		this.value = (ThotTypeEvent) (this.getSelectedItem());
 		this.motBalise.setTypeEvent(this.value);
-		System.out.println(this.value);
-		System.out.println("ici");
-		if(flag) {
-			flag=false;
-			Table.test();
-		}else if(this.value.toString()==ThotTypeEvent.Retranscription.toString()){
-			ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),motBalise);
-			Table.listee.set(Table.position,editorText);
+		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
+			motBalise.setConcept(concept);
+			if((this.value.toString()==ThotTypeEvent.Retranscription.toString())){
+				ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
+				System.out.println("icimaisnon");
+				Table.listee.set(Table.getSelectedRow(),editorText);
+				etat=this.value;
+			}
+			else if (this.value.toString()==ThotTypeEvent.Media.toString()){
+				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
+				Table.listee.set(Table.getSelectedRow(),editorBoutton);
+				etat=this.value;
+			}
+			
 		}
-		else {
-			Table.update(this.value);
-		}
-		
+		Table.fireTableDataChanged();
 	}
 	
 	public ThotTypeEvent getChoice() {

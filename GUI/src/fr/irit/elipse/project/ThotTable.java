@@ -16,12 +16,15 @@ import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.*;
 import javax.swing.JCheckBox;
 
@@ -31,13 +34,9 @@ public class ThotTable extends JTable{
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
-	protected List<ThotButtonEditor> listButtonEditor = new ArrayList<ThotButtonEditor>(1);
-	protected List<ThotTextAreaEditor> listTextEditor = new ArrayList<ThotTextAreaEditor>(1);
 	protected ArrayList listee= new ArrayList();
 	protected int row;
-	protected int position;
 	protected ThotGrammar t;
-	protected boolean flag=true;
 	
 	//Constructeur
 	public ThotTable(ThotTableModel ttm) {
@@ -46,7 +45,7 @@ public class ThotTable extends JTable{
 		this.setAutoCreateRowSorter(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.model = ttm;
-		
+
 		//Suprresion de la ligne en appuyant sur la touche Suprr
 		Action action = new AbstractAction() {
 
@@ -61,10 +60,13 @@ public class ThotTable extends JTable{
 			}
 			
 		};
+		
+		System.out.println("Tabele1");
 		String keyStrokeAndKey = "DELETE";
 		KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeAndKey);
 		this.getInputMap().put(keyStroke, keyStrokeAndKey);
 		this.getActionMap().put(keyStrokeAndKey, action);
+
 	}
 
 
@@ -75,14 +77,13 @@ public class ThotTable extends JTable{
 		this.t=t;
 		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t,this)); //Nouveau Menu déroulant
 		editor.add(dce);
-		ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),t);
-		listee.add(position, editorText);
 		this.fireTableDataChanged();
 	}
 
 		//Surchage de la méthode de JTable
 		public TableCellEditor getCellEditor(int row, int column) {
-			this.position=row;
+			System.out.println("on est ici");
+			System.out.println(row);
 			if(row<this.liste.size() && column==1) {
 				return editor.get(row);
 				
@@ -110,24 +111,6 @@ public class ThotTable extends JTable{
 		}
 		
 		return s;
-	}
-	public void test() {
-		ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),t);
-		listee.add(position, editorText);
-		this.fireTableDataChanged();
-	}
-	
-	public void update(ThotTypeEvent choix) {
-		t.setConcept(new ThotConcept(""));
-		if(t.getTypeEventName()==ThotTypeEvent.Retranscription.toString()) {
-			ThotTextAreaEditor editorText = new ThotTextAreaEditor(new JCheckBox(),t);
-			listee.set(position,editorText);
-				
-		}else {
-			ThotButtonEditor editorBoutton=new ThotButtonEditor(new JCheckBox(),t);
-			listee.set(position,editorBoutton);
-		}
-		this.fireTableDataChanged();	
 	}
 
 }
