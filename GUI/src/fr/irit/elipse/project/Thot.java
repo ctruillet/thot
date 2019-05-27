@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -335,7 +336,7 @@ public class Thot extends JFrame{
 		}
 		
 		try{
-			BufferedWriter output_xml = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF8")); 
+			BufferedWriter output_xml = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.UTF_8));
 			// entetes
 			output_xml.write("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n");
 			output_xml.write("<!DOCTYPE grammar PUBLIC \"-//W3C//DTD GRAMMAR 1.0//EN\"\n\"http://www.w3.org/TR/speech-grammar/grammar.dtd\">\n");
