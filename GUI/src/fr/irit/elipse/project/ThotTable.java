@@ -40,7 +40,7 @@ public class ThotTable extends JTable{
 	protected ThotText Text;
 	
 	//Constructeur
-	public ThotTable(ThotTableModel ttm,ThotText Text) {
+	public ThotTable(ThotTableModel ttm, ThotText Text) {
 		super(ttm);
 		this.Text=Text;
 		this.liste = new ArrayList<>();

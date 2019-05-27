@@ -94,7 +94,7 @@ public class Thot extends JFrame{
 				return true;
          	}						
 		};
-		T_grammar = new ThotTable(T_Table);
+		T_grammar = new ThotTable(T_Table, T_Text);
 		
 		JScrollPane SP_grammar = new JScrollPane(T_grammar);
 		
@@ -108,8 +108,8 @@ public class Thot extends JFrame{
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "\" dans la table");
 					T_grammar.add(selection);
-					//T_Text.allMot.add(selection);
-					//T_Text.highlight(selection);
+					T_Text.allMot.add(selection);
+					T_Text.highlight(selection);
 					selection="";
 					position = -1;
 				}
