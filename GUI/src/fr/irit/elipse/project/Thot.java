@@ -323,6 +323,8 @@ public class Thot extends JFrame{
 	}
 	
 	public void save_GRXML() {
+		System.out.println(T_Table.toString());
+
 		Date curDate = new Date();
 		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
 		String output = "grammar_" + SDFDate.format(curDate) + ".grxml";
@@ -345,6 +347,7 @@ public class Thot extends JFrame{
 			for (int i=0;i<T_Table.getRowCount();i++){
 				output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
 			}
+
 			// créer les rules
 			// String rules="";
 			// output_xml.write(rules);

@@ -5,9 +5,8 @@
 
 package fr.irit.elipse.project;
 
-import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-import java.util.*;
+import java.util.ArrayList;
 
 public class ThotTableModel extends AbstractTableModel {
 	
@@ -43,7 +42,18 @@ public class ThotTableModel extends AbstractTableModel {
 				return("");
 		}
 	}
-	
+
+	public String toString(){
+		String s= "";
+
+		for (int i=0;i<this.liste.size(); i++) {
+			s+=this.liste.get(i).toString()+"\n";
+		}
+
+		return s;
+	}
+
+
 	public void add(ThotGrammar t) {
 		liste.add(t);
 	}

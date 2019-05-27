@@ -61,9 +61,13 @@ public class ThotGrammar{
 	public String getConceptName() {
 		return ((this.getConcept()==null) ? "" : this.getConcept());
 	}
+
+	public int getPosition() {
+		return (this.position);
+	}
 		
 	
 	public String toString() {
-		return (this.getMotBalise() + " : " + this.getTypeEventName() + " & " + this.getConcept());
+		return (this.getMotBalise() + " : " + this.getTypeEventName() + " & " + this.getConcept() + " & " + this.getPosition());
 	}
 }

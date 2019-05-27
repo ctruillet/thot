@@ -5,11 +5,9 @@
 
 package fr.irit.elipse.project;
 
-import java.awt.Container;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.*;
 
 public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	//Attributs
@@ -29,7 +27,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		checkbox=new JCheckBox();
 		concept=new ThotConcept("");
 		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
-		Table.listeConcep.add(editorText);
+		Table.listeConcept.add(editorText);
 		etat=this.value;
 		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
@@ -45,11 +43,11 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 			motBalise.setConcept(concept);
 			if (this.value.toString()==ThotTypeEvent.Media.toString()){
 				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
-				Table.listeConcep.set(Table.getSelectedRow(),editorBoutton);
+				Table.listeConcept.set(Table.getSelectedRow(),editorBoutton);
 				etat=this.value;
 			}else {
 				ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
-				Table.listeConcep.set(Table.getSelectedRow(),editorText);
+				Table.listeConcept.set(Table.getSelectedRow(),editorText);
 				etat=this.value;
 			}
 		}
