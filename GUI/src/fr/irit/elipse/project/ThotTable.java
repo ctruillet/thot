@@ -5,28 +5,12 @@
 
 package fr.irit.elipse.project;
 
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.DefaultCellEditor;
-import javax.swing.JTable;
-import javax.swing.KeyStroke;
-import javax.swing.ListModel;
-import javax.swing.ListSelectionModel;
+import javax.swing.*;
 import javax.swing.table.TableCellEditor;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-
-import java.awt.Component;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.*;
-import javax.swing.JCheckBox;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ThotTable extends JTable{
 	
@@ -71,8 +55,8 @@ public class ThotTable extends JTable{
 	}
 
 
-	public void add(String mot) {
-		ThotGrammar t = new ThotGrammar(mot);
+	public void add(int position, String mot) {
+		ThotGrammar t = new ThotGrammar(position, mot);
 		this.model.add(t);
 		liste.add(t);
 		this.t=t;

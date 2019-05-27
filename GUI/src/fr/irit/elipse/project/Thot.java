@@ -5,15 +5,14 @@
 
 package fr.irit.elipse.project;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.io.*;
-import javax.swing.*;
 import info.clearthought.layout.TableLayout;
 
-import java.util.Date;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Thot extends JFrame{ 
@@ -41,11 +40,11 @@ public class Thot extends JFrame{
 		
 		double sizeManPane[][] = {
 				{20,250,25,250,25,250,20},
-				{23,40,40,100,100,100,20,30,20}
+				{53,40,40,100,100,100,20,20}
 		};
 		double sizeScenarPane[][] = {
 				{20,250,25,250,25,250,20},
-				{23,40,40,100,100,100,20,30,20}
+				{53,40,40,100,100,100,20,20}
 		};
 		
 		this.createNewDirectory();
@@ -106,9 +105,9 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // ajout du texte selectionné
 				if (!selection.equals("")){
-					System.out.println("ajout de \"" + selection + "\" dans la table");
-					T_grammar.add(selection);
-					T_Text.allMot.add(selection);
+					System.out.println("ajout de \"" + selection + "-> " + position + "\" dans la table");
+					T_grammar.add(position, selection);
+					T_Text.allOccurency.add(selection);
 					T_Text.highlight(selection);
 					selection="";
 					position = -1;

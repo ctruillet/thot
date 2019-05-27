@@ -7,16 +7,18 @@ package fr.irit.elipse.project;
 
 public class ThotGrammar{
 	//Attributs
+	protected int position;
 	protected String motBalise;
 	protected ThotTypeEvent typeEvent; 
 	protected ThotConcept concept = new ThotConcept("");
 	
 	//Constructeurs
-	public ThotGrammar() {
-		this("");
+	public ThotGrammar(int position) {
+		this(position, "");
 	}
 	
-	public ThotGrammar(String mot){
+	public ThotGrammar(int position, String mot){
+		this.position = position;
 		this.motBalise = mot;
 		this.typeEvent = null;
 	}
@@ -63,19 +65,5 @@ public class ThotGrammar{
 	
 	public String toString() {
 		return (this.getMotBalise() + " : " + this.getTypeEventName() + " & " + this.getConcept());
-	}
-	
-	public static void main(String[] args) {
-		ThotGrammar tc = new ThotGrammar("l'abricot du renard");
-		System.out.println(tc.toString() + " + " + tc.hasNoEvent());
-		tc.setTypeEvent(ThotTypeEvent.Media);
-		System.out.println(tc.toString());
-		ThotConcept tc2 = new ThotConcept("corbeau");
-		tc.setConcept(tc2);
-		tc.setMotBalise("Petit Prince");
-		System.out.println(tc.toString() + " + " + tc.hasNoEvent());
-		
-		ThotGrammar tc3 = new ThotGrammar();
-		System.out.println(tc3.toString());
 	}
 }

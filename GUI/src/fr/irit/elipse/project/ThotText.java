@@ -5,35 +5,22 @@
 
 package fr.irit.elipse.project;
 
+import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Document;
+import javax.swing.text.Highlighter;
 import java.awt.*;
-import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.io.BufferedWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
-import java.io.FileWriter;
-
-import javax.swing.*;
-import javax.swing.text.StyledDocument;
-import java.awt.GraphicsEnvironment;
-import javax.swing.ImageIcon;
-import javax.swing.JColorChooser;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JSpinner;
-import javax.swing.JTextPane;
-import javax.swing.table.TableCellEditor;
-import javax.swing.text.*;
 
 
 public class ThotText extends JTextPane {
 	//Attributs
-	protected List<String> allMot = new ArrayList<String>(1);
+	protected List<String> allOccurency = new ArrayList<String>(1);
 	protected String test;
 	//Enum
     enum TypeMot {
@@ -112,7 +99,7 @@ public class ThotText extends JTextPane {
                 hilite.addHighlight(pos, pos+pattern.length(), mhp);
                 pos += pattern.length();
             }
-            System.out.println(allMot.toString());
+            System.out.println(allOccurency.toString());
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
@@ -120,11 +107,11 @@ public class ThotText extends JTextPane {
     
     public void suppresion(int pattern) {
     	System.out.println(pattern);
-    	test=allMot.get(pattern);
+    	test=allOccurency.get(pattern);
     	if(pattern>=0) {
-            allMot.remove(allMot.get(pattern));
+            allOccurency.remove(allOccurency.get(pattern));
     	}
-    	System.out.println(allMot.toString());
+    	System.out.println(allOccurency.toString());
     	
     	try{
             Highlighter hilite = this.getHighlighter();
@@ -136,14 +123,14 @@ public class ThotText extends JTextPane {
                 hilite.removeAllHighlights();
                 pos += test.length();
             }
-            System.out.println(allMot.toString());
+            System.out.println(allOccurency.toString());
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
     	
 
-        for(int i=0;i<allMot.size();i++) {
-        	highlight(allMot.get(i));
+        for(int i=0;i<allOccurency.size();i++) {
+        	highlight(allOccurency.get(i));
         }
 
     }
