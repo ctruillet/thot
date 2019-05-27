@@ -19,7 +19,8 @@ import java.text.SimpleDateFormat;
 public class Thot extends JFrame{ 
 	//Attributs
 	private ThotText T_Text = new ThotText();
-	private String selection; 
+	private String selection;
+	protected int position;
 	private String txt;
 	private ThotTableModel T_Table;	
 	private ThotTable T_grammar;	
@@ -50,6 +51,7 @@ public class Thot extends JFrame{
 		this.createNewDirectory();
 		
 		this.selection = "";
+		this.position = -1;
 		//Container
 		Container constructPane = new Container();
 		Container manPane = new Container();
@@ -104,10 +106,11 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // ajout du texte selectionné
 				if (!selection.equals("")){
-					System.out.println("ajout de \"" + selection + "\" dans la table");
-					T_grammar.add(selection);
+					System.out.println("ajout de \"" + selection + "-" + position + "\" dans la table");
+					T_grammar.add(position, selection);
 					T_Text.highlight(selection, ThotText.TypeMot.VERBE, false);
 					selection="";
+					position = -1;
 				}		
             }
 		});
@@ -148,7 +151,8 @@ public class Thot extends JFrame{
 				//System.out.println("d " + d + " - " + "f " + f);
 				if(d==f)return; // pas de texte sélectionné !
 				selection = ((ThotText) e.getSource()).getSelectedText();
-				System.out.println(selection);
+				position = d;
+				System.out.println(selection + " -> " + position);
 			}
 		});
 
