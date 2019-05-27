@@ -37,10 +37,12 @@ public class ThotTable extends JTable{
 	protected ArrayList listee= new ArrayList();
 	protected int row;
 	protected ThotGrammar t;
+	protected ThotText Text;
 	
 	//Constructeur
-	public ThotTable(ThotTableModel ttm) {
+	public ThotTable(ThotTableModel ttm,ThotText Text) {
 		super(ttm);
+		this.Text=Text;
 		this.liste = new ArrayList<>();
 		this.setAutoCreateRowSorter(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -48,7 +50,6 @@ public class ThotTable extends JTable{
 
 		//Suprresion de la ligne en appuyant sur la touche Suprr
 		Action action = new AbstractAction() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				row=getSelectedRow();
@@ -57,8 +58,8 @@ public class ThotTable extends JTable{
 				editor.remove(row);
 				listee.remove(row);
 				System.out.println(Arrays.toString(listee.toArray()));
+				Text.suppresion(row);
 			}
-			
 		};
 		
 		System.out.println("Tabele1");

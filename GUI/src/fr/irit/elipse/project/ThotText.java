@@ -10,6 +10,8 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.PrintWriter;
@@ -25,12 +27,14 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JSpinner;
 import javax.swing.JTextPane;
+import javax.swing.table.TableCellEditor;
 import javax.swing.text.*;
 
 
 public class ThotText extends JTextPane {
 	//Attributs
-	
+	protected List<String> allMot = new ArrayList<String>(1);
+	protected String test;
 	//Enum
     enum TypeMot {
         VERBE,
@@ -96,26 +100,52 @@ public class ThotText extends JTextPane {
     }
 
     //permet de changer le fond pour chaque mot envoyé en comptant toute les rebondances
-    public void highlight(String pattern,TypeMot mot, boolean etat){
-        Highlighter.HighlightPainter mhp = new MyHighlightPainter(variationColor(mot));
-        if(etat){
-            mhp=new MyHighlightPainter(Color.white);
-        }
+    public void highlight(String pattern){
+        Highlighter.HighlightPainter mhp = new MyHighlightPainter(Color.red);
         try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
             String text = doc.getText(0, doc.getLength());
-
             int pos = 0;
-
             while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0){
 
                 hilite.addHighlight(pos, pos+pattern.length(), mhp);
                 pos += pattern.length();
             }
+            System.out.println(allMot.toString());
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
+    }
+    
+    public void suppresion(int pattern) {
+    	System.out.println(pattern);
+    	test=allMot.get(pattern);
+    	if(pattern>=0) {
+            allMot.remove(allMot.get(pattern));
+    	}
+    	System.out.println(allMot.toString());
+    	
+    	try{
+            Highlighter hilite = this.getHighlighter();
+            Document doc = this.getDocument();
+            String text = doc.getText(0, doc.getLength());
+            int pos = 0;
+            while ((pos = text.toUpperCase().indexOf(test.toUpperCase(), pos)) >= 0){
+
+                hilite.removeAllHighlights();
+                pos += test.length();
+            }
+            System.out.println(allMot.toString());
+        }catch (BadLocationException e) {
+        	System.out.println("Pas de texte sélectionné");
+        }
+    	
+
+        for(int i=0;i<allMot.size();i++) {
+        	highlight(allMot.get(i));
+        }
+
     }
 
 

@@ -106,12 +106,13 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // ajout du texte selectionné
 				if (!selection.equals("")){
-					System.out.println("ajout de \"" + selection + "-" + position + "\" dans la table");
-					T_grammar.add(position, selection);
-					T_Text.highlight(selection, ThotText.TypeMot.VERBE, false);
+					System.out.println("ajout de \"" + selection + "\" dans la table");
+					T_grammar.add(selection);
+					//T_Text.allMot.add(selection);
+					//T_Text.highlight(selection);
 					selection="";
 					position = -1;
-				}		
+				}
             }
 		});
 			
