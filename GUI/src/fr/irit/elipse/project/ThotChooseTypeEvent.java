@@ -31,7 +31,6 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
 		Table.listee.add(editorText);
 		etat=this.value;
-		System.out.println("azeaze"+etat.toString());
 		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
@@ -44,18 +43,15 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.motBalise.setTypeEvent(this.value);
 		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
 			motBalise.setConcept(concept);
-			if((this.value.toString()==ThotTypeEvent.Retranscription.toString())){
-				ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
-				System.out.println("icimaisnon");
-				Table.listee.set(Table.getSelectedRow(),editorText);
-				etat=this.value;
-			}
-			else if (this.value.toString()==ThotTypeEvent.Media.toString()){
+			if (this.value.toString()==ThotTypeEvent.Media.toString()){
 				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
 				Table.listee.set(Table.getSelectedRow(),editorBoutton);
 				etat=this.value;
+			}else {
+				ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
+				Table.listee.set(Table.getSelectedRow(),editorText);
+				etat=this.value;
 			}
-			
 		}
 		Table.fireTableDataChanged();
 	}

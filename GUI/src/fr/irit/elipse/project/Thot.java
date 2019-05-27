@@ -67,10 +67,10 @@ public class Thot extends JFrame{
 			//Police
 		Font fPlain = new Font("B612-Regular",Font.PLAIN, 10);
 		Font fBigBold = new Font("B612-Regular",Font.BOLD, 36);
-			//Titre
+		//Titre
 		JLabel thot_title = new JLabel("THOT");
 		thot_title.setFont(fBigBold);
-			//Descriptions
+		//Descriptions
 		JLabel thot_part = new JLabel("<html>Veuillez saisir votre texte ici en indiquant les mots-balises<br/> via le bouton ci-dessous</html>");
 		thot_part.setFont(fPlain);
 		JLabel grammar_part = new JLabel("Mots-balises et signification"); 
