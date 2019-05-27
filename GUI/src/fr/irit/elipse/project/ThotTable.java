@@ -18,7 +18,7 @@ public class ThotTable extends JTable{
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
-	protected ArrayList listee= new ArrayList();
+	protected ArrayList listeConcep= new ArrayList();
 	protected int row;
 	protected ThotGrammar t;
 	protected ThotText Text;
@@ -40,8 +40,8 @@ public class ThotTable extends JTable{
 				ttm.remove(row);
 				liste.remove(row);
 				editor.remove(row);
-				listee.remove(row);
-				System.out.println(Arrays.toString(listee.toArray()));
+				listeConcep.remove(row);
+				System.out.println(Arrays.toString(listeConcep.toArray()));
 				Text.suppresion(row);
 			}
 		};
@@ -73,7 +73,7 @@ public class ThotTable extends JTable{
 				return editor.get(row);
 				
 			}else if (row<this.liste.size() && column==2) {
-				return (TableCellEditor) listee.get(row);
+				return (TableCellEditor) listeConcep.get(row);
 			}
 			return super.getCellEditor(row, column);
 		}
