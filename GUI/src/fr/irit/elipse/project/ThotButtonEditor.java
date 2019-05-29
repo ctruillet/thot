@@ -1,13 +1,10 @@
 package fr.irit.elipse.project;
 
+import javax.swing.*;
 import java.awt.*;
-
-import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-
-import javax.swing.*;
 
 public class ThotButtonEditor extends DefaultCellEditor implements ActionListener{
 
@@ -30,9 +27,10 @@ public class ThotButtonEditor extends DefaultCellEditor implements ActionListene
 			public void actionPerformed(ActionEvent e) {
 
 				ThotImportFrame tif = new ThotImportFrame(getParentDirectory());
+				tif.setImportType(ThotImportFrame.importType.MEDIA);
 				try {
 					Component contentPane=getContentPane();
-					tif.openMedia(contentPane);
+					tif.openFrame(contentPane);
 					if(tif.getFilePath()!=null) {
 						label=tif.getFileName();
 						button.setText(label);

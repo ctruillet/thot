@@ -65,17 +65,16 @@ public class ThotTable extends JTable{
 	}
 
 		//Surchage de la méthode de JTable
-		public TableCellEditor getCellEditor(int row, int column) {
-			System.out.println("on est ici");
-			System.out.println(row);
-			if(row<this.liste.size() && column==1) {
-				return editor.get(row);
-				
-			}else if (row<this.liste.size() && column==2) {
-				return (TableCellEditor) listeConcept.get(row);
-			}
-			return super.getCellEditor(row, column);
+	public TableCellEditor getCellEditor(int row, int column) {
+		System.out.println("on est ici");
+		System.out.println(row);
+		if(row<this.liste.size() && column==1) {
+			return editor.get(row);
+		}else if (row<this.liste.size() && column==2) {
+			return (TableCellEditor) listeConcept.get(row);
 		}
+		return super.getCellEditor(row, column);
+	}
 	
 	//Envoit une alerte au modele quand un evenement a lieu
 	public void fireTableDataChanged() {

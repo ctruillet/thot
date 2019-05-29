@@ -5,14 +5,13 @@
 
 package fr.irit.elipse.project;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.io.*;
-import java.nio.file.*;
-import java.nio.file.Paths.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ThotImportFrame extends JFrame{
 	//Attribut
@@ -34,7 +33,8 @@ public class ThotImportFrame extends JFrame{
 		TEXT,
 		AUDIO,
 		VIDEO,
-		PICTURE;
+		PICTURE,
+		MEDIA;
 	}
 	
 	//Inner Class
@@ -102,7 +102,7 @@ public class ThotImportFrame extends JFrame{
 	}
 	
 	
-	protected class thotfiltermedia extends FileFilter{
+	protected class ThotFilterMedia extends FileFilter{
 		ThotFilterAudio audio = new ThotFilterAudio();
 		ThotFilterVideo video = new ThotFilterVideo();
 		ThotFilterPicture picture = new ThotFilterPicture();
@@ -119,26 +119,7 @@ public class ThotImportFrame extends JFrame{
 		}
 
 	}
-	
-	public void openMedia(Component parent) throws IOException{
-		this.fenetre.setMultiSelectionEnabled(false);
-		this.fenetre.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		this.fenetre.setAcceptAllFileFilterUsed(false);				//Supprimer le filtre "All"
-		this.fenetre.addChoosableFileFilter(new thotfiltermedia());
-		
-		if(this.fenetre.showDialog(parent, "Importer") == JFileChooser.APPROVE_OPTION) {
-			this.fichier = this.fenetre.getSelectedFile();
-			
-			try {
-				Files.copy(this.fichier.toPath(), Paths.get(this.parentDirectory,this.getFileName()));
-			} catch(Exception e) {
-				
-			}
-			
-			this.fichier = new File((Paths.get(this.parentDirectory,this.getFileName())).toString());
-		}
-	}
-	
+
 	//Méthodes
 	public void openFrame(Component parent) throws IOException {
 		this.fenetre.setMultiSelectionEnabled(false);
@@ -161,6 +142,9 @@ public class ThotImportFrame extends JFrame{
 				
 			case PICTURE:
 				this.fenetre.addChoosableFileFilter(new ThotFilterPicture());
+				break;
+			case MEDIA:
+				this.fenetre.addChoosableFileFilter(new ThotFilterMedia());
 				break;
 			default:
 				System.out.println("Pas d'importType spécifié");

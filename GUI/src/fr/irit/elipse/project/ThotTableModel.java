@@ -44,13 +44,13 @@ public class ThotTableModel extends AbstractTableModel {
 	}
 
 	public String toString(){
-		String s= "";
+		String s= "==========================\n";
 
 		for (int i=0;i<this.liste.size(); i++) {
 			s+=this.liste.get(i).toString()+"\n";
 		}
 
-		return s;
+		return (s+"==========================");
 	}
 
 

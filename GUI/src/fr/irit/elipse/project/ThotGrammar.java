@@ -68,6 +68,6 @@ public class ThotGrammar{
 		
 	
 	public String toString() {
-		return (this.getMotBalise() + " : " + this.getTypeEventName() + " & " + this.getConcept() + " & " + this.getPosition());
+		return (this.getPosition() + " - " + this.getMotBalise() + " | " + this.getTypeEventName() + " | " + this.getConcept());
 	}
 }
