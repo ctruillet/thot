@@ -30,10 +30,9 @@ public class ThotButtonEditor extends DefaultCellEditor implements ActionListene
 			public void actionPerformed(ActionEvent e) {
 
 				ThotImportFrame tif = new ThotImportFrame(getParentDirectory());
-				tif.setImportType(ThotImportFrame.importType.TEXT);
 				try {
 					Component contentPane=getContentPane();
-					tif.openFrame(contentPane);
+					tif.openMedia(contentPane);
 					if(tif.getFilePath()!=null) {
 						label=tif.getFileName();
 						button.setText(label);

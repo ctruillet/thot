@@ -101,6 +101,44 @@ public class ThotImportFrame extends JFrame{
 		
 	}
 	
+	
+	protected class thotfiltermedia extends FileFilter{
+		ThotFilterAudio audio = new ThotFilterAudio();
+		ThotFilterVideo video = new ThotFilterVideo();
+		ThotFilterPicture picture = new ThotFilterPicture();
+		public boolean accept(File f) {
+
+			if (audio.accept(f)==true || video.accept(f)==true || picture.accept(f)) {
+				return true;
+			}
+			return false;
+		}
+
+		public String getDescription() {
+			return "media";
+		}
+
+	}
+	
+	public void openMedia(Component parent) throws IOException{
+		this.fenetre.setMultiSelectionEnabled(false);
+		this.fenetre.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		this.fenetre.setAcceptAllFileFilterUsed(false);				//Supprimer le filtre "All"
+		this.fenetre.addChoosableFileFilter(new thotfiltermedia());
+		
+		if(this.fenetre.showDialog(parent, "Importer") == JFileChooser.APPROVE_OPTION) {
+			this.fichier = this.fenetre.getSelectedFile();
+			
+			try {
+				Files.copy(this.fichier.toPath(), Paths.get(this.parentDirectory,this.getFileName()));
+			} catch(Exception e) {
+				
+			}
+			
+			this.fichier = new File((Paths.get(this.parentDirectory,this.getFileName())).toString());
+		}
+	}
+	
 	//Méthodes
 	public void openFrame(Component parent) throws IOException {
 		this.fenetre.setMultiSelectionEnabled(false);
@@ -162,15 +200,5 @@ public class ThotImportFrame extends JFrame{
 	
 	public void setImportType(importType it) {
 		this.typeImport = it;
-	}
-	
-	
-	public static void main(String[] args) throws IOException {
-		ThotImportFrame tif = new ThotImportFrame("./data");
-		tif.openFrame(null);
-		System.out.println(tif.getFileName());
-		System.out.println(tif.getFilePath());
-		System.out.println(tif.getFile().toPath());
-		System.out.println(tif.getFile().exists());
 	}
 }

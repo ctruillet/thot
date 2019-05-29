@@ -46,7 +46,6 @@ public class ThotTable extends JTable{
 			}
 		};
 		
-		System.out.println("Tabele1");
 		String keyStrokeAndKey = "DELETE";
 		KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeAndKey);
 		this.getInputMap().put(keyStroke, keyStrokeAndKey);
