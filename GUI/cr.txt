@@ -39,10 +39,13 @@
 
 24/05/2019
 	- Presentation pour la réunion du 29
-	
+
+27/05/2019
+
+29/05/2019
+
 ToDo
-	- Entrée du concept
-	- Suppresion d'un mot balise
+    - Tri
 	- Génération de la grammaire
 	- Manuel d'utilisation+scénario
 	- Matérialiser la prosodie (gras pour le cris, italique ...)
@@ -51,3 +54,9 @@ ToDo
 Contextualiser (position du mot dans le texte : dans une tirade, aprés un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
 Mot-Balise -> Lexique de mot/mot simple
 Mot : nom/verbe ... differencier le mot avec la couleur
+
+Couleur -> pour différencier le type d'évenement
+//multi flux ? envoyer paramétre
+mettre un bouton pour passer de dictée vocale à (maintenant) ce qu'on a fait
+//phénomene visible retranscrit (non voyant) audio description
+Sélection des périphériques d'entrée et de sortie adresse port

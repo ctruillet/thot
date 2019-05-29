@@ -85,7 +85,11 @@ public class ThotTable extends JTable{
 		
 		return (this.model.getRowCount());
 	}
-	
+
+	public ArrayList<ThotGrammar> getListe(){
+		return (this.liste);
+	}
+
 	public String toString() {
 		String s= "";
 		

@@ -53,6 +53,9 @@ public class ThotTableModel extends AbstractTableModel {
 		return (s+"==========================");
 	}
 
+	public ArrayList<ThotGrammar> getListe(){
+		return (this.liste);
+	}
 
 	public void add(ThotGrammar t) {
 		liste.add(t);

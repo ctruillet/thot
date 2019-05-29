@@ -324,8 +324,6 @@ public class Thot extends JFrame{
 	}
 	
 	public void save_GRXML() {
-		System.out.println(T_Table.toString());
-
 		Date curDate = new Date();
 		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
 		String output = "grammar_" + SDFDate.format(curDate) + ".grxml";
