@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ff43f5-b809-4977-a720-3ead651ac43b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar_05_14_28.grxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin1/" />
@@ -22,13 +16,16 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="GUI" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="326" column="29" lean-forward="true" selection-start-line="326" selection-start-column="29" selection-end-line="326" selection-end-column="29" />
+            <state relative-caret-position="334">
+              <caret line="133" column="80" lean-forward="true" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
               <folding>
                 <element signature="e#2464#2652#0" expanded="true" />
                 <element signature="e#2651#2652#0" expanded="true" />
@@ -42,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="278">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -55,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="697">
-              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -81,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -187,8 +184,11 @@
         <option value="Clement Truillet &lt;clem.truillet@gmail.com&gt;" />
       </list>
     </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="SIGN_OFF_COMMIT" value="true" />
+    <option name="ADD_SUFFIX_TO_CHERRY_PICKS_OF_PUBLISHED_COMMITS" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -198,10 +198,10 @@
         <option value="$PROJECT_DIR$/cr.txt" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java" />
-        <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java" />
+        <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" />
       </list>
     </option>
   </component>
@@ -217,10 +217,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1288" />
-    <option name="y" value="-547" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1099" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -259,12 +259,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558968181770" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558969333180" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -311,7 +314,7 @@
       <updated>1558621890046</updated>
       <workItem from="1558621892071" duration="581000" />
       <workItem from="1558960539561" duration="977000" />
-      <workItem from="1558961521966" duration="6397000" />
+      <workItem from="1558961521966" duration="7620000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de la position d'un mot">
       <created>1558965383890</created>
@@ -341,11 +344,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558966558514</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ajout du toString sur ThotTableModem">
+      <created>1558968258888</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558968258888</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Commit de fin de journée">
+      <created>1558969317226</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558969317226</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7955000" />
+    <option name="totallyTimeSpent" value="9178000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -357,16 +374,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1288" y="-547" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49853373" weight="0.14644013" />
-      <window_info id="Structure" order="1" sideWeight="0.5014663" side_tool="true" weight="0.21925566" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49913943" visible="true" weight="0.12147651" />
+      <window_info id="Structure" order="1" sideWeight="0.5008606" side_tool="true" weight="0.14644013" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.5008606" side_tool="true" weight="0.14644013" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.21337947" />
@@ -375,41 +391,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3298731" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49919093" visible="true" weight="0.40509915" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3298731" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.3298731" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49853373" visible="true" weight="0.14644013" />
-      <window_info id="Structure" order="1" sideWeight="0.5014663" side_tool="true" weight="0.21925566" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21337947" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3298731" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3298731" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5008091" side_tool="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -420,7 +405,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -465,10 +450,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Ajout de la position d'un mot" />
     <MESSAGE value="Merge effectué" />
     <MESSAGE value="Merge bien fait" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge bien fait" />
+    <MESSAGE value="Ajout du toString sur ThotTableModem" />
+    <MESSAGE value="Commit de fin de journée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit de fin de journée" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -567,7 +555,7 @@
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -586,14 +574,21 @@
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="326" column="29" lean-forward="true" selection-start-line="326" selection-start-column="29" selection-end-line="326" selection-end-column="29" />
+        <state relative-caret-position="334">
+          <caret line="133" column="80" lean-forward="true" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
           <folding>
             <element signature="e#2464#2652#0" expanded="true" />
             <element signature="e#2651#2652#0" expanded="true" />
@@ -606,19 +601,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>GUI</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
