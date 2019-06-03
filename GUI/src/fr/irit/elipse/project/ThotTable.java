@@ -76,8 +76,6 @@ public class ThotTable extends JTable{
 				listeConcept.add(i, listeConcept.get(listeConcept.size()-1));
 				listeConcept.remove(listeConcept.size()-1);
 				System.out.println(Arrays.toString(listeConcept.toArray()));
-				flag=false;
-				
 				Text.allOccurency.add(i, Text.allOccurency.get(Text.allOccurency.size()-1));
 				Text.allOccurency.remove(Text.allOccurency.size()-1);
 				Text.typeEvent.add(i, Text.typeEvent.get(Text.typeEvent.size()-1));
@@ -85,6 +83,7 @@ public class ThotTable extends JTable{
 				System.out.println("allocurrency "+Text.allOccurency);
 				System.out.println("typevent "+Text.typeEvent);
 				System.out.println("1er");
+				flag=false;
 				
 			}
 			i++;
@@ -137,7 +136,7 @@ public class ThotTable extends JTable{
 		return this.getSelectedRow();
 	}
 	
-	public void ajoue(ThotTypeEvent value) {
+	public void append(ThotTypeEvent value) {
 		Text.typeEvent.add(value);
 		Text.highlight(mot,value);
 	}

@@ -30,7 +30,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
 		Table.listeConcept.add(editorText);
 		etat=this.value;
-		Table.ajoue(etat);
+		Table.append(etat);
 		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
