@@ -13,6 +13,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 
@@ -29,6 +30,8 @@ public class Thot extends JFrame{
 	protected JMenuItem menuMan;
 	protected JMenuItem menuScenar;
 	private static final long serialVersionUID = 0L;
+	protected int pos;
+	protected String selectionn;
 	
 	//Constructeur
 	Thot() {
@@ -107,9 +110,8 @@ public class Thot extends JFrame{
                 // ajout du texte selectionné
 				if (!selection.equals("")){
 					System.out.println("ajout de \"" + selection + "-> " + position + "\" dans la table");
-					T_grammar.add(position, selection);
 					T_Text.allOccurency.add(selection);
-					T_Text.highlight(selection);
+					T_grammar.add(position, selection);
 					selection="";
 					position = -1;
 				}
@@ -120,6 +122,7 @@ public class Thot extends JFrame{
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	System.out.println(T_Table.toString());
                 // Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
@@ -154,6 +157,11 @@ public class Thot extends JFrame{
 				selection = ((ThotText) e.getSource()).getSelectedText();
 				position = d;
 				System.out.println(selection + " -> " + position);
+				pos=T_grammar.SelectedRow();
+				if(pos!=-1) {
+					T_grammar.getCellEditor().stopCellEditing();
+				}
+				T_grammar.fireTableDataChanged();
 			}
 		});
 

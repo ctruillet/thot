@@ -24,7 +24,6 @@ public class ThotTextAreaEditor extends DefaultCellEditor {
         textarea.setLineWrap(true);
         textarea.setWrapStyleWord(true);
         scrollpane.getViewport().add(textarea);
-
     }
 
     public Component getTableCellEditorComponent(JTable table, Object value,boolean isSelected, int row, int column) {

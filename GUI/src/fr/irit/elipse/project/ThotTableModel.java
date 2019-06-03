@@ -61,10 +61,19 @@ public class ThotTableModel extends AbstractTableModel {
 		liste.add(t);
 	}
 	
+	public void add(int i,ThotGrammar t) {
+		liste.add(i,t);
+	}
+	
 	//suppresion d'une ligne avec mise à jour
 	public void remove(int num){
 		this.liste.remove(num);
 		this.fireTableDataChanged();
+	}
+
+	public void fireEditingStopped() {
+		this.fireEditingStopped();
+		
 	}
 
 }

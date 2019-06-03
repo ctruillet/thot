@@ -26,9 +26,11 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.addActionListener(this);
 		checkbox=new JCheckBox();
 		concept=new ThotConcept("");
+		System.out.println("plz t'es avant");
 		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
 		Table.listeConcept.add(editorText);
 		etat=this.value;
+		Table.ajoue(etat);
 		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
@@ -41,6 +43,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.motBalise.setTypeEvent(this.value);
 		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
 			motBalise.setConcept(concept);
+			Table.updateText(this.value,Table.getSelectedRow());
 			if (this.value.toString()==ThotTypeEvent.Media.toString()){
 				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
 				Table.listeConcept.set(Table.getSelectedRow(),editorBoutton);
@@ -50,6 +53,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 				Table.listeConcept.set(Table.getSelectedRow(),editorText);
 				etat=this.value;
 			}
+			
 		}
 		Table.fireTableDataChanged();
 	}

@@ -42,6 +42,7 @@ public class ThotButtonEditor extends DefaultCellEditor implements ActionListene
 				}
 			}
 		});
+		
 		jCheckBox.setOpaque(true);
 		jCheckBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

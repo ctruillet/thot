@@ -21,7 +21,8 @@ import java.util.Scanner;
 public class ThotText extends JTextPane {
 	//Attributs
 	protected List<String> allOccurency = new ArrayList<String>(1);
-	protected String test;
+	protected List<ThotTypeEvent> typeEvent = new ArrayList<ThotTypeEvent>(1);
+	protected String word;
 	//Enum
     enum TypeMot {
         VERBE,
@@ -41,7 +42,6 @@ public class ThotText extends JTextPane {
             super(color);
         }
     }
-    
     
     //Méthodes
     public StringBuffer readText(String nomFichier){
@@ -71,15 +71,15 @@ public class ThotText extends JTextPane {
     }
     
   //Permet de faire la variation de la couleur en fonction du type de mot
-    public Color variationColor(TypeMot mot){
+    public Color variationColor(ThotTypeEvent mot){
         switch(mot){
-            case VERBE:
+            case Retranscription:
                 return Color.red;
-            case NOM:
+            case Media:
                 return Color.blue;
-            case COMPLEMENT:
+            case Effet:
                 return Color.green;
-            case ADVERBE:
+            case Registre:
                 return Color.orange;
             default:
                 return Color.white;
@@ -87,8 +87,9 @@ public class ThotText extends JTextPane {
     }
 
     //permet de changer le fond pour chaque mot envoyé en comptant toute les rebondances
-    public void highlight(String pattern){
-        Highlighter.HighlightPainter mhp = new MyHighlightPainter(Color.red);
+    public void highlight(String pattern,ThotTypeEvent value){
+        Highlighter.HighlightPainter mhp = new MyHighlightPainter(variationColor(value));
+        
         try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
@@ -99,42 +100,42 @@ public class ThotText extends JTextPane {
                 hilite.addHighlight(pos, pos+pattern.length(), mhp);
                 pos += pattern.length();
             }
-            System.out.println(allOccurency.toString());
+            
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
     }
-    
-    public void suppresion(int pattern) {
-    	System.out.println(pattern);
-    	test=allOccurency.get(pattern);
+
+    public void suppr(int pattern) {
+    	word=allOccurency.get(pattern);
     	if(pattern>=0) {
             allOccurency.remove(allOccurency.get(pattern));
+            typeEvent.remove(typeEvent.get(pattern));
     	}
-    	System.out.println(allOccurency.toString());
-    	
+    	Remove(pattern,word);
+    }
+    
+    public void Remove(int pattern,String word) {
+    	//on pourra trier aussi pour une meilleur compréhension mais c'est pas forcement utile
     	try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
             String text = doc.getText(0, doc.getLength());
             int pos = 0;
-            while ((pos = text.toUpperCase().indexOf(test.toUpperCase(), pos)) >= 0){
+            while ((pos = text.toUpperCase().indexOf(word.toUpperCase(), pos)) >= 0){
 
                 hilite.removeAllHighlights();
-                pos += test.length();
+                pos += word.length();
             }
-            System.out.println(allOccurency.toString());
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
     	
 
         for(int i=0;i<allOccurency.size();i++) {
-        	highlight(allOccurency.get(i));
+        	highlight(allOccurency.get(i),typeEvent.get(i));
         }
+        System.out.println(allOccurency.toString());
 
     }
-
-
-
 }
