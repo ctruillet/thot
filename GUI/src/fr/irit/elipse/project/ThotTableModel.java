@@ -53,6 +53,10 @@ public class ThotTableModel extends AbstractTableModel {
 		return (s+"==========================");
 	}
 
+	public String getTypeEvent(int i){
+		return ((this.liste.get(i))).getTypeEventName();
+	}
+
 	public ArrayList<ThotGrammar> getListe(){
 		return (this.liste);
 	}

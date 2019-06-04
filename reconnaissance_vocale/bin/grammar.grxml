@@ -26,10 +26,11 @@
        
    <rule id="deplacement">
    <one-of>
-    <item>déplacer</item>
-	<item>bouger</item>
+    <item>manger</item>
+	<item>bouffer</item>
    </one-of>
-    <ruleref special="GARBAGE" /><ruleref uri="#position"/><tag>out.text="Action : Deplacer " + rules.position.text;</tag>
+    <ruleref special="GARBAGE" />
+	<ruleref uri="#position"/><tag>out.text="Action : manger " + rules.position.text;</tag>
   </rule> 
   
   <rule id="initialiser">
@@ -39,10 +40,10 @@
   
   <rule id="position">
     <one-of>
-      <item>haut</item>
-      <item>bas</item>
-      <item>gauche</item>
-      <item>droite</item>
+      <item>saucisson</item>
+      <item>poisson</item>
+      <item>legume</item>
+      <item>fruit et carotte</item>
     </one-of>
     <tag>out.text = "Position : "+meta.current().text;</tag>
   </rule>

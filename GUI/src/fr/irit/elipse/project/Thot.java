@@ -13,7 +13,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -31,7 +31,7 @@ public class Thot extends JFrame{
 	protected JMenuItem menuScenar;
 	private static final long serialVersionUID = 0L;
 	protected int pos;
-	protected String selectionn;
+	protected ArrayList<ArrayList> motGrammar = new ArrayList<ArrayList>();
 	
 	//Constructeur
 	Thot() {
@@ -312,6 +312,10 @@ public class Thot extends JFrame{
 	}
 	
 	//Méthodes
+	public String motGrammarToString(){
+		return (this.motGrammar.toString());
+	}
+
 	public void setText(String text) {
 		this.txt=text;
 	}
@@ -332,9 +336,16 @@ public class Thot extends JFrame{
 	}
 	
 	public void save_GRXML() {
+		System.out.println(T_Table.toString());
+
+		//for (int i = 0; i<T_Table.getListe().size(); i++){
+		//	System.out.println(T_Table.getTypeEvent(i));
+		//}
+		System.out.println(this.getParentDirectory());
+
 		Date curDate = new Date();
 		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
-		String output = "grammar_" + SDFDate.format(curDate) + ".grxml";
+		String output = this.getParentDirectory() + "/grammar_" + SDFDate.format(curDate) + ".grxml";
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists

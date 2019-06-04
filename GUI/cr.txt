@@ -41,9 +41,14 @@
 	- Presentation pour la réunion du 29
 
 27/05/2019
-
+	- Ajout d'un champ de position d'un mot-balise
+	
 29/05/2019
-
+	- Reunion
+	
+03/06/2019
+	- Scenario
+	
 ToDo
     - Tri
 	- Génération de la grammaire
