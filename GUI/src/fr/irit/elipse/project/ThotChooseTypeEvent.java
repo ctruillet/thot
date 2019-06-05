@@ -26,7 +26,6 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.addActionListener(this);
 		checkbox=new JCheckBox();
 		concept=new ThotConcept("");
-		System.out.println("plz t'es avant");
 		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
 		Table.listeConcept.add(editorText);
 		etat=this.value;

@@ -109,7 +109,6 @@ public class Thot extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // ajout du texte selectionné
 				if (!selection.equals("")){
-					System.out.println("ajout de \"" + selection + "-> " + position + "\" dans la table");
 					T_Text.allOccurency.add(selection);
 					T_grammar.add(position, selection);
 					selection="";
@@ -123,7 +122,7 @@ public class Thot extends JFrame{
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	System.out.println(T_Table.toString());
-                // Génération de la Grammaire
+                //Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
             }
@@ -138,8 +137,9 @@ public class Thot extends JFrame{
 				tif.setImportType(ThotImportFrame.importType.TEXT);
 				try {
 					tif.openFrame(null);
-					T_Text.displayText(tif.getFilePath());
-					
+					if(tif.getFilePath()!=null) {
+						T_Text.displayText(tif.getFilePath());
+					}					
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}

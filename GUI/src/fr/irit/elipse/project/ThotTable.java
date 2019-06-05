@@ -18,18 +18,18 @@ public class ThotTable extends JTable{
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
-	protected ArrayList listeConcept= new ArrayList();
+	protected ArrayList<Object> listeConcept= new ArrayList<Object>(1);
 	protected int row;
 	protected ThotGrammar t;
-	protected ThotText Text;
+	protected ThotText text;
 	protected String mot;
 	protected int position;
-	protected String Word;
+	protected String word;
 	
 	//Constructeur
-	public ThotTable(ThotTableModel ttm, ThotText Text) {
+	public ThotTable(ThotTableModel ttm, ThotText text) {
 		super(ttm);
-		this.Text=Text;
+		this.text=text;
 		this.liste = new ArrayList<>();
 		this.setAutoCreateRowSorter(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -45,8 +45,7 @@ public class ThotTable extends JTable{
 				liste.remove(row);
 				editor.remove(row);
 				listeConcept.remove(row);
-				System.out.println("aa"+Arrays.toString(listeConcept.toArray()));
-				Text.suppr(row);
+				text.suppr(row);
 			}
 		};
 		
@@ -63,28 +62,19 @@ public class ThotTable extends JTable{
 		this.t=t;
 		this.mot=mot;
 		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t,this)); //Nouveau Menu déroulant
-		System.out.println("avant la boucle");
 		int i=0;
 		while((i<this.liste.size()) && flag) {
-			System.out.println("Au debut de la boucle");
 			if(t.getPosition()<liste.get(i).getPosition()) {
-				System.out.println("ici");
 				liste.add(i, t);
 				this.model.add(i,t);
 				editor.add(i, dce);
-				System.out.println("je fais:"+listeConcept.size());
 				listeConcept.add(i, listeConcept.get(listeConcept.size()-1));
 				listeConcept.remove(listeConcept.size()-1);
-				System.out.println(Arrays.toString(listeConcept.toArray()));
-				Text.allOccurency.add(i, Text.allOccurency.get(Text.allOccurency.size()-1));
-				Text.allOccurency.remove(Text.allOccurency.size()-1);
-				Text.typeEvent.add(i, Text.typeEvent.get(Text.typeEvent.size()-1));
-				Text.typeEvent.remove(Text.typeEvent.size()-1);
-				System.out.println("allocurrency "+Text.allOccurency);
-				System.out.println("typevent "+Text.typeEvent);
-				System.out.println("1er");
+				text.allOccurency.add(i, text.allOccurency.get(text.allOccurency.size()-1));
+				text.allOccurency.remove(text.allOccurency.size()-1);
+				text.typeEvent.add(i, text.typeEvent.get(text.typeEvent.size()-1));
+				text.typeEvent.remove(text.typeEvent.size()-1);
 				flag=false;
-				
 			}
 			i++;
 		}
@@ -137,15 +127,15 @@ public class ThotTable extends JTable{
 	}
 	
 	public void append(ThotTypeEvent value) {
-		Text.typeEvent.add(value);
-		Text.highlight(mot,value);
+		text.typeEvent.add(value);
+		text.highlight(mot,value);
 	}
 	
 	public void updateText(ThotTypeEvent value,int rowSelected) {
-		Word=Text.allOccurency.get(rowSelected);
-		Text.allOccurency.set(rowSelected,Word);
-		Text.typeEvent.set(rowSelected,value);
-		Text.Remove(rowSelected,Word);
-		Text.highlight(mot,value);
+		word = text.allOccurency.get(rowSelected);
+		text.allOccurency.set(rowSelected,word);
+		text.typeEvent.set(rowSelected,value);
+		text.Remove(rowSelected,word);
+		text.highlight(mot,value);
 	}
 }
