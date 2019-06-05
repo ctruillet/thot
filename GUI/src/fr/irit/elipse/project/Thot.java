@@ -121,7 +121,6 @@ public class Thot extends JFrame{
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	System.out.println(T_Table.toString());
                 //Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
@@ -334,13 +333,26 @@ public class Thot extends JFrame{
 	public String getParentDirectory() {
 		return (this.directory);
 	}
-	
-	public void save_GRXML() {
-		System.out.println(T_Table.toString());
 
-		//for (int i = 0; i<T_Table.getListe().size(); i++){
-		//	System.out.println(T_Table.getTypeEvent(i));
-		//}
+	public void cutText(){
+		int indexListe = 0;
+		this.motGrammar.add(new ArrayList());
+
+		for (int i = 0; i<T_Table.getListe().size(); i++){
+			if(T_Table.getTypeEvent(i).equals("Registre")) {
+				System.out.println("-----");
+				indexListe++;
+				this.motGrammar.add(new ArrayList());
+			}
+			this.motGrammar.get(indexListe).add(T_Table.getMotBalise(i));
+		}
+
+		System.out.println(this.motGrammar.toString());
+	}
+
+	public void save_GRXML() {
+		this.cutText();
+
 		System.out.println(this.getParentDirectory());
 
 		Date curDate = new Date();
