@@ -20,6 +20,4 @@ class ThotButton extends JButton {
         Font f = new Font("B612-Regular",Font.BOLD, 10);
         this.setFont(f);
     }
-    
-
 }

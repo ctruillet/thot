@@ -31,7 +31,7 @@ public class Thot extends JFrame{
 	protected JMenuItem menuScenar;
 	private static final long serialVersionUID = 0L;
 	protected int pos;
-	protected ArrayList<ArrayList> motGrammar = new ArrayList<ArrayList>();
+	protected ArrayList<ArrayList<Object>> motGrammar = new ArrayList<ArrayList<Object>>();
 	
 	//Constructeur
 	Thot() {
@@ -336,13 +336,13 @@ public class Thot extends JFrame{
 
 	public void cutText(){
 		int indexListe = 0;
-		this.motGrammar.add(new ArrayList());
+		this.motGrammar.add(new ArrayList<Object>());
 
 		for (int i = 0; i<T_Table.getListe().size(); i++){
 			if(T_Table.getTypeEvent(i).equals("Registre")) {
 				System.out.println("-----");
 				indexListe++;
-				this.motGrammar.add(new ArrayList());
+				this.motGrammar.add(new ArrayList<Object>());
 			}
 			this.motGrammar.get(indexListe).add(T_Table.getMotBalise(i));
 		}
@@ -372,18 +372,25 @@ public class Thot extends JFrame{
 			output_xml.write("<!-- the default grammar language is FR  -->");
 			output_xml.write("<grammar  version=\"1.0\"\nmode =\"voice\"\nxmlns=\"http://www.w3.org/2001/06/grammar\"\nxmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\nxsi:schemaLocation=\"http://www.w3.org/2001/06/grammar\nhttp://www.w3.org/TR/speech-grammar/grammar.xsd\"\nxml:lang=\"fr\" root=\"answer\">\n");
 			output_xml.write("\n<rule id=\"answer\" scope=\"public\">\n<one-of>\n");
-			
-			// les mots à reconnaitre - régles à créer
+			output_xml.write("<ruleref special=\"garbage\"/>");
+			output_xml.write("<one-of>\n");
 			for (int i=0;i<T_Table.getRowCount();i++){
-				output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
+				output_xml.write("<item><ruleref uri=#mot"+i+"/></item>\n");
 			}
+			output_xml.write("</one-of>\n");
+			output_xml.write("<tag>out=rules.latest().text</tag>");
+
+			// les mots à reconnaitre - régles à créer
+			//for (int i=0;i<T_Table.getRowCount();i++){
+			//	output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
+			//}
 
 			// créer les rules
 			// String rules="";
 			// output_xml.write(rules);
 			
 			// fin  de la grammaire
-			output_xml.write("</one-of>\n</rule>\n</grammar>\n");
+			output_xml.write("</grammar>\n");
 			output_xml.close();
 		}
 		catch (Exception e) {
@@ -395,7 +402,6 @@ public class Thot extends JFrame{
                      "Confirmation",
                       JOptionPane.INFORMATION_MESSAGE);
 	}
-	
 		
 	public static void main(String[] args){
 		try {
