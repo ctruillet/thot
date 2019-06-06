@@ -31,7 +31,7 @@ public class Thot extends JFrame{
 	protected JMenuItem menuScenar;
 	private static final long serialVersionUID = 0L;
 	protected int pos;
-	protected ArrayList<ArrayList<Object>> motGrammar = new ArrayList<ArrayList<Object>>();
+	protected ArrayList<ArrayList<ThotGrammar>> motGrammar = new ArrayList<ArrayList<ThotGrammar>>();
 	
 	//Constructeur
 	Thot() {
@@ -121,6 +121,11 @@ public class Thot extends JFrame{
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+				pos=T_grammar.SelectedRow();
+				if(pos!=-1) {
+					T_grammar.getCellEditor().stopCellEditing();
+				}
+				T_grammar.fireTableDataChanged();
                 //Génération de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
@@ -311,10 +316,6 @@ public class Thot extends JFrame{
 	}
 	
 	//Méthodes
-	public String motGrammarToString(){
-		return (this.motGrammar.toString());
-	}
-
 	public void setText(String text) {
 		this.txt=text;
 	}
@@ -336,35 +337,30 @@ public class Thot extends JFrame{
 
 	public void cutText(){
 		int indexListe = 0;
-		this.motGrammar.add(new ArrayList<Object>());
+		this.motGrammar.add(new ArrayList<ThotGrammar>());
 
 		for (int i = 0; i<T_Table.getListe().size(); i++){
 			if(T_Table.getTypeEvent(i).equals("Registre")) {
 				System.out.println("-----");
 				indexListe++;
-				this.motGrammar.add(new ArrayList<Object>());
+				this.motGrammar.add(new ArrayList<ThotGrammar>());
 			}
 			this.motGrammar.get(indexListe).add(T_Table.getMotBalise(i));
 		}
 
 		System.out.println(this.motGrammar.toString());
 	}
-
-	public void save_GRXML() {
-		this.cutText();
-
-		System.out.println(this.getParentDirectory());
-
-		Date curDate = new Date();
-		SimpleDateFormat SDFDate = new SimpleDateFormat("hh_mm_ss");
-		String output = this.getParentDirectory() + "/grammar_" + SDFDate.format(curDate) + ".grxml";
+	public void save_GRXML(int i) {
+		//Créer grammar+i.grxml
+		String output = this.getParentDirectory() + "/grammar" + i + ".grxml";
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists
 			System.out.println("Le fichier existe déjà !\n");
 		}
 		
-		try{
+		
+		try{		
 			BufferedWriter output_xml = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.UTF_8));
 			// entetes
 			output_xml.write("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n");
@@ -377,30 +373,40 @@ public class Thot extends JFrame{
 									"\t\t  xsi:schemaLocation=\"http://www.w3.org/2001/06/grammar\n" +
 									"\t\t\t\t\t\t\t  http://www.w3.org/TR/speech-grammar/grammar.xsd\"\n" +
 									"\t\t  xml:lang=\"fr-FR\" root=\"answer\" tag-format=\"semantics/1.0\">\n");
-			output_xml.write("\n<rule id=\"answer\" scope=\"public\">\n<one-of>\n");
-			output_xml.write("<ruleref special=\"garbage\"/>");
-			output_xml.write("<one-of>\n");
-			for (int i=0;i<T_Table.getRowCount();i++){
-				output_xml.write("<item><ruleref uri=#mot"+i+"/></item>\n");
+			output_xml.write("\n<rule id=\"answer\" scope=\"public\">\n");
+			output_xml.write("\t<ruleref special=\"GARBAGE\"/>\n");
+			output_xml.write("\t<one-of>\n");
+			for (int j=0;j<this.motGrammar.get(i).size();j++){
+				output_xml.write("\t\t<item><ruleref uri=\"#mot"+j+"\"/></item>\n");
 			}
-			output_xml.write("</one-of>\n");
-			output_xml.write("<tag>out=rules.latest().text</tag>");
-
-			// les mots à reconnaitre - régles à créer
-			//for (int i=0;i<T_Table.getRowCount();i++){
-			//	output_xml.write("<item>" + T_Table.getValueAt(i,0) + " </item>\n");
-			//}
-
-			// créer les rules
-			// String rules="";
-			// output_xml.write(rules);
+			output_xml.write("\t</one-of>\n");
+			output_xml.write("\t<tag>out=rules.latest().text</tag>\n</rule>\n\n");
+			
+			for(int j=0;j<this.motGrammar.get(i).size();j++) {
+				output_xml.write("\t<rule id=\"mot"+j+"\">\n" + 
+								 	"\t\t<item>"+motGrammar.get(i).get(j).getMotBalise()+"</item>\n" + 
+								 	"\t\t<ruleref special=\"GARBAGE\" />\n"
+								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).toString()+"\"</tag>\n" + 
+									"\t</rule>\n");
+			}
 			
 			// fin  de la grammaire
-			output_xml.write("</grammar>\n");
+			output_xml.write("\n</grammar>\n");
 			output_xml.close();
 		}
 		catch (Exception e) {
-			
+			System.out.println("Erreur dans la création du fichier grxml.");
+		}
+	}
+	
+	
+	public void save_GRXML() {
+		this.cutText();
+	
+		for(int i=0; i<this.motGrammar.size(); i++) {
+			System.out.println(this.motGrammar.get(i).toString());
+			if(this.motGrammar.get(i).size()!=0)
+				this.save_GRXML(i);
 		}
 		
 		JOptionPane.showMessageDialog(this,
