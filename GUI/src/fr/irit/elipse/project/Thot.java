@@ -369,8 +369,14 @@ public class Thot extends JFrame{
 			// entetes
 			output_xml.write("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n");
 			output_xml.write("<!DOCTYPE grammar PUBLIC \"-//W3C//DTD GRAMMAR 1.0//EN\"\n\"http://www.w3.org/TR/speech-grammar/grammar.dtd\">\n");
-			output_xml.write("<!-- the default grammar language is FR  -->");
-			output_xml.write("<grammar  version=\"1.0\"\nmode =\"voice\"\nxmlns=\"http://www.w3.org/2001/06/grammar\"\nxmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\nxsi:schemaLocation=\"http://www.w3.org/2001/06/grammar\nhttp://www.w3.org/TR/speech-grammar/grammar.xsd\"\nxml:lang=\"fr\" root=\"answer\">\n");
+			output_xml.write("<!-- the default grammar language is FR  -->\n");
+			output_xml.write("<grammar  version=\"1.0\"\n" +
+									"\t\t  mode =\"voice\"\n" +
+									"\t\t  xmlns=\"http://www.w3.org/2001/06/grammar\"\n" +
+									"\t\t  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n" +
+									"\t\t  xsi:schemaLocation=\"http://www.w3.org/2001/06/grammar\n" +
+									"\t\t\t\t\t\t\t  http://www.w3.org/TR/speech-grammar/grammar.xsd\"\n" +
+									"\t\t  xml:lang=\"fr-FR\" root=\"answer\" tag-format=\"semantics/1.0\">\n");
 			output_xml.write("\n<rule id=\"answer\" scope=\"public\">\n<one-of>\n");
 			output_xml.write("<ruleref special=\"garbage\"/>");
 			output_xml.write("<one-of>\n");

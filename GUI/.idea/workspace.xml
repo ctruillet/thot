@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ff43f5-b809-4977-a720-3ead651ac43b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar_02_55_36.grxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar_10_25_29.grxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/06-06-2019_11.12.22/grammar_11_12_36.grxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/06-06-2019_11.26.11/grammar_11_26_16.grxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/06-06-2019_11.26.58/grammar_11_27_04.grxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/06-06-2019_11.27.48/grammar_11_27_52.grxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/06-06-2019_11.28.06/grammar_11_28_10.grxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/06-06-2019_11.28.43/grammar_11_28_49.grxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin1/" />
@@ -27,32 +30,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
-              <folding>
-                <element signature="e#869#880#0" expanded="true" />
-                <element signature="method#Thot#0;class#Thot#0" />
-                <element signature="e#4439#5048#0" expanded="true" />
-                <element signature="e#5047#5048#0" expanded="true" />
-                <element signature="e#5550#5652#0" expanded="true" />
-                <element signature="e#5651#5652#0" expanded="true" />
-                <element signature="e#8461#8462#0" expanded="true" />
-                <element signature="e#8503#8504#0" expanded="true" />
-                <element signature="e#8540#8541#0" expanded="true" />
-                <element signature="e#8560#8561#0" expanded="true" />
-                <element signature="e#8589#8590#0" expanded="true" />
-                <element signature="e#8613#8614#0" expanded="true" />
-                <element signature="e#8892#8893#0" expanded="true" />
-                <element signature="e#8922#8923#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="148">
+              <caret line="375" column="103" selection-start-line="375" selection-start-column="103" selection-end-line="375" selection-end-column="103" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/06-06-2019_12.19.03/grammar_12_19_21.grxml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
+            <state relative-caret-position="1615">
               <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -64,16 +56,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
+            <state relative-caret-position="765">
               <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
               <folding>
                 <element signature="e#1289#1290#0" expanded="true" />
                 <element signature="e#1343#1344#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
-                <element signature="e#1405#1406#0" expanded="true" />
-                <element signature="e#1387#1388#0" expanded="true" />
-                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1523#1524#0" expanded="true" />
                 <element signature="e#1542#1543#0" expanded="true" />
+                <element signature="e#1584#1585#0" expanded="true" />
                 <element signature="e#1605#1606#0" expanded="true" />
               </folding>
             </state>
@@ -83,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
+            <state relative-caret-position="799">
               <caret line="70" column="126" selection-start-line="70" selection-start-column="126" selection-end-line="70" selection-end-column="126" />
               <folding>
                 <element signature="e#1300#1301#0" expanded="true" />
@@ -160,8 +150,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="2120" />
-    <option name="height" value="1270" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -171,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,6 +172,18 @@
               <item name="GUI" type="b2602c69:ProjectViewProjectNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="06-06-2019_11.29.09" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="06-06-2019_12.19.03" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GUI" type="b2602c69:ProjectViewProjectNode" />
@@ -200,6 +201,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,7 +217,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -267,7 +269,10 @@
       <workItem from="1559118348790" duration="10530000" />
       <workItem from="1559548846980" duration="1847000" />
       <workItem from="1559636853704" duration="5131000" />
-      <workItem from="1559722987899" duration="4361000" />
+      <workItem from="1559722987899" duration="7212000" />
+      <workItem from="1559741578233" duration="1270000" />
+      <workItem from="1559809557881" duration="604000" />
+      <workItem from="1559815745407" duration="907000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de la position d'un mot">
       <created>1558965383890</created>
@@ -339,11 +344,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559643476247</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Separation du texte">
+      <created>1559736420704</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559736420705</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31772000" />
+    <option name="totallyTimeSpent" value="37404000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -358,7 +370,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49913943" visible="true" weight="0.15100671" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49913943" visible="true" weight="0.15704697" />
       <window_info id="Structure" order="1" sideWeight="0.5008606" side_tool="true" weight="0.14644013" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -367,7 +379,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5008606" side_tool="true" weight="0.14644013" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28895184" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22804533" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -458,7 +470,8 @@
     <MESSAGE value="Commit pour le tri" />
     <MESSAGE value="Debut de la separation du texte" />
     <MESSAGE value="Debut de la speration du texte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debut de la speration du texte" />
+    <MESSAGE value="Separation du texte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separation du texte" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -655,9 +668,54 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/04-06-2019_11.18.16/grammar_11_18_20.grxml" />
+    <entry file="file://$PROJECT_DIR$/data/05-06-2019_12.51.04/grammar_12_51_24.grxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/05-06-2019_15.13.13/grammar_03_13_36.grxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/05-06-2019_15.14.54/grammar_03_15_03.grxml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/05-06-2019_15.16.00/grammar_03_16_07.grxml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+          <folding>
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1523#1524#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="799">
           <caret line="70" column="126" selection-start-line="70" selection-start-column="126" selection-end-line="70" selection-end-column="126" />
           <folding>
             <element signature="e#1300#1301#0" expanded="true" />
@@ -666,53 +724,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java">
+    <entry file="file://$PROJECT_DIR$/data/05-06-2019_15.17.53/grammar_03_17_57.grxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-          <folding>
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1405#1406#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/data/06-06-2019_11.29.09/grammar_11_29_13.grxml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/06-06-2019_12.19.03/grammar_12_19_21.grxml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
-          <folding>
-            <element signature="e#869#880#0" expanded="true" />
-            <element signature="method#Thot#0;class#Thot#0" />
-            <element signature="e#4439#5048#0" expanded="true" />
-            <element signature="e#5047#5048#0" expanded="true" />
-            <element signature="e#5550#5652#0" expanded="true" />
-            <element signature="e#5651#5652#0" expanded="true" />
-            <element signature="e#8461#8462#0" expanded="true" />
-            <element signature="e#8503#8504#0" expanded="true" />
-            <element signature="e#8540#8541#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8589#8590#0" expanded="true" />
-            <element signature="e#8613#8614#0" expanded="true" />
-            <element signature="e#8892#8893#0" expanded="true" />
-            <element signature="e#8922#8923#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="148">
+          <caret line="375" column="103" selection-start-line="375" selection-start-column="103" selection-end-line="375" selection-end-column="103" />
         </state>
       </provider>
     </entry>
