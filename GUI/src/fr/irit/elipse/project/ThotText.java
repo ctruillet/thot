@@ -87,7 +87,7 @@ public class ThotText extends JTextPane {
     }
 
     //permet de changer le fond pour chaque mot envoyé en comptant toute les rebondances
-    public void highlight(String pattern,ThotTypeEvent value){
+    public void highlight(String pattern,ThotTypeEvent value,int posmax){
         Highlighter.HighlightPainter mhp = new MyHighlightPainter(variationColor(value));
         
         try{
@@ -95,10 +95,11 @@ public class ThotText extends JTextPane {
             Document doc = this.getDocument();
             String text = doc.getText(0, doc.getLength());
             int pos = 0;
-            while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0){
-
+            while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0 && pos<=posmax){
+            	
                 hilite.addHighlight(pos, pos+pattern.length(), mhp);
-                pos += pattern.length();
+                    
+            	pos += pattern.length();
             }
             
         }catch (BadLocationException e) {
@@ -132,9 +133,9 @@ public class ThotText extends JTextPane {
         }
     	
 
-        for(int i=0;i<allOccurency.size();i++) {
+        /*for(int i=0;i<allOccurency.size();i++) {
         	highlight(allOccurency.get(i),typeEvent.get(i));
-        }
+        }*/
         System.out.println(allOccurency.toString());
 
     }

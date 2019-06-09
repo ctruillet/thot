@@ -52,6 +52,9 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 				Table.listeConcept.set(Table.getSelectedRow(),editorText);
 				etat=this.value;
 			}
+			if(etat.toString()==ThotTypeEvent.Registre.toString()) {
+				Table.separation();
+			}
 			
 		}
 		Table.fireTableDataChanged();

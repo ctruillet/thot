@@ -13,12 +13,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThotTable extends JTable{
-	
+	//enlever word ou mot
 	//Attributs
 	protected ThotTableModel model;
 	private ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
 	protected ArrayList<Object> listeConcept= new ArrayList<Object>(1);
+	protected ArrayList<Integer> ListeText= new ArrayList<Integer>(1);
 	protected int row;
 	protected ThotGrammar t;
 	protected ThotText text;
@@ -48,11 +49,11 @@ public class ThotTable extends JTable{
 				text.suppr(row);
 			}
 		};
-		
 		String keyStrokeAndKey = "DELETE";
 		KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeAndKey);
 		this.getInputMap().put(keyStroke, keyStrokeAndKey);
 		this.getActionMap().put(keyStrokeAndKey, action);
+		ListeText.add(0);
 	}
 
 	public void add(int position, String mot) {
@@ -128,7 +129,22 @@ public class ThotTable extends JTable{
 	
 	public void append(ThotTypeEvent value) {
 		text.typeEvent.add(value);
-		text.highlight(mot,value);
+		boolean flag=true;
+		int posmax=0;
+		int i=0;
+		if(ListeText.size()==1) {
+			posmax=5000;
+		}else {
+			while(i<ListeText.size()&&flag) {
+				if(position<ListeText.get(i)) {
+					posmax=ListeText.get(i);
+					flag=false;
+				}
+				i++;
+			}
+		}
+		System.out.println(liste.toString());
+		text.highlight(mot,value,posmax);
 	}
 	
 	public void updateText(ThotTypeEvent value,int rowSelected) {
@@ -136,6 +152,50 @@ public class ThotTable extends JTable{
 		text.allOccurency.set(rowSelected,word);
 		text.typeEvent.set(rowSelected,value);
 		text.Remove(rowSelected,word);
-		text.highlight(mot,value);
+		int i=0;
+		int posmax=0;
+		boolean flag=true;
+		if(ListeText.size()==1) {
+			posmax=5000;//changer cette valeur prendre la grandeur du texte
+		}else {
+			
+			while(i<ListeText.size()&&flag) {
+				if(position<ListeText.get(i)) {
+					posmax=ListeText.get(i);
+					flag=false;
+				}
+				i++;
+			}
+		}
+
+		text.highlight(mot,value,posmax);
 	}
+	
+	//si c'est un registre alors:
+	//aussi s'occupé de la suprresion
+	public void separation() {
+		int i=0;
+		boolean flag=true;
+		while(i<ListeText.size()&&flag) {
+			if(position<ListeText.get(i)) {
+				ListeText.add(i,position+mot.length());
+				flag=false;
+			}
+			i++;
+		}
+		if(flag) {
+			ListeText.add(position+mot.length());
+		}
+		for(int j=0;j<ListeText.size();j++) {
+		
+		}
+		System.out.println(ListeText.toString());
+	}
+	
+	//quand on ajout un resgistre pas seulement faire la séparation aussi faire la mise a jour de tout
+	//quand on supprime un registre faire la mise a jour
+	//faire une arraylist avec la pos de chaque mot ?utiliser thot grammar? et faire une autre liste avec leur position
+	//et avec une boucle for si le registre a changé mettre a jour la liste avec la nouvelle posmax
+	//si le mot est un registre tout revoir on sauvegardera la pos donc pas de probléme
+	
 }

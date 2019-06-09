@@ -69,7 +69,7 @@ public class Thot extends JFrame{
 		scenarPane.setLayout(scenarLayout);
 		
 		//Composants
-			//Police
+		//Police
 		Font fPlain = new Font("B612-Regular",Font.PLAIN, 10);
 		Font fBigBold = new Font("B612-Regular",Font.BOLD, 36);
 		//Titre
