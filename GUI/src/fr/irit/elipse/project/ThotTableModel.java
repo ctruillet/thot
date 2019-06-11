@@ -53,12 +53,24 @@ public class ThotTableModel extends AbstractTableModel {
 		return (s+"==========================");
 	}
 
+	public String getMot(int i){
+		return (this.liste.get(i).getMotBalise());
+	}
+
 	public String getTypeEvent(int i) {
 		return ((this.liste.get(i))).getTypeEventName();
 	}
 
 	public ThotGrammar getMotBalise(int i){
 		return (this.liste.get(i));
+	}
+
+	public int getPosition(int i){
+		return (this.liste.get(i).getPosition());
+	}
+
+	public String getConcept(int i){
+		return (this.liste.get(i).getConcept());
 	}
 
 	public ArrayList<ThotGrammar> getListe(){

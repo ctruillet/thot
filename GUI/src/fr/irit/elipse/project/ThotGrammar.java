@@ -22,6 +22,16 @@ public class ThotGrammar{
 		this.motBalise = mot;
 		this.typeEvent = null;
 	}
+
+	public ThotGrammar(int position, String mot, ThotTypeEvent typeEvent){
+		this(position,mot);
+		this.setTypeEvent(typeEvent);
+	}
+
+	public ThotGrammar(int position, String mot, ThotTypeEvent typeEvent, String concept){
+		this(position,mot, typeEvent);
+		this.setConcept(new ThotConcept(concept));
+	}
 	
 	//Méthodes	
 	public boolean hasNoEvent() {
@@ -54,7 +64,6 @@ public class ThotGrammar{
 
 
 	public String getConcept() {
-
 		return (this.concept.getContent());
 	}
 
@@ -68,6 +77,6 @@ public class ThotGrammar{
 		
 	
 	public String toString() {
-		return (this.getMotBalise() + " - " + this.getTypeEventName() + " : " + this.getConcept());
+		return (this.getMotBalise() + " - " + this.getTypeEventName() + " : " + this.getConcept() );
 	}
 }

@@ -345,7 +345,15 @@ public class Thot extends JFrame{
 				indexListe++;
 				this.motGrammar.add(new ArrayList<ThotGrammar>());
 			}
-			this.motGrammar.get(indexListe).add(T_Table.getMotBalise(i));
+			if (motGrammar.get(indexListe).size()!=0  &&
+				motGrammar.get(indexListe).get(motGrammar.get(indexListe).size()-1).getMotBalise().toLowerCase().equals(T_Table.getMot(i).toLowerCase())){
+					this.motGrammar.get(indexListe).set(this.motGrammar.get(indexListe).size()-1,
+														new ThotGrammar(T_Table.getPosition(i),
+														T_Table.getMot(i),ThotTypeEvent.Autre,
+														(this.motGrammar.get(indexListe).get(this.motGrammar.get(indexListe).size()-1).getConcept() + "& " + T_Table.getMotBalise(i).getConcept())));
+			}else{
+				this.motGrammar.get(indexListe).add(T_Table.getMotBalise(i));
+			}
 		}
 
 		System.out.println(this.motGrammar.toString());
