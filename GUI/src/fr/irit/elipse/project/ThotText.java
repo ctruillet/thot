@@ -140,6 +140,9 @@ public class ThotText extends JTextPane {
         	boolean flag=true;
     		int i=0;
     		while(i<ListeText.size()&&flag) {
+    			if(listePos.get(j)>ListeText.get(i)) {
+    				posmin=ListeText.get(i);
+    			}
     			if(listePos.get(j)<ListeText.get(i)) {
     				posmax=ListeText.get(i);
     				posmin=ListeText.get(i-1);
