@@ -16,10 +16,11 @@ public class ThotTable extends JTable{
 	//enlever word ou mot
 	//Attributs
 	protected ThotTableModel model;
-	private ArrayList<ThotGrammar> liste;
+	protected ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
-	protected ArrayList<Object> listeConcept= new ArrayList<Object>(1);
-	protected ArrayList<Integer> ListeText= new ArrayList<Integer>(1);
+	protected ArrayList<Object> listeConcept = new ArrayList<Object>(1);
+	protected ArrayList<Integer> listePos = new ArrayList<Integer>(1);
+	protected ArrayList<Integer> ListeText = new ArrayList<Integer>(1);
 	protected int row;
 	protected ThotGrammar t;
 	protected ThotText text;
@@ -42,11 +43,17 @@ public class ThotTable extends JTable{
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("la");
 				row=getSelectedRow();
+				if(liste.get(row).getTypeEvent()==ThotTypeEvent.Registre) {
+					int pp=liste.get(row).getPosition();
+					ListeText.remove(ListeText.indexOf(pp));
+					System.out.println(ListeText.toString());
+				}
 				ttm.remove(row);
 				liste.remove(row);
 				editor.remove(row);
+				listePos.remove(row);
 				listeConcept.remove(row);
-				text.suppr(row);
+				text.suppr(row,liste,listePos,ListeText);
 			}
 		};
 		String keyStrokeAndKey = "DELETE";
@@ -71,6 +78,8 @@ public class ThotTable extends JTable{
 				editor.add(i, dce);
 				listeConcept.add(i, listeConcept.get(listeConcept.size()-1));
 				listeConcept.remove(listeConcept.size()-1);
+				listePos.add(i, listePos.get(listePos.size()-1));
+				listePos.remove(listePos.size()-1);
 				text.allOccurency.add(i, text.allOccurency.get(text.allOccurency.size()-1));
 				text.allOccurency.remove(text.allOccurency.size()-1);
 				text.typeEvent.add(i, text.typeEvent.get(text.typeEvent.size()-1));
@@ -129,46 +138,38 @@ public class ThotTable extends JTable{
 	
 	public void append(ThotTypeEvent value) {
 		text.typeEvent.add(value);
+		
 		boolean flag=true;
-		int posmax=0;
+		int posmax=5000;
+		int posmin=0;
 		int i=0;
-		if(ListeText.size()==1) {
-			posmax=5000;
-		}else {
-			while(i<ListeText.size()&&flag) {
-				if(position<ListeText.get(i)) {
-					posmax=ListeText.get(i);
-					flag=false;
-				}
-				i++;
+		
+
+		while(i<ListeText.size()&&flag) {
+			if(position<ListeText.get(i)) {
+				posmax=ListeText.get(i);
+				posmin=ListeText.get(i-1);
+				System.out.println(ListeText.toString());
+				System.out.println("la position minimum est : "+ListeText.get(i-1));
+				System.out.println("la position maximum est : "+ListeText.get(i));
+				flag=false;
+					
 			}
+			i++;
 		}
-		System.out.println(liste.toString());
-		text.highlight(mot,value,posmax);
+		
+		if(flag) {
+			posmax=5000;//mettre la bonne valeur ici aussi
+		}
+		
+		text.highlight(mot,value,posmin,posmax);
 	}
 	
 	public void updateText(ThotTypeEvent value,int rowSelected) {
 		word = text.allOccurency.get(rowSelected);
 		text.allOccurency.set(rowSelected,word);
 		text.typeEvent.set(rowSelected,value);
-		text.Remove(rowSelected,word);
-		int i=0;
-		int posmax=0;
-		boolean flag=true;
-		if(ListeText.size()==1) {
-			posmax=5000;//changer cette valeur prendre la grandeur du texte
-		}else {
-			
-			while(i<ListeText.size()&&flag) {
-				if(position<ListeText.get(i)) {
-					posmax=ListeText.get(i);
-					flag=false;
-				}
-				i++;
-			}
-		}
-
-		text.highlight(mot,value,posmax);
+		text.Remove(rowSelected,word,liste,listePos,ListeText);
 	}
 	
 	//si c'est un registre alors:
@@ -178,24 +179,13 @@ public class ThotTable extends JTable{
 		boolean flag=true;
 		while(i<ListeText.size()&&flag) {
 			if(position<ListeText.get(i)) {
-				ListeText.add(i,position+mot.length());
+				ListeText.add(i,position);
 				flag=false;
 			}
 			i++;
 		}
 		if(flag) {
-			ListeText.add(position+mot.length());
+			ListeText.add(position);
 		}
-		for(int j=0;j<ListeText.size();j++) {
-		
-		}
-		System.out.println(ListeText.toString());
 	}
-	
-	//quand on ajout un resgistre pas seulement faire la séparation aussi faire la mise a jour de tout
-	//quand on supprime un registre faire la mise a jour
-	//faire une arraylist avec la pos de chaque mot ?utiliser thot grammar? et faire une autre liste avec leur position
-	//et avec une boucle for si le registre a changé mettre a jour la liste avec la nouvelle posmax
-	//si le mot est un registre tout revoir on sauvegardera la pos donc pas de probléme
-	
 }

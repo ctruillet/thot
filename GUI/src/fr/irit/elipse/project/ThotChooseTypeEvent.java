@@ -30,6 +30,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		Table.listeConcept.add(editorText);
 		etat=this.value;
 		Table.append(etat);
+		Table.listePos.add(Table.position);
 		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
 			this.addItem(tte);
@@ -42,7 +43,12 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.motBalise.setTypeEvent(this.value);
 		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
 			motBalise.setConcept(concept);
-			Table.updateText(this.value,Table.getSelectedRow());
+			
+
+			if(etat==ThotTypeEvent.Registre) {
+				int pp=Table.liste.get(Table.getSelectedRow()).getPosition();
+				Table.ListeText.remove(Table.ListeText.indexOf(pp));
+			}
 			if (this.value.toString()==ThotTypeEvent.Media.toString()){
 				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
 				Table.listeConcept.set(Table.getSelectedRow(),editorBoutton);
@@ -52,9 +58,11 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 				Table.listeConcept.set(Table.getSelectedRow(),editorText);
 				etat=this.value;
 			}
-			if(etat.toString()==ThotTypeEvent.Registre.toString()) {
+			if(this.value==ThotTypeEvent.Registre) {
 				Table.separation();
 			}
+			Table.updateText(this.value,Table.getSelectedRow());
+
 			
 		}
 		Table.fireTableDataChanged();
@@ -62,5 +70,5 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	
 	public ThotTypeEvent getChoice() {
 		return (this.value);
-	}	
+	}
 }

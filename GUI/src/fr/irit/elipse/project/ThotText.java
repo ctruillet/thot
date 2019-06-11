@@ -87,7 +87,7 @@ public class ThotText extends JTextPane {
     }
 
     //permet de changer le fond pour chaque mot envoyé en comptant toute les rebondances
-    public void highlight(String pattern,ThotTypeEvent value,int posmax){
+    public void highlight(String pattern,ThotTypeEvent value,int posmin,int posmax){
         Highlighter.HighlightPainter mhp = new MyHighlightPainter(variationColor(value));
         
         try{
@@ -96,8 +96,9 @@ public class ThotText extends JTextPane {
             String text = doc.getText(0, doc.getLength());
             int pos = 0;
             while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0 && pos<=posmax){
-            	
-                hilite.addHighlight(pos, pos+pattern.length(), mhp);
+            	if(pos>=posmin) {
+            		hilite.addHighlight(pos, pos+pattern.length(), mhp);
+            	}
                     
             	pos += pattern.length();
             }
@@ -107,17 +108,18 @@ public class ThotText extends JTextPane {
         }
     }
 
-    public void suppr(int pattern) {
+    public void suppr(int pattern,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> ListeText) {
     	word=allOccurency.get(pattern);
     	if(pattern>=0) {
             allOccurency.remove(allOccurency.get(pattern));
             typeEvent.remove(typeEvent.get(pattern));
     	}
-    	Remove(pattern,word);
+    	Remove(pattern,word,liste,listePos,ListeText);
     }
     
-    public void Remove(int pattern,String word) {
+    public void Remove(int pattern,String word,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> ListeText) {
     	//on pourra trier aussi pour une meilleur compréhension mais c'est pas forcement utile
+
     	try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
@@ -131,11 +133,36 @@ public class ThotText extends JTextPane {
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
-    	
-
+    	System.out.println("on va ici normalement"+ListeText.toString());
+    	for(int j=0;j<liste.size();j++) {
+        	int posmax=5000;
+        	int posmin=0;
+        	boolean flag=true;
+    		int i=0;
+    		while(i<ListeText.size()&&flag) {
+    			if(listePos.get(j)<ListeText.get(i)) {
+    				posmax=ListeText.get(i);
+    				posmin=ListeText.get(i-1);
+    				flag=false;
+    			}
+    			i++;
+    		}
+    		
+    		if(flag) {
+    			posmax=5000;//mettre la bonne valeur ici aussi
+    		}
+    		
+    		if(liste.get(j).getTypeEvent()==ThotTypeEvent.Registre) {
+    			posmax=liste.get(j).getPosition()+1;
+    			posmin=liste.get(j).getPosition()-1;
+    			System.out.println("la position est :"+posmin);
+    		}
+    		highlight(allOccurency.get(j),typeEvent.get(j),posmin,posmax);
+    	}
         /*for(int i=0;i<allOccurency.size();i++) {
-        	highlight(allOccurency.get(i),typeEvent.get(i));
+        	highlight(allOccurency.get(i),typeEvent.get(i),posmax);
         }*/
+        
         System.out.println(allOccurency.toString());
 
     }
