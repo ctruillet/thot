@@ -146,6 +146,9 @@ public class ThotTable extends JTable{
 		
 
 		while(i<ListeText.size()&&flag) {
+			if(position>ListeText.get(i)) {
+				posmin=ListeText.get(i);
+			}
 			if(position<ListeText.get(i)) {
 				posmax=ListeText.get(i);
 				posmin=ListeText.get(i-1);

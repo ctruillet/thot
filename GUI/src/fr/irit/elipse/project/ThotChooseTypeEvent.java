@@ -44,7 +44,9 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
 			motBalise.setConcept(concept);
 			
-
+			if(this.value==ThotTypeEvent.Registre) {
+				Table.separation();
+			}
 			if(etat==ThotTypeEvent.Registre) {
 				int pp=Table.liste.get(Table.getSelectedRow()).getPosition();
 				Table.ListeText.remove(Table.ListeText.indexOf(pp));
@@ -57,9 +59,6 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 				ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
 				Table.listeConcept.set(Table.getSelectedRow(),editorText);
 				etat=this.value;
-			}
-			if(this.value==ThotTypeEvent.Registre) {
-				Table.separation();
 			}
 			Table.updateText(this.value,Table.getSelectedRow());
 
