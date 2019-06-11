@@ -1,0 +1,44 @@
+Compte-Rendu:
+
+13/05/2019:
+	- Decouverte du Projet
+	- Comprehention de code
+	- Classes (ThotCell, ThotConcept, ThotTypeEvent) -> Elements de la cellule du tableau de mot-balise
+	
+14/05/2019
+	- Arrangement de l'espace de travail pour pouvoir faire les tests sous eclipse
+	- Tests des classes ThotCell, ThotConcept et ThotTypeEvent
+	
+15/05/2019
+	- Transfert du code de ThotCell vers ThotGrammar
+	- Début du boutton "Import Text"
+	- Classe ThotImportFrame -> Fenetre d'import de fichier
+	
+16/05/2019
+	- Filtres d'import (inner class de ThotImportFrame)
+	- Import de fichier + copier le fichier dans ./data
+	
+
+20/05/2019
+	- Affichage du texte importé
+	- Création d'un dossier unique à chaque lancement du programme où sont stockés les documents
+	- Menu deroulant du choix de TypeEvent
+	
+21/05/2019
+	- Classe ThotTable -> ThotTableModel
+	- Classe ThotTable qui concerne la JTable directement
+	- Implemantation du menu déroulant ThotChooseTypeEvent
+	
+	
+ToDo
+	- Affichage du choix du TypeEvent -> JComboBox
+	- Entrée du concept
+	- Suppresion d'un mot balise
+	- Génération de la grammaire
+	- Manuel d'utilisation+scénario
+	- Matérialiser la prosodie (gras pour le cris, italique ...)
+	- Design
+	
+Contextualiser (position du mot dans le texte : dans une tirade, après un certain mot, nombre d'occurence (repetition),) y compris pour l'affichage faire une proposition d'occurence
+Mot-Balise -> Lexique de mot/mot simple
+Mot : nom/verbe ... differencier le mot avec la couleur
