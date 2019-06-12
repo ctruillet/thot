@@ -133,7 +133,7 @@ public class ThotText extends JTextPane {
         	System.out.println("Pas de texte sélectionné");
         }
     	for(int j=0;j<liste.size();j++) {
-        	int posmax=5000;
+        	int posmax=this.getText().length();
         	int posmin=0;
         	boolean flag=true;
     		int i=0;
@@ -150,7 +150,7 @@ public class ThotText extends JTextPane {
     		}
     		
     		if(flag) {
-    			posmax=5000;//mettre la bonne valeur ici aussi
+    			posmax=this.getText().length();//mettre la bonne valeur ici aussi
     		}
     		
     		if(liste.get(j).getTypeEvent()==ThotTypeEvent.Registre) {

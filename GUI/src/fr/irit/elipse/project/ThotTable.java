@@ -136,12 +136,10 @@ public class ThotTable extends JTable{
 	
 	public void append(ThotTypeEvent value) {
 		text.typeEvent.add(value);
-		
 		boolean flag=true;
-		int posmax=5000;
+		int posmax=text.getText().length();
 		int posmin=0;
 		int i=0;
-		
 
 		while(i<ListeText.size()&&flag) {
 			if(position>ListeText.get(i)) {
@@ -157,7 +155,7 @@ public class ThotTable extends JTable{
 		}
 		
 		if(flag) {
-			posmax=5000;//mettre la bonne valeur ici aussi
+			posmax=text.getText().length();//mettre la bonne valeur ici aussi
 		}
 		
 		text.highlight(mot,value,posmin,posmax);
