@@ -111,8 +111,8 @@ public class ThotText extends JTextPane {
     public void suppr(int pattern,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> ListeText) {
     	word=allOccurency.get(pattern);
     	if(pattern>=0) {
-            allOccurency.remove(allOccurency.get(pattern));
-            typeEvent.remove(typeEvent.get(pattern));
+            allOccurency.remove(pattern);
+            typeEvent.remove(pattern);
     	}
     	Remove(pattern,word,liste,listePos,ListeText);
     }

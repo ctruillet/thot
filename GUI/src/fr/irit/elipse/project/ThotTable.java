@@ -46,13 +46,13 @@ public class ThotTable extends JTable{
 				if(liste.get(row).getTypeEvent()==ThotTypeEvent.Registre) {
 					int pp=liste.get(row).getPosition();
 					ListeText.remove(ListeText.indexOf(pp));
-					System.out.println(ListeText.toString());
 				}
 				ttm.remove(row);
 				liste.remove(row);
 				editor.remove(row);
 				listePos.remove(row);
 				listeConcept.remove(row);
+				System.out.println("Quelle est la valeur de row"+row);
 				text.suppr(row,liste,listePos,ListeText);
 			}
 		};
