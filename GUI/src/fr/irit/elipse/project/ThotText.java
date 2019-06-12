@@ -61,7 +61,6 @@ public class ThotText extends JTextPane {
         catch (FileNotFoundException exc) {
             System.out.println("Fichier inexistant");
         }
-        System.out.println(texte);
         
         return (texte);
     }
@@ -133,7 +132,6 @@ public class ThotText extends JTextPane {
         }catch (BadLocationException e) {
         	System.out.println("Pas de texte sélectionné");
         }
-    	System.out.println("on va ici normalement"+ListeText.toString());
     	for(int j=0;j<liste.size();j++) {
         	int posmax=5000;
         	int posmin=0;
@@ -158,7 +156,6 @@ public class ThotText extends JTextPane {
     		if(liste.get(j).getTypeEvent()==ThotTypeEvent.Registre) {
     			posmax=liste.get(j).getPosition()+1;
     			posmin=liste.get(j).getPosition()-1;
-    			System.out.println("la position est :"+posmin);
     		}
     		highlight(allOccurency.get(j),typeEvent.get(j),posmin,posmax);
     	}
@@ -166,7 +163,6 @@ public class ThotText extends JTextPane {
         	highlight(allOccurency.get(i),typeEvent.get(i),posmax);
         }*/
         
-        System.out.println(allOccurency.toString());
 
     }
 }

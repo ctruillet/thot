@@ -43,12 +43,15 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.motBalise.setTypeEvent(this.value);
 		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
 			motBalise.setConcept(concept);
-			
+			System.out.println("la position normalement est "+Table.position);
+			System.out.println("d'abord ici"+Table.liste.get(Table.getSelectedRow()).getPosition());
 			if(this.value==ThotTypeEvent.Registre) {
 				Table.separation();
 			}
 			if(etat==ThotTypeEvent.Registre) {
 				int pp=Table.liste.get(Table.getSelectedRow()).getPosition();
+				System.out.println("puis la"+pp);
+				System.out.println("puis ici"+Table.ListeText.toString());
 				Table.ListeText.remove(Table.ListeText.indexOf(pp));
 			}
 			if (this.value.toString()==ThotTypeEvent.Media.toString()){

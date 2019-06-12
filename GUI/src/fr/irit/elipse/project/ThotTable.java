@@ -41,7 +41,6 @@ public class ThotTable extends JTable{
 		Action action = new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("la");
 				row=getSelectedRow();
 				if(liste.get(row).getTypeEvent()==ThotTypeEvent.Registre) {
 					int pp=liste.get(row).getPosition();
@@ -52,7 +51,6 @@ public class ThotTable extends JTable{
 				editor.remove(row);
 				listePos.remove(row);
 				listeConcept.remove(row);
-				System.out.println("Quelle est la valeur de row"+row);
 				text.suppr(row,liste,listePos,ListeText);
 			}
 		};
@@ -152,9 +150,6 @@ public class ThotTable extends JTable{
 			if(position<ListeText.get(i)) {
 				posmax=ListeText.get(i);
 				posmin=ListeText.get(i-1);
-				System.out.println(ListeText.toString());
-				System.out.println("la position minimum est : "+ListeText.get(i-1));
-				System.out.println("la position maximum est : "+ListeText.get(i));
 				flag=false;
 					
 			}
@@ -180,15 +175,16 @@ public class ThotTable extends JTable{
 	public void separation() {
 		int i=0;
 		boolean flag=true;
+		System.out.println("la position ajouté est : fin normalmeent"+listePos.get(SelectedRow()));
 		while(i<ListeText.size()&&flag) {
-			if(position<ListeText.get(i)) {
-				ListeText.add(i,position);
+			if(listePos.get(SelectedRow())<ListeText.get(i)) {
+				ListeText.add(i,listePos.get(SelectedRow()));
 				flag=false;
 			}
 			i++;
 		}
 		if(flag) {
-			ListeText.add(position);
+			ListeText.add(listePos.get(SelectedRow()));
 		}
 	}
 }
