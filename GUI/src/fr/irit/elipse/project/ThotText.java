@@ -33,7 +33,7 @@ public class ThotText extends JTextPane {
 	//Constructeur
     public ThotText() {
         super();
-        this.setEditable(false);
+        this.setEditable(true);
     }
     
     //Inner Class
@@ -75,7 +75,7 @@ public class ThotText extends JTextPane {
             case Retranscription:
                 return Color.red;
             case Media:
-                return Color.blue;
+                return Color.cyan;
             case Effet:
                 return Color.green;
             case Registre:

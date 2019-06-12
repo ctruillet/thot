@@ -33,7 +33,9 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		Table.listePos.add(Table.position);
 		Table.fireTableDataChanged();
 		for (ThotTypeEvent tte : ThotTypeEvent.values()) {
-			this.addItem(tte);
+			if(tte != ThotTypeEvent.Autre){
+				this.addItem(tte);
+			}
 		}
 	}
 	
@@ -52,7 +54,7 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 				int pp=Table.liste.get(Table.getSelectedRow()).getPosition();
 				System.out.println("puis la"+pp);
 				System.out.println("puis ici"+Table.ListeText.toString());
-				Table.ListeText.remove(Table.ListeText.indexOf(pp));
+				Table.ListeText.remove((Integer) pp);
 			}
 			if (this.value.toString()==ThotTypeEvent.Media.toString()){
 				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
