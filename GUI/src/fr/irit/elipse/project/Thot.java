@@ -430,7 +430,10 @@ public class Thot extends JFrame{
 			csvOutput.write("Mots-Balises;Type d'événement;Concept associée;Description\n");
 			for(int i=0; i<this.motGrammar.size(); i++) {
 				for(int j=0;j<this.motGrammar.size();j++) {
-					csvOutput.write(motGrammar.get(i).get(j).getMotBalise()+";"+motGrammar.get(i).get(j).getTypeEventName()+";"+motGrammar.get(i).get(j).getConceptName()+";"+motGrammar.get(i).get(j).getDescription()+"\n");
+					csvOutput.write(motGrammar.get(i).get(j).getMotBalise()+";"
+								    +motGrammar.get(i).get(j).getTypeEventName()+";"
+							        +motGrammar.get(i).get(j).getConceptName()+";"
+								    +motGrammar.get(i).get(j).getDescription()+"\n");
 					
 				}
 			}

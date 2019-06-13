@@ -149,10 +149,6 @@ public class ThotText extends JTextPane {
     			i++;
     		}
     		
-    		if(flag) {
-    			posmax=this.getText().length();//mettre la bonne valeur ici aussi
-    		}
-    		
     		if(liste.get(j).getTypeEvent()==ThotTypeEvent.Registre) {
     			posmax=liste.get(j).getPosition()+1;
     			posmin=liste.get(j).getPosition()-1;

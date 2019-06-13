@@ -158,10 +158,6 @@ public class ThotTable extends JTable{
 			i++;
 		}
 		
-		if(flag) {
-			posmax=text.getText().length();//mettre la bonne valeur ici aussi
-		}
-		
 		text.highlight(mot,value,posmin,posmax);
 	}
 	
