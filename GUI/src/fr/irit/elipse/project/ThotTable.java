@@ -9,7 +9,6 @@ import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ThotTable extends JTable{
@@ -44,7 +43,7 @@ public class ThotTable extends JTable{
 				row=getSelectedRow();
 				if(liste.get(row).getTypeEvent()==ThotTypeEvent.Registre) {
 					int pp=liste.get(row).getPosition();
-					ListeText.remove(ListeText.indexOf(pp));
+					ListeText.remove((Integer) pp);
 				}
 				ttm.remove(row);
 				liste.remove(row);

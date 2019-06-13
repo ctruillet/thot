@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ThotTableModel extends AbstractTableModel {
 	
 	private static final long serialVersionUID = 1L;
-	private static final String[] entetes = { "Mots-Balises", "Type d'\u00e9v\u00e9nement", "Concept associ\u00e9" };;
+	private static final String[] entetes = { "Mots-Balises", "Type d'\u00e9v\u00e9nement", "Concept associ\u00e9" };
 	private ArrayList<ThotGrammar> liste;
 	
 	public ThotTableModel() {

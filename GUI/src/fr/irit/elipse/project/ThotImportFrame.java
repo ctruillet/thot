@@ -34,16 +34,14 @@ public class ThotImportFrame extends JFrame{
 		AUDIO,
 		VIDEO,
 		PICTURE,
-		MEDIA;
+		MEDIA
 	}
 	
 	//Inner Class
 	protected class ThotFilterText extends FileFilter{
 		public boolean accept(File f) {
-			if(f.isDirectory() ||(f.getName().endsWith(".txt") 
-							   || f.getName().endsWith(".md")))
-				return true;
-			return false;
+			return f.isDirectory() || (f.getName().endsWith(".txt")
+					|| f.getName().endsWith(".md"));
 		}
 		
 		public String getDescription() {
@@ -54,11 +52,9 @@ public class ThotImportFrame extends JFrame{
 	
 	protected class ThotFilterAudio extends FileFilter{
 		public boolean accept(File f) {
-			if(f.isDirectory() ||(f.getName().endsWith(".wov") 
-							   || f.getName().endsWith(".mp3")
-							   || f.getName().endsWith(".aif")))
-				return true;
-			return false;
+			return f.isDirectory() || (f.getName().endsWith(".wov")
+					|| f.getName().endsWith(".mp3")
+					|| f.getName().endsWith(".aif"));
 		}
 		
 		public String getDescription() {
@@ -69,14 +65,12 @@ public class ThotImportFrame extends JFrame{
 	
 	protected class ThotFilterVideo extends FileFilter{
 		public boolean accept(File f) {
-			if(f.isDirectory() ||(f.getName().endsWith(".mov") 
-							   || f.getName().endsWith(".avi")
-							   || f.getName().endsWith(".m2ts")
-							   || f.getName().endsWith(".ts")
-							   || f.getName().endsWith(".mkv")
-							   || f.getName().endsWith(".mp4")))
-				return true;
-			return false;
+			return f.isDirectory() || (f.getName().endsWith(".mov")
+					|| f.getName().endsWith(".avi")
+					|| f.getName().endsWith(".m2ts")
+					|| f.getName().endsWith(".ts")
+					|| f.getName().endsWith(".mkv")
+					|| f.getName().endsWith(".mp4"));
 		}
 		
 		public String getDescription() {
@@ -87,12 +81,10 @@ public class ThotImportFrame extends JFrame{
 	
 	protected class ThotFilterPicture extends FileFilter{
 		public boolean accept(File f) {
-			if(f.isDirectory() ||(f.getName().endsWith(".png") 
-							   || f.getName().endsWith(".gif")
-							   || f.getName().endsWith(".jpg")
-							   || f.getName().endsWith(".jpeg")))
-				return true;
-			return false;
+			return f.isDirectory() || (f.getName().endsWith(".png")
+					|| f.getName().endsWith(".gif")
+					|| f.getName().endsWith(".jpg")
+					|| f.getName().endsWith(".jpeg"));
 		}
 		
 		public String getDescription() {
@@ -108,10 +100,7 @@ public class ThotImportFrame extends JFrame{
 		ThotFilterPicture picture = new ThotFilterPicture();
 		public boolean accept(File f) {
 
-			if (audio.accept(f)==true || video.accept(f)==true || picture.accept(f)) {
-				return true;
-			}
-			return false;
+			return audio.accept(f) == true || video.accept(f) == true || picture.accept(f);
 		}
 
 		public String getDescription() {
@@ -167,7 +156,7 @@ public class ThotImportFrame extends JFrame{
 	}
 	
 	public File getFile() {
-		return ((this.fichier==null)?null:this.fichier);
+		return (this.fichier);
 	}
 	
 	public String getFileName() {

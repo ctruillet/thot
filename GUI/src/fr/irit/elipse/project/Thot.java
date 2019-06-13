@@ -37,18 +37,18 @@ public class Thot extends JFrame{
 	Thot() {
 		super();
 		setType(Type.UTILITY);
-		double sizeConstructPane[][] = {
-			{20,120,120,120,20,40,20,120,120,120,20},
-			{23,40,40,100,100,100,20,30,20}
+		double[][] sizeConstructPane = {
+				{20, 120, 120, 120, 20, 40, 20, 120, 120, 120, 20},
+				{23, 40, 40, 100, 100, 100, 20, 30, 20}
 		};
-		
-		double sizeManPane[][] = {
-				{20,250,25,250,25,250,20},
-				{53,40,40,100,100,100,20,20}
+
+		double[][] sizeManPane = {
+				{20, 250, 25, 250, 25, 250, 20},
+				{53, 40, 40, 100, 100, 100, 20, 20}
 		};
-		double sizeScenarPane[][] = {
-				{20,250,25,250,25,250,20},
-				{53,40,40,100,100,100,20,20}
+		double[][] sizeScenarPane = {
+				{20, 250, 25, 250, 25, 250, 20},
+				{53, 40, 40, 100, 100, 100, 20, 20}
 		};
 		
 		this.createNewDirectory();
@@ -394,7 +394,7 @@ public class Thot extends JFrame{
 				output_xml.write("\t<rule id=\"mot"+j+"\">\n" + 
 								 	"\t\t<item>"+motGrammar.get(i).get(j).getMotBalise()+"</item>\n" + 
 								 	"\t\t<ruleref special=\"GARBAGE\" />\n"
-								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).toString()+"\"</tag>\n" + 
+								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).getConcept()+"\"</tag>\n" +
 									"\t</rule>\n");
 			}
 			

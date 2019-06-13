@@ -75,7 +75,7 @@ public class ThotButtonEditor extends DefaultCellEditor implements ActionListene
 			JOptionPane.showMessageDialog(button ,label + ": Ouch!");
 		}
 		isPushed = false;
-		return new String(label) ;
+		return label;
 	}
 
 	public boolean stopCellEditing() {
