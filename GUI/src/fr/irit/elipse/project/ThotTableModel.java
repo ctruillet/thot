@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ThotTableModel extends AbstractTableModel {
 	
 	private static final long serialVersionUID = 1L;
-	private static final String[] entetes = { "Mots-Balises", "Type d'\u00e9v\u00e9nement", "Concept associ\u00e9" };;
+	private static final String[] entetes = { "Mots-Balises", "Type d'\u00e9v\u00e9nement", "Concept associ\u00e9","Description" };;
 	private ArrayList<ThotGrammar> liste;
 	
 	public ThotTableModel() {
@@ -38,6 +38,8 @@ public class ThotTableModel extends AbstractTableModel {
 				return ((liste.get(rowIndex)).getTypeEventName());
 			case 2: 
 				return ((liste.get(rowIndex)).getConceptName());
+			case 3: 
+				return ((liste.get(rowIndex)).getDescription());
 			default:
 				return("");
 		}
@@ -72,6 +74,10 @@ public class ThotTableModel extends AbstractTableModel {
 	public String getConcept(int i){
 		return (this.liste.get(i).getConcept());
 	}
+	
+	public String getDescription(int i){
+		return (this.liste.get(i).getDescription());
+	}
 
 	public ArrayList<ThotGrammar> getListe(){
 		return (this.liste);
@@ -95,5 +101,4 @@ public class ThotTableModel extends AbstractTableModel {
 		this.fireEditingStopped();
 		
 	}
-
 }

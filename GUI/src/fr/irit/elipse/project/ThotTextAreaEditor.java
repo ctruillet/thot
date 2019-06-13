@@ -13,6 +13,7 @@ public class ThotTextAreaEditor extends DefaultCellEditor {
     protected JScrollPane scrollpane;
     protected JTextArea textarea;
     protected ThotGrammar motBalise;
+    protected int column;
     
     public ThotTextAreaEditor(JCheckBox checkBox,ThotGrammar motBalise) {
 
@@ -27,12 +28,18 @@ public class ThotTextAreaEditor extends DefaultCellEditor {
     }
 
     public Component getTableCellEditorComponent(JTable table, Object value,boolean isSelected, int row, int column) {
+    	this.column=column;
         textarea.setText((String) value);
         return scrollpane;
     }
 
     public Object getCellEditorValue() {
-    	motBalise.setConcept(new ThotConcept(textarea.getText()));
+    	if(this.column==2) {
+    		motBalise.setConcept(new ThotConcept(textarea.getText()));
+    	}else {
+    		motBalise.setDescription(new ThotDescription(textarea.getText()));
+    	}
+    	
         return textarea.getText();
     }
 }

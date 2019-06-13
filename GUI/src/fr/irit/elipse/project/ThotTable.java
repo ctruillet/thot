@@ -18,7 +18,8 @@ public class ThotTable extends JTable{
 	protected ThotTableModel model;
 	protected ArrayList<ThotGrammar> liste;
 	protected List<TableCellEditor> editor = new ArrayList<TableCellEditor>(1);
-	protected ArrayList<Object> listeConcept = new ArrayList<Object>(1);
+	protected ArrayList<ThotTextAreaEditor> listeConcept = new ArrayList<ThotTextAreaEditor>(1);
+	protected ArrayList<ThotTextAreaEditor> listeDescription = new ArrayList<ThotTextAreaEditor>(1);
 	protected ArrayList<Integer> listePos = new ArrayList<Integer>(1);
 	protected ArrayList<Integer> ListeText = new ArrayList<Integer>(1);
 	protected int row;
@@ -51,6 +52,7 @@ public class ThotTable extends JTable{
 				editor.remove(row);
 				listePos.remove(row);
 				listeConcept.remove(row);
+				listeDescription.remove(row);
 				text.suppr(row,liste,listePos,ListeText);
 			}
 		};
@@ -76,6 +78,8 @@ public class ThotTable extends JTable{
 				editor.add(i, dce);
 				listeConcept.add(i, listeConcept.get(listeConcept.size()-1));
 				listeConcept.remove(listeConcept.size()-1);
+				listeDescription.add(i, listeDescription.get(listeDescription.size()-1));
+				listeDescription.remove(listeDescription.size()-1);
 				listePos.add(i, listePos.get(listePos.size()-1));
 				listePos.remove(listePos.size()-1);
 				text.allOccurency.add(i, text.allOccurency.get(text.allOccurency.size()-1));
@@ -103,6 +107,8 @@ public class ThotTable extends JTable{
 			return editor.get(row);
 		}else if (row<this.liste.size() && column==2) {
 			return (TableCellEditor) listeConcept.get(row);
+		}else if (row<this.liste.size() && column==3) {
+			return listeDescription.get(row);
 		}
 		return super.getCellEditor(row, column);
 	}
@@ -149,7 +155,6 @@ public class ThotTable extends JTable{
 				posmax=ListeText.get(i);
 				posmin=ListeText.get(i-1);
 				flag=false;
-					
 			}
 			i++;
 		}
