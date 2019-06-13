@@ -413,6 +413,34 @@ public class Thot extends JFrame{
 			System.out.println("Erreur dans la création du fichier grxml.");
 		}
 	}
+	public void save_CSV() {
+		
+		//Créer grammar+i.grxml
+		String output = this.getParentDirectory() + "fichier.csv";
+		boolean exists = (new File(output)).exists();
+		if (exists) {
+			// File or directory exists
+			System.out.println("Le fichier existe déjà !\n");
+		}
+				
+		try{	
+			BufferedWriter csvOutput = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.UTF_8));
+			// entetes
+			
+			csvOutput.write("Mots-Balises;Type d'événement;Concept associée;Description\n");
+			for(int i=0; i<this.motGrammar.size(); i++) {
+				for(int j=0;j<this.motGrammar.size();j++) {
+					csvOutput.write(motGrammar.get(i).get(j).getMotBalise()+";"+motGrammar.get(i).get(j).getTypeEventName()+";"+motGrammar.get(i).get(j).getConceptName()+";"+motGrammar.get(i).get(j).getDescription()+"\n");
+					
+				}
+			}
+
+			csvOutput.close();
+			}
+			catch (Exception e) {
+				System.out.println("Erreur dans la création du fichier CSV.");
+			}
+	}
 	
 	
 	public void save_GRXML() {
@@ -423,6 +451,7 @@ public class Thot extends JFrame{
 			if(this.motGrammar.get(i).size()!=0)
 				this.save_GRXML(i);
 		}
+		this.save_CSV();
 		
 		JOptionPane.showMessageDialog(this,
                      "Le Grammaire vient d'\u00eatre g\u00e9n\u00e9r\u00e9e",
