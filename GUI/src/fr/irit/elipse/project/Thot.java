@@ -28,7 +28,7 @@ public class Thot extends JFrame{
 	private String directory;
 	protected JMenuItem menuConstruct;
 	protected JMenuItem menuMan;
-	protected JMenuItem menuScenar;
+	protected JMenuItem menuInfo;
 	private static final long serialVersionUID = 0L;
 	protected int pos;
 	protected ArrayList<ArrayList<ThotGrammar>> motGrammar = new ArrayList<ArrayList<ThotGrammar>>();
@@ -46,7 +46,7 @@ public class Thot extends JFrame{
 				{20, 250, 25, 250, 25, 250, 20},
 				{53, 40, 40, 100, 100, 100, 20, 20}
 		};
-		double[][] sizeScenarPane = {
+		double[][] sizeinfoPane = {
 				{20, 250, 25, 250, 25, 250, 20},
 				{53, 40, 40, 100, 100, 100, 20, 20}
 		};
@@ -58,19 +58,20 @@ public class Thot extends JFrame{
 		//Container
 		Container constructPane = new Container();
 		Container manPane = new Container();
-		Container scenarPane = new Container();
+		Container infoPane = new Container();
 		
 		TableLayout constructLayout = new TableLayout(sizeConstructPane);
 		TableLayout manLayout = new TableLayout(sizeManPane);
-		TableLayout scenarLayout = new TableLayout(sizeScenarPane);
+		TableLayout scenarLayout = new TableLayout(sizeinfoPane);
 		
 		constructPane.setLayout(constructLayout);
 		manPane.setLayout(manLayout);
-		scenarPane.setLayout(scenarLayout);
+		infoPane.setLayout(scenarLayout);
 		
 		//Composants
 		//Police
 		Font fPlain = new Font("B612-Regular",Font.PLAIN, 10);
+		Font fInfo = new Font("B612-Regular",Font.PLAIN, 12);
 		Font fBigBold = new Font("B612-Regular",Font.BOLD, 36);
 		//Titre
 		JLabel thot_title = new JLabel("THOT");
@@ -85,8 +86,15 @@ public class Thot extends JFrame{
 		
 		JLabel manPage = new JLabel("Manuel d'utilisation"); 
 		manPage.setFont(fBigBold);
-		JLabel scenarPage = new JLabel("Scénarios"); 
-		scenarPage.setFont(fBigBold);
+		JTextPane infoPage = new JTextPane();
+		infoPage.setContentType("text/html");
+		infoPage.setText("Le logiciel <strong>THOT</strong> a été réalisé dans le cadre d'un stage à l'IRIT en  2019 par <br />" +
+				"Antonin Miloudi - <i>antonin.miloudi@univ-tlse3.fr</i><br />" +
+				"Clement Truillet - <i>clement.truillet@univ-tlse3.fr</i><br />" +
+				"<br />" +
+				"Vous pouvez retrouver le code à l'adresse suivante : <i>https://github.com/ctruillet/thot</i>");
+		infoPage.setBackground(null);
+		infoPage.setFont(fInfo);
 		
 		//Tableau
 		T_Table = new ThotTableModel(){
@@ -116,7 +124,6 @@ public class Thot extends JFrame{
 				}
             }
 		});
-			
 		//Génération
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
@@ -183,7 +190,7 @@ public class Thot extends JFrame{
 		manPane.add(manPage,"1,1,4,1");
 		
 		//Scenar Pane
-		scenarPane.add(scenarPage,"1,1,4,1");
+		infoPane.add(infoPage,"1,1,4,4");
 		
 		//Close
 		addWindowListener ( new WindowAdapter() {
@@ -198,7 +205,7 @@ public class Thot extends JFrame{
 		setBounds(0,0,840,525);
 		constructPane.setBounds(0,0,840,525);
 		manPane.setBounds(0,0,840,525);
-		scenarPane.setBounds(0,0,840,525);
+		infoPane.setBounds(0,0,840,525);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		
@@ -230,11 +237,11 @@ public class Thot extends JFrame{
 				System.out.println(constructPane.toString());
 				menuConstruct.setSelected(true);
 				menuMan.setSelected(false);
-				menuScenar.setSelected(false);
+				menuInfo.setSelected(false);
 				
 				constructPane.setVisible(true);
 				manPane.setVisible(false);
-				scenarPane.setVisible(false);
+				infoPane.setVisible(false);
 				
 				setContentPane(constructPane);
 			}
@@ -264,11 +271,11 @@ public class Thot extends JFrame{
 				System.out.println(manPane.toString());
 				menuMan.setSelected(true);
 				menuConstruct.setSelected(false);
-				menuScenar.setSelected(false);
+				menuInfo.setSelected(false);
 				
 				constructPane.setVisible(false);
 				manPane.setVisible(true);
-				scenarPane.setVisible(false);
+				infoPane.setVisible(false);
 				
 				setContentPane(manPane);
 			}
@@ -278,9 +285,9 @@ public class Thot extends JFrame{
 			}
 		});
 		
-		menuScenar = new JMenuItem("Scénarios");
-		menuBar.add(menuScenar);
-		menuScenar.addMouseListener(new MouseListener() {
+		menuInfo = new JMenuItem("Informations");
+		menuBar.add(menuInfo);
+		menuInfo.addMouseListener(new MouseListener() {
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {				
@@ -295,16 +302,16 @@ public class Thot extends JFrame{
 			}
 
 			public void mousePressed(MouseEvent e) {
-				System.out.println(scenarPane.toString());
-				menuScenar.setSelected(true);
+				System.out.println(infoPane.toString());
+				menuInfo.setSelected(true);
 				menuConstruct.setSelected(false);
 				menuMan.setSelected(false);
 				
 				constructPane.setVisible(false);
 				manPane.setVisible(false);
-				scenarPane.setVisible(true);
+				infoPane.setVisible(true);
 				
-				setContentPane(scenarPane);
+				setContentPane(infoPane);
 			}
 
 			@Override
@@ -394,7 +401,7 @@ public class Thot extends JFrame{
 				output_xml.write("\t<rule id=\"mot"+j+"\">\n" + 
 								 	"\t\t<item>"+motGrammar.get(i).get(j).getMotBalise()+"</item>\n" + 
 								 	"\t\t<ruleref special=\"GARBAGE\" />\n"
-								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).getConcept()+"\"</tag>\n" +
+								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).getConcept() +"\"</tag>\n" +
 									"\t</rule>\n");
 			}
 			
