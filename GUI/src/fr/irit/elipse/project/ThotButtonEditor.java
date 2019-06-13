@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class ThotButtonEditor extends DefaultCellEditor implements ActionListener{
 
@@ -37,7 +36,7 @@ public class ThotButtonEditor extends DefaultCellEditor implements ActionListene
 						motBalise.setConcept(new ThotConcept(label));
 					}
 
-				} catch (IOException e1) {
+				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			}

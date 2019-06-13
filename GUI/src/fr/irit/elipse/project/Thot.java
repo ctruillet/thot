@@ -1,6 +1,6 @@
 /**
-* @author Philippe Truillet (Philippe.Truillet@irit.fr)
-* @version 0.2 du 05/01/2019
+* @author Clement Truillet (Clement.Truillet@irit.fr)
+* @version 0.6 du 13/06/2019
 */
 
 package fr.irit.elipse.project;
@@ -10,7 +10,10 @@ import info.clearthought.layout.TableLayout;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -151,7 +154,7 @@ public class Thot extends JFrame{
 					if(tif.getFilePath()!=null) {
 						T_Text.displayText(tif.getFilePath());
 					}					
-				} catch (IOException e1) {
+				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
             }

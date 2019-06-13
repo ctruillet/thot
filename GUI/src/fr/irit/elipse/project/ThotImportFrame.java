@@ -9,7 +9,6 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -110,7 +109,7 @@ public class ThotImportFrame extends JFrame{
 	}
 
 	//Méthodes
-	public void openFrame(Component parent) throws IOException {
+	public void openFrame(Component parent) {
 		this.fenetre.setMultiSelectionEnabled(false);
 		this.fenetre.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		
@@ -146,7 +145,7 @@ public class ThotImportFrame extends JFrame{
 			
 			try {
 				Files.copy(this.fichier.toPath(), Paths.get(this.parentDirectory,this.getFileName()));
-			} catch(Exception e) {
+			} catch(Exception ignored) {
 				
 			}
 			

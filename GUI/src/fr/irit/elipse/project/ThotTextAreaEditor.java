@@ -1,13 +1,13 @@
+/**
+ * @author Clement Truillet (clement.Truillet@univ-tlse3.fr)
+ * @version 0.1 du 15/05/2019
+ */
+
+
 package fr.irit.elipse.project;
 
-import java.awt.Component;
-
-import javax.swing.DefaultCellEditor;
-import javax.swing.JCheckBox;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.border.TitledBorder;
+import javax.swing.*;
+import java.awt.*;
 
 public class ThotTextAreaEditor extends DefaultCellEditor {
     protected JScrollPane scrollpane;

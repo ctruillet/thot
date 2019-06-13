@@ -1,3 +1,8 @@
+/**
+ * @author Antonin Miloudi (miloudi.miloudi@univ-tlse3.fr)
+ * @version 0.1 du 13/06/2019
+ */
+
 package fr.irit.elipse.project;
 
 public class ThotDescription {
@@ -19,7 +24,7 @@ public class ThotDescription {
 	}
 	
 	public String toString() {
-		return (this.getContent()==null)?"null":this.getContent().toString();
+		return (this.getContent()==null)?"null": this.getContent();
 	}
 
 }

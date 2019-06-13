@@ -105,7 +105,7 @@ public class ThotTable extends JTable{
 		if(row<this.liste.size() && column==1) {
 			return editor.get(row);
 		}else if (row<this.liste.size() && column==2) {
-			return (TableCellEditor) listeConcept.get(row);
+			return listeConcept.get(row);
 		}else if (row<this.liste.size() && column==3) {
 			return listeDescription.get(row);
 		}
@@ -127,12 +127,12 @@ public class ThotTable extends JTable{
 	}
 
 	public String toString() {
-		String s= "";
+		StringBuilder s= new StringBuilder();
 		
 		for (int i=0;i<this.liste.size(); i++) {
-			s+=this.liste.get(i).toString()+"\n";
+			s.append(this.liste.get(i).toString()).append("\n");
 		}
-		return s;
+		return s.toString();
 	}
 	
 	public int SelectedRow() {

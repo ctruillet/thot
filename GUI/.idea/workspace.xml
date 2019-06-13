@@ -9,6 +9,12 @@
     <list default="true" id="b1ff43f5-b809-4977-a720-3ead651ac43b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotDescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin1/" />
@@ -18,6 +24,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
@@ -26,44 +46,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="253" column="53" selection-start-line="253" selection-start-column="53" selection-end-line="253" selection-end-column="53" />
+            <state relative-caret-position="323">
+              <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
               <folding>
-                <element signature="e#880#904#0" expanded="true" />
-                <element signature="e#2677#2865#0" expanded="true" />
-                <element signature="e#2864#2865#0" expanded="true" />
-                <element signature="e#4588#5197#0" expanded="true" />
-                <element signature="e#5196#5197#0" expanded="true" />
-                <element signature="e#5695#5797#0" expanded="true" />
-                <element signature="e#5796#5797#0" expanded="true" />
-                <element signature="method#cutText#0;class#Thot#0" />
-                <element signature="method#save_GRXML#1;class#Thot#0" />
-                <element signature="method#main#0;class#Thot#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-              <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#880#904#0" expanded="true" />
+                <element signature="e#9077#9078#0" expanded="true" />
+                <element signature="e#9097#9098#0" expanded="true" />
+                <element signature="e#9126#9127#0" expanded="true" />
+                <element signature="e#9150#9151#0" expanded="true" />
+                <element signature="e#9429#9430#0" expanded="true" />
+                <element signature="e#9459#9460#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+            <state relative-caret-position="191">
+              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+              <folding>
+                <element signature="e#2264#2265#0" expanded="true" />
+                <element signature="e#2297#2298#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,7 +126,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThottextAreaEditor.java" />
         <option value="$PROJECT_DIR$/cr.txt" />
-        <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTypeEvent.java" />
@@ -124,15 +134,18 @@
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
+        <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java" />
+        <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotDescription.java" />
         <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" />
+        <option value="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1906" />
+    <option name="x" value="1912" />
     <option name="y" value="-304" />
-    <option name="width" value="1358" />
-    <option name="height" value="823" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -246,7 +259,7 @@
       <workItem from="1559897692605" duration="2645000" />
       <workItem from="1560241014267" duration="7471000" />
       <workItem from="1560328208572" duration="4495000" />
-      <workItem from="1560416191116" duration="5665000" />
+      <workItem from="1560416191116" duration="7528000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de la position d'un mot">
       <created>1558965383890</created>
@@ -374,11 +387,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560425853946</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary=":zap: Ajout de la generation du CSV">
+      <created>1560428411462</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560428411462</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58766000" />
+    <option name="totallyTimeSpent" value="60629000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -399,20 +419,22 @@
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5008606" side_tool="true" weight="0.14644013" />
+      <window_info id="Favorites" order="6" sideWeight="0.50333333" side_tool="true" weight="0.16564792" />
+      <window_info anchor="bottom" id="Duplicates" weight="0.32922733" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.32922733" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922733" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.28667414" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49838188" weight="0.3281075" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49755502" weight="0.3281075" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32922733" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013423" side_tool="true" weight="0.22804533" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3281075" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5012225" side_tool="true" weight="0.22732362" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4987775" weight="0.3281075" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -421,7 +443,7 @@
       <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Database" order="8" weight="0.3294621" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +525,8 @@
     <MESSAGE value=":fire: Clean data directory" />
     <MESSAGE value="Modification suite à la réunion" />
     <MESSAGE value=":sparkles: Make Info Page" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: Make Info Page" />
+    <MESSAGE value=":zap: Ajout de la generation du CSV" />
+    <option name="LAST_COMMIT_MESSAGE" value=":zap: Ajout de la generation du CSV" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -525,37 +548,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grammar_04_33_53.grxml" />
     <entry file="file://$PROJECT_DIR$/grammar_05_14_28.grxml" />
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-          <folding>
-            <element signature="class#ThotFilterText#0;class#ThotImportFrame#0" />
-            <element signature="class#ThotFilterAudio#0;class#ThotImportFrame#0" />
-            <element signature="class#ThotFilterVideo#0;class#ThotImportFrame#0" />
-            <element signature="class#ThotFilterPicture#0;class#ThotImportFrame#0" />
-            <element signature="class#thotfiltermedia#0;class#ThotImportFrame#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -677,32 +669,8 @@
     <entry file="file://$PROJECT_DIR$/data/06-06-2019_11.29.09/grammar_11_29_13.grxml" />
     <entry file="file://$PROJECT_DIR$/data/06-06-2019_12.19.03/grammar_12_19_21.grxml" />
     <entry file="file://$PROJECT_DIR$/data/06-06-2019_13.48.40/grammar0.grxml" />
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTypeEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/11-06-2019_11.47.26/grammar0.grxml" />
     <entry file="file://$PROJECT_DIR$/data/11-06-2019_11.49.56/grammar0.grxml" />
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotConcept.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/11-06-2019_12.23.18/grammar0.grxml" />
     <entry file="file://$PROJECT_DIR$/data/12-06-2019_10.43.29/scientilivre.txt" />
     <entry file="file://$PROJECT_DIR$/data/12-06-2019_10.43.29/texte.txt" />
@@ -713,63 +681,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java">
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/java/awt/event/ActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+        <state relative-caret-position="442">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTypeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+        <state relative-caret-position="118">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="626">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
+        <state relative-caret-position="2074">
           <caret line="136" column="25" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotConcept.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotDescription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1001">
+          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="81" column="56" selection-start-line="81" selection-start-column="56" selection-end-line="81" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#4158#0" expanded="true" />
+            <element signature="class#ThotFilterText#0;class#ThotImportFrame#0" />
+            <element signature="class#ThotFilterAudio#0;class#ThotImportFrame#0" />
+            <element signature="class#ThotFilterVideo#0;class#ThotImportFrame#0" />
+            <element signature="class#ThotFilterPicture#0;class#ThotImportFrame#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="253" column="53" selection-start-line="253" selection-start-column="53" selection-end-line="253" selection-end-column="53" />
+        <state relative-caret-position="323">
+          <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
             <element signature="e#880#904#0" expanded="true" />
-            <element signature="e#2677#2865#0" expanded="true" />
-            <element signature="e#2864#2865#0" expanded="true" />
-            <element signature="e#4588#5197#0" expanded="true" />
-            <element signature="e#5196#5197#0" expanded="true" />
-            <element signature="e#5695#5797#0" expanded="true" />
-            <element signature="e#5796#5797#0" expanded="true" />
-            <element signature="method#cutText#0;class#Thot#0" />
-            <element signature="method#save_GRXML#1;class#Thot#0" />
-            <element signature="method#main#0;class#Thot#0" />
+            <element signature="e#9077#9078#0" expanded="true" />
+            <element signature="e#9097#9098#0" expanded="true" />
+            <element signature="e#9126#9127#0" expanded="true" />
+            <element signature="e#9150#9151#0" expanded="true" />
+            <element signature="e#9429#9430#0" expanded="true" />
+            <element signature="e#9459#9460#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <folding>
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2297#2298#0" expanded="true" />
           </folding>
         </state>
       </provider>
