@@ -251,7 +251,7 @@ public class Thot extends JFrame{
 			}
 		});
 		
-		menuMan = new JMenuItem("Manuel d'utilisatation");
+		menuMan = new JMenuItem("Manuel d'utilisation");
 		menuBar.add(menuMan);
 		menuMan.addMouseListener(new MouseListener() {
 			
@@ -416,7 +416,7 @@ public class Thot extends JFrame{
 	public void save_CSV() {
 		
 		//Créer grammar+i.grxml
-		String output = this.getParentDirectory() + "fichier.csv";
+		String output = this.getParentDirectory() + "/grammar.csv";
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists
@@ -427,7 +427,7 @@ public class Thot extends JFrame{
 			BufferedWriter csvOutput = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.UTF_8));
 			// entetes
 			
-			csvOutput.write("Mots-Balises;Type d'événement;Concept associée;Description\n");
+			csvOutput.write("Mots-Balises;Type d'evenement;Concept associee;Description\n");
 			for(int i=0; i<this.motGrammar.size(); i++) {
 				for(int j=0;j<this.motGrammar.size();j++) {
 					csvOutput.write(motGrammar.get(i).get(j).getMotBalise()+";"
