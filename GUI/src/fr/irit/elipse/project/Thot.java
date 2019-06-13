@@ -394,6 +394,7 @@ public class Thot extends JFrame{
 			for (int j=0;j<this.motGrammar.get(i).size();j++){
 				output_xml.write("\t\t<item><ruleref uri=\"#mot"+j+"\"/></item>\n");
 			}
+			output_xml.write("\t\t<item><ruleref special=\"GARBAGE\"/></item>\n");
 			output_xml.write("\t</one-of>\n");
 			output_xml.write("\t<tag>out=rules.latest().text</tag>\n</rule>\n\n");
 			
