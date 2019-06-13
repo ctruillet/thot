@@ -27,7 +27,9 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		checkbox=new JCheckBox();
 		concept=new ThotConcept("");
 		ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
+		ThotTextAreaEditor editorText2 = new ThotTextAreaEditor(checkbox,motBalise);
 		Table.listeConcept.add(editorText);
+		Table.listeDescription.add(editorText2);
 		etat=this.value;
 		Table.append(etat);
 		Table.listePos.add(Table.position);
@@ -45,29 +47,20 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		this.motBalise.setTypeEvent(this.value);
 		if(Table.getSelectedRow()!=-1 && (etat!=this.value)) {
 			motBalise.setConcept(concept);
-			System.out.println("la position normalement est "+Table.position);
-			System.out.println("d'abord ici"+Table.liste.get(Table.getSelectedRow()).getPosition());
+			
 			if(this.value==ThotTypeEvent.Registre) {
 				Table.separation();
 			}
 			if(etat==ThotTypeEvent.Registre) {
-				int pp=Table.liste.get(Table.getSelectedRow()).getPosition();
-				System.out.println("puis la"+pp);
-				System.out.println("puis ici"+Table.ListeText.toString());
-				Table.ListeText.remove((Integer) pp);
+				Integer pp=Table.liste.get(Table.getSelectedRow()).getPosition();
+				Table.ListeText.remove(pp);
 			}
-			if (this.value.toString()==ThotTypeEvent.Media.toString()){
-				ThotButtonEditor editorBoutton=new ThotButtonEditor(checkbox,motBalise);
-				Table.listeConcept.set(Table.getSelectedRow(),editorBoutton);
-				etat=this.value;
-			}else {
-				ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
-				Table.listeConcept.set(Table.getSelectedRow(),editorText);
-				etat=this.value;
-			}
+			ThotTextAreaEditor editorText = new ThotTextAreaEditor(checkbox,motBalise);
+			ThotTextAreaEditor editorText2 = new ThotTextAreaEditor(checkbox,motBalise);
+			Table.listeConcept.set(Table.getSelectedRow(),editorText);
+			Table.listeDescription.set(Table.getSelectedRow(),editorText2);
+			etat=this.value;
 			Table.updateText(this.value,Table.getSelectedRow());
-
-			
 		}
 		Table.fireTableDataChanged();
 	}

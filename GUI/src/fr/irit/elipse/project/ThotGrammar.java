@@ -9,6 +9,7 @@ public class ThotGrammar{
 	//Attributs
 	protected int position;
 	protected String motBalise;
+	protected ThotDescription description=new ThotDescription("");
 	protected ThotTypeEvent typeEvent; 
 	protected ThotConcept concept = new ThotConcept("");
 	
@@ -33,6 +34,12 @@ public class ThotGrammar{
 		this.setConcept(new ThotConcept(concept));
 	}
 	
+	
+	public ThotGrammar(int position, String mot, ThotTypeEvent typeEvent, String concept,String description){
+		this(position,mot, typeEvent,concept);
+		this.setDescription(new ThotDescription(description));
+	}
+
 	//Méthodes	
 	public boolean hasNoEvent() {
 		return (this.typeEvent==null);
@@ -40,6 +47,10 @@ public class ThotGrammar{
 	
 	public void setMotBalise(String motBalise) {
 		this.motBalise = motBalise;
+	}
+	
+	public void setDescription(ThotDescription description) {
+		this.description = description;
 	}
 	
 	public void setTypeEvent(ThotTypeEvent typeEvent) {
@@ -53,6 +64,10 @@ public class ThotGrammar{
 	public String getMotBalise() {
 		return (this.motBalise);
 	}
+	
+	public String getDescription() {
+		return (this.description.getContent());
+	}
 		
 	public ThotTypeEvent getTypeEvent() {
 		return (this.typeEvent);
@@ -61,7 +76,6 @@ public class ThotGrammar{
 	public String getTypeEventName() {
 		return((this.getTypeEvent()==null) ? "" : this.getTypeEvent().name());
 	}
-
 
 	public String getConcept() {
 		return (this.concept.getContent());
@@ -75,7 +89,6 @@ public class ThotGrammar{
 		return (this.position);
 	}
 		
-	
 	public String toString() {
 		return (this.getMotBalise() + " - " + this.getTypeEventName() + " : " + this.getConcept() );
 	}

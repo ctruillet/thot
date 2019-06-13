@@ -26,5 +26,4 @@ public class ThotConcept {
 	public String toString() {
 		return (this.getContent()==null)?"null": this.getContent();
 	}
-
 }
