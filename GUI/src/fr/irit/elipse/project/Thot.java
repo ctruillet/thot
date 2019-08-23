@@ -30,7 +30,6 @@ public class Thot extends JFrame{
 	private ThotTable T_grammar;	
 	private String directory;
 	protected JMenuItem menuConstruct;
-	protected JMenuItem menuMan;
 	protected JMenuItem menuInfo;
 	private static final long serialVersionUID = 0L;
 	protected int pos;
@@ -87,8 +86,8 @@ public class Thot extends JFrame{
 		JScrollPane SP_Text = new JScrollPane(T_Text);
 		this.T_Text.setText("Veuillez importer un fichier texte.");
 		
-		JLabel manPage = new JLabel("Manuel d'utilisation"); 
-		manPage.setFont(fBigBold);
+		//JLabel manPage = new JLabel("Manuel d'utilisation");
+		//manPage.setFont(fBigBold);
 		JTextPane infoPage = new JTextPane();
 		infoPage.setContentType("text/html");
 		infoPage.setText("Le logiciel <strong>THOT</strong> a été réalisé dans le cadre d'un stage à l'IRIT en  2019 par <br />" +
@@ -188,10 +187,7 @@ public class Thot extends JFrame{
 		constructPane.add(B_Creation, "8,7");
 		constructPane.add(SP_Text, "1,3,3,5");
 		constructPane.add(SP_grammar, "7,2,9,5");
-		
-		//ManPane
-		manPane.add(manPage,"1,1,4,1");
-		
+
 		//Scenar Pane
 		infoPane.add(infoPage,"1,1,4,4");
 		
@@ -239,48 +235,14 @@ public class Thot extends JFrame{
 			public void mousePressed(MouseEvent e) {
 				System.out.println(constructPane.toString());
 				menuConstruct.setSelected(true);
-				menuMan.setSelected(false);
+				//menuMan.setSelected(false);
 				menuInfo.setSelected(false);
 				
 				constructPane.setVisible(true);
-				manPane.setVisible(false);
+				//manPane.setVisible(false);
 				infoPane.setVisible(false);
 				
 				setContentPane(constructPane);
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		
-		menuMan = new JMenuItem("Manuel d'utilisation");
-		menuBar.add(menuMan);
-		menuMan.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {			
-			}
-
-			public void mousePressed(MouseEvent e) {
-				System.out.println(manPane.toString());
-				menuMan.setSelected(true);
-				menuConstruct.setSelected(false);
-				menuInfo.setSelected(false);
-				
-				constructPane.setVisible(false);
-				manPane.setVisible(true);
-				infoPane.setVisible(false);
-				
-				setContentPane(manPane);
 			}
 
 			@Override
@@ -308,10 +270,10 @@ public class Thot extends JFrame{
 				System.out.println(infoPane.toString());
 				menuInfo.setSelected(true);
 				menuConstruct.setSelected(false);
-				menuMan.setSelected(false);
+				//menuMan.setSelected(false);
 				
 				constructPane.setVisible(false);
-				manPane.setVisible(false);
+				//manPane.setVisible(false);
 				infoPane.setVisible(true);
 				
 				setContentPane(infoPane);
@@ -335,6 +297,10 @@ public class Thot extends JFrame{
 	}
 	
 	public void createNewDirectory() {
+		File dataDir = new File("./data");
+		if (!dataDir.exists()){
+			dataDir.mkdir();
+		}
 		this.directory = "./data/" + new SimpleDateFormat("dd-MM-yyyy_H.mm.ss").format(new Date());
 		File directory = new File(this.directory);
 		directory.mkdir();
@@ -379,11 +345,10 @@ public class Thot extends JFrame{
 		
 		
 		try{		
-			BufferedWriter output_xml = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.UTF_8));
+			BufferedWriter output_xml = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.ISO_8859_1));
 			// entetes
 			output_xml.write("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n");
 			output_xml.write("<!DOCTYPE grammar PUBLIC \"-//W3C//DTD GRAMMAR 1.0//EN\"\n\"http://www.w3.org/TR/speech-grammar/grammar.dtd\">\n");
-			output_xml.write("<!-- the default grammar language is FR  -->\n");
 			output_xml.write("<grammar  version=\"1.0\"\n" +
 									"\t\t  mode =\"voice\"\n" +
 									"\t\t  xmlns=\"http://www.w3.org/2001/06/grammar\"\n" +
