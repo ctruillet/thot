@@ -282,6 +282,7 @@ public class Thot extends JFrame{
 			@Override
 			public void mouseReleased(MouseEvent e) {
 			}
+
 		});
 	
 		this.setContentPane(constructPane);
@@ -370,7 +371,7 @@ public class Thot extends JFrame{
 				output_xml.write("\t<rule id=\"mot"+j+"\">\n" + 
 								 	"\t\t<item>"+motGrammar.get(i).get(j).getMotBalise()+"</item>\n" + 
 								 	"\t\t<ruleref special=\"GARBAGE\" />\n"
-								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).getConcept() +"\"</tag>\n" +
+								 	+ "\t\t<tag>out.text=\""+motGrammar.get(i).get(j).getTypeEventName() + "=" + motGrammar.get(i).get(j).getConcept() +"\"</tag>\n" +
 									"\t</rule>\n");
 			}
 			
