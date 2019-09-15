@@ -1,13 +1,19 @@
 /**
- * @author Philippe Truillet (Philippe.Truillet@irit.fr)
+ *  
+* @author Philippe Truillet (Philippe.Truillet@irit.fr)
 * @version 0.1 du 04/01/2019
 */
 
 package fr.irit.elipse.project;
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
+/**
+ * Button
+ * @author Philippe Truillet (Philippe.Truillet@irit.fr)
+ * 
+ */
 class ThotButton extends JButton {
 	
 	//Constructeur
@@ -15,6 +21,11 @@ class ThotButton extends JButton {
         super();
     }
 	//Methode
+	
+	/**
+	 * Retourne le label du bouton
+	* @return label 
+	*/
     public ThotButton(String label){
         super(label);
         Font f = new Font("B612-Regular",Font.BOLD, 10);

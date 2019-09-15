@@ -8,24 +8,35 @@ package fr.irit.elipse.project;
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
+/**
+ * Modele du tableau des mot-balises
+ * @author Philippe Truillet (Philippe.Truillet@irit.fr)
+ *
+ */
 public class ThotTableModel extends AbstractTableModel {
 	
+	//Attributs
 	private static final long serialVersionUID = 1L;
 	private static final String[] entetes = { "Mots-Balises", "Type d'\u00e9v\u00e9nement", "Concept associ\u00e9","Description" };
 	private ArrayList<ThotGrammar> liste;
 	
+	//Constructeur
 	public ThotTableModel() {
 		this.liste = new ArrayList<>();
 	}
+	
+	//Méthode
 	
 	public int getColumnCount() {
 		return entetes.length;
 	}
 	
+
 	public String getColumnName(int columnIndex) {
 		return entetes[columnIndex];
 	}
 	
+
 	public int getRowCount() {
 		return liste.size();
 	}
@@ -45,6 +56,10 @@ public class ThotTableModel extends AbstractTableModel {
 		}
 	}
 
+	/**
+	 * Méthode toString de la classe ThotTableModel
+	 * @return String
+	 */
 	public String toString(){
 		StringBuilder s= new StringBuilder("==========================\n");
 
@@ -55,6 +70,7 @@ public class ThotTableModel extends AbstractTableModel {
 		return (s+"==========================");
 	}
 
+	
 	public String getMot(int i){
 		return (this.liste.get(i).getMotBalise());
 	}
@@ -63,40 +79,83 @@ public class ThotTableModel extends AbstractTableModel {
 		return ((this.liste.get(i))).getTypeEventName();
 	}
 
+	/**
+	 * 
+	 * @param i
+	 * @return ThotGrammar
+	 * @see ThotGrammar
+	 */
 	public ThotGrammar getMotBalise(int i){
 		return (this.liste.get(i));
 	}
 
+	/**
+	 * 
+	 * @param i
+	 * @return int
+	 */
 	public int getPosition(int i){
 		return (this.liste.get(i).getPosition());
 	}
 
+	/**
+	 * 
+	 * @param i
+	 * @return String
+	 */
 	public String getConcept(int i){
 		return (this.liste.get(i).getConcept());
 	}
 
+	/**
+	 * 
+	 * @param i
+	 * @return String
+	 */
 	public String getDescription(int i){
 		return (this.liste.get(i).getDescription());
 	}
 
+	/**
+	 * 
+	 * @return ArrayList<ThotGrammar>
+	 * @see ThotGrammar
+	 */
 	public ArrayList<ThotGrammar> getListe(){
 		return (this.liste);
 	}
 
+	/**
+	 * 
+	 * @param t
+	 * @see ThotGrammar
+	 */
 	public void add(ThotGrammar t) {
 		liste.add(t);
 	}
 	
+	/**
+	 * 
+	 * @param i
+	 * @param t
+	 * @see ThotGrammar
+	 */
 	public void add(int i,ThotGrammar t) {
 		liste.add(i,t);
 	}
 	
-	//suppresion d'une ligne avec mise � jour
+	/**
+	 * Suppression d'une ligne
+	 * @param num
+	 */
 	public void remove(int num){
 		this.liste.remove(num);
 		this.fireTableDataChanged();
 	}
 
+	/**
+	 * 
+	 */
 	public void fireEditingStopped() {
 		this.fireEditingStopped();
 		

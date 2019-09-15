@@ -1,6 +1,6 @@
 /**
-* @author Clement Truillet (Clement.Truillet@irit.fr)
-* @version 0.6 du 13/06/2019
+* @author Clement Truillet (Clement.Truillet@univ-tlse3.fr)
+* @version 0.7 du 15/09/2019
 */
 
 package fr.irit.elipse.project;
@@ -19,7 +19,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+/**
+ * Classe principale
+ * @author Clement Truillet (Clement.Truillet@univ-tlse3.fr)
+ *
+ */
 public class Thot extends JFrame{ 
 	//Attributs
 	private ThotText T_Text = new ThotText();
@@ -86,15 +90,13 @@ public class Thot extends JFrame{
 		JScrollPane SP_Text = new JScrollPane(T_Text);
 		this.T_Text.setText("Veuillez importer un fichier texte.");
 		
-		//JLabel manPage = new JLabel("Manuel d'utilisation");
-		//manPage.setFont(fBigBold);
 		JTextPane infoPage = new JTextPane();
 		infoPage.setContentType("text/html");
-		infoPage.setText("Le logiciel <strong>THOT</strong> a été réalisé dans le cadre d'un stage à l'IRIT en  2019 par <br />" +
+		infoPage.setText("Le logiciel <strong>THOT</strong> a Ã©tÃ© rÃ©alisÃ© dans le cadre d'un stage Ã  l'IRIT en  2019 par <br />" +
 				"Antonin Miloudi - <i>antonin.miloudi@univ-tlse3.fr</i><br />" +
 				"Clement Truillet - <i>clement.truillet@univ-tlse3.fr</i><br />" +
 				"<br />" +
-				"Vous pouvez retrouver le code à l'adresse suivante : <i>https://github.com/ctruillet/thot</i>");
+				"Vous pouvez retrouver le code Ã  l'adresse suivante : <i>https://github.com/ctruillet/thot</i>");
 		infoPage.setBackground(null);
 		infoPage.setFont(fInfo);
 		
@@ -117,7 +119,7 @@ public class Thot extends JFrame{
 		ThotButton B_Ajouter = new ThotButton("<html>A<br/>j<br/>o<br/>u<br/>t<br/>e<br/>r</html>");
 		B_Ajouter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // ajout du texte selectionné
+                // ajout du texte selectionnï¿½
 				if (!selection.equals("")){
 					T_Text.allOccurency.add(selection);
 					T_grammar.add(position, selection);
@@ -126,7 +128,7 @@ public class Thot extends JFrame{
 				}
             }
 		});
-		//Génération
+		//GÃ©nÃ©ration
 		ThotButton B_Creation = new ThotButton("G\u00e9n\u00e9ration");
 		B_Creation.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -135,7 +137,7 @@ public class Thot extends JFrame{
 					T_grammar.getCellEditor().stopCellEditing();
 				}
 				T_grammar.fireTableDataChanged();
-                //Génération de la Grammaire
+                //GÃ©nÃ©ration de la Grammaire
 				System.out.println("Generation de la grammaire");
 				save_GRXML();
             }
@@ -166,7 +168,7 @@ public class Thot extends JFrame{
 				int d = ((ThotText) e.getSource()).getSelectionStart();
 				int f = ((ThotText) e.getSource()).getSelectionEnd();
 				//System.out.println("d " + d + " - " + "f " + f);
-				if(d==f)return; // pas de texte sélectionné !
+				if(d==f)return; // pas de texte sï¿½lectionnï¿½ !
 				selection = ((ThotText) e.getSource()).getSelectedText();
 				position = d;
 				System.out.println(selection + " -> " + position);
@@ -288,16 +290,29 @@ public class Thot extends JFrame{
 		this.setContentPane(constructPane);
 	}
 	
-	//Méthodes
+	//MÃ©thodes
+	
+	/**
+	 * @param text
+	 */
 	public void setText(String text) {
+
 		this.txt=text;
 	}
 	
+	/**
+	 * @return text
+	 */
 	public String getText() {
+
 		return (this.txt);
 	}
 	
+	/**
+	* CrÃ©ation d'un nouveau dossier oÃ¹ sont stockÃ©s les grammaires gÃ©nÃ©rÃ©es
+	*/
 	public void createNewDirectory() {
+
 		File dataDir = new File("./data");
 		if (!dataDir.exists()){
 			dataDir.mkdir();
@@ -308,10 +323,16 @@ public class Thot extends JFrame{
 		System.out.println(this.directory);
 	}
 	
+	/**
+	 * @return directory
+	 */
 	public String getParentDirectory() {
 		return (this.directory);
 	}
 
+	/*
+	* Separe les mots-balises en plusieurs parties correspondants au parties du texte
+	*/
 	public void cutText(){
 		int indexListe = 0;
 		this.motGrammar.add(new ArrayList<ThotGrammar>());
@@ -335,13 +356,18 @@ public class Thot extends JFrame{
 
 		System.out.println(this.motGrammar.toString());
 	}
+	
+	/**
+	 * Genere le fichier grxml d'une partie du texte
+	 * @param i
+	 */
 	public void save_GRXML(int i) {
-		//Créer grammar+i.grxml
+		//CrÃ©er grammar+i.grxml
 		String output = this.getParentDirectory() + "/grammar" + i + ".grxml";
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists
-			System.out.println("Le fichier existe déjà !\n");
+			System.out.println("Le fichier existe dï¿½jï¿½ !\n");
 		}
 		
 		
@@ -380,17 +406,19 @@ public class Thot extends JFrame{
 			output_xml.close();
 		}
 		catch (Exception e) {
-			System.out.println("Erreur dans la création du fichier grxml.");
+			System.out.println("Erreur dans la crï¿½ation du fichier grxml.");
 		}
 	}
+	
+	/**
+	 * Genere le fichier csv rÃ©capitulatif des mots-balises
+	 */
 	public void save_CSV() {
-		
-		//Créer grammar+i.grxml
 		String output = this.getParentDirectory() + "/grammar.csv";
 		boolean exists = (new File(output)).exists();
 		if (exists) {
 			// File or directory exists
-			System.out.println("Le fichier existe déjà !\n");
+			System.out.println("Le fichier existe dï¿½jï¿½ !\n");
 		}
 				
 		try{	
@@ -411,11 +439,15 @@ public class Thot extends JFrame{
 			csvOutput.close();
 			}
 			catch (Exception e) {
-				System.out.println("Erreur dans la création du fichier CSV.");
+				System.out.println("Erreur dans la crï¿½ation du fichier CSV.");
 			}
 	}
 	
-	
+	/**
+	 * Genere l'ensemble des fichiers grxml ainsi que le fichier csv
+	 * @see #save_GRXML(int)
+	 * @see #save_CSV()
+	 */
 	public void save_GRXML() {
 		this.cutText();
 	
@@ -432,6 +464,10 @@ public class Thot extends JFrame{
                       JOptionPane.INFORMATION_MESSAGE);
 	}
 		
+	/**
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args){
 		try {
 			UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");

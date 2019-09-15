@@ -1,8 +1,8 @@
 /**
- * @author Philippe Truillet (Philippe.Truillet@irit.fr)
- * @version 0.1 du 04/01/2019
+ * @author Antonin Miloudi (miloudi.miloudi@univ-tlse3.fr)
+ * @version 0.3 du 13/06/2019
+ * NB : Je n'ai aucune idÃ©e de ce que Antonin a voulu faire avec cette classe.
  */
-
 package fr.irit.elipse.project;
 
 import javax.swing.*;
@@ -17,12 +17,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
+/**
+ * Classe de gestion du texte de travail
+ * @author Antonin Miloudi (miloudi.miloudi@univ-tlse3.fr)
+ *
+ */
 public class ThotText extends JTextPane {
 	//Attributs
 	protected List<String> allOccurency = new ArrayList<String>(1);
 	protected List<ThotTypeEvent> typeEvent = new ArrayList<ThotTypeEvent>(1);
 	protected String word;
+	
 	//Enum
     enum TypeMot {
         VERBE,
@@ -30,6 +35,7 @@ public class ThotText extends JTextPane {
         COMPLEMENT,
         ADVERBE
     }
+    
 	//Constructeur
     public ThotText() {
         super();
@@ -43,7 +49,13 @@ public class ThotText extends JTextPane {
         }
     }
     
-    //Méthodes
+    //MÃ©thodes
+    
+    /**
+     * 
+     * @param nomFichier
+     * @return
+     */
     public StringBuffer readText(String nomFichier){
         File fichier = new File(nomFichier);
         StringBuffer texte = new StringBuffer();
@@ -55,7 +67,6 @@ public class ThotText extends JTextPane {
                 texte.append(lecteur.nextLine());
                 texte.append("\n");
             }
-            //voir si il ne faudrait pas mettre un finally a cause du close !
             lecteur.close();
         }
         catch (FileNotFoundException exc) {
@@ -65,11 +76,20 @@ public class ThotText extends JTextPane {
         return (texte);
     }
 
+    /**
+     * 
+     * @param nomFichier
+     */
     public void displayText(String nomFichier){
         this.setText(new String(readText(nomFichier)));
     }
     
-  //Permet de faire la variation de la couleur en fonction du type de mot
+    /**
+     * Colore un mot-balise suivant son type d'evenement
+     * @param mot
+     * @return
+     * @see ThotTypeEvent
+     */
     public Color variationColor(ThotTypeEvent mot){
         switch(mot){
             case Retranscription:
@@ -85,7 +105,14 @@ public class ThotText extends JTextPane {
         }
     }
 
-    //permet de changer le fond pour chaque mot envoyé en comptant toute les rebondances
+    /**
+     * Change la couleur de toutes les occurences d'une mot-balise
+     * @param pattern
+     * @param value
+     * @param posmin
+     * @param posmax
+     * @see ThotTypeEvent
+     */
     public void highlight(String pattern,ThotTypeEvent value,int posmin,int posmax){
         Highlighter.HighlightPainter mhp = new MyHighlightPainter(variationColor(value));
         
@@ -103,22 +130,37 @@ public class ThotText extends JTextPane {
             }
             
         }catch (BadLocationException e) {
-        	System.out.println("Pas de texte sélectionné");
+        	System.out.println("Pas de texte sï¿½lectionnï¿½");
         }
     }
 
-    public void suppr(int pattern,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> ListeText) {
+    /**
+     * 
+     * @param pattern
+     * @param liste
+     * @param listePos
+     * @param listeText
+     * @see ThotGrammar
+     */
+    public void suppr(int pattern,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> listeText) {
     	word=allOccurency.get(pattern);
     	if(pattern>=0) {
             allOccurency.remove(pattern);
             typeEvent.remove(pattern);
     	}
-    	Remove(pattern,word,liste,listePos,ListeText);
+    	remove(pattern,word,liste,listePos,listeText);
     }
     
-    public void Remove(int pattern,String word,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> ListeText) {
-    	//on pourra trier aussi pour une meilleur compréhension mais c'est pas forcement utile
-
+    /**
+     * 
+     * @param pattern
+     * @param word
+     * @param liste
+     * @param listePos
+     * @param listeText
+     * @see ThotGrammar
+     */
+    public void remove(int pattern,String word,ArrayList<ThotGrammar> liste,ArrayList<Integer> listePos,ArrayList<Integer> listeText) {
     	try{
             Highlighter hilite = this.getHighlighter();
             Document doc = this.getDocument();
@@ -130,20 +172,20 @@ public class ThotText extends JTextPane {
                 pos += word.length();
             }
         }catch (BadLocationException e) {
-        	System.out.println("Pas de texte sélectionné");
+        	System.out.println("Pas de texte sï¿½lectionnï¿½");
         }
     	for(int j=0;j<liste.size();j++) {
         	int posmax=this.getText().length();
         	int posmin=0;
         	boolean flag=true;
     		int i=0;
-    		while(i<ListeText.size()&&flag) {
-    			if(listePos.get(j)>ListeText.get(i)) {
-    				posmin=ListeText.get(i);
+    		while(i<listeText.size()&&flag) {
+    			if(listePos.get(j)>listeText.get(i)) {
+    				posmin=listeText.get(i);
     			}
-    			if(listePos.get(j)<ListeText.get(i)) {
-    				posmax=ListeText.get(i);
-    				posmin=ListeText.get(i-1);
+    			if(listePos.get(j)<listeText.get(i)) {
+    				posmax=listeText.get(i);
+    				posmin=listeText.get(i-1);
     				flag=false;
     			}
     			i++;
@@ -154,11 +196,6 @@ public class ThotText extends JTextPane {
     			posmin=liste.get(j).getPosition()-1;
     		}
     		highlight(allOccurency.get(j),typeEvent.get(j),posmin,posmax);
-    	}
-        /*for(int i=0;i<allOccurency.size();i++) {
-        	highlight(allOccurency.get(i),typeEvent.get(i),posmax);
-        }*/
-        
-
+    	}   
     }
 }

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Unnamed" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="GUI:jar" />
@@ -7,8 +11,307 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ff43f5-b809-4977-a720-3ead651ac43b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/Thot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotButtonEditor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotChooseTypeEvent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotConcept.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotDescription.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotGrammar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotImportFrame.ThotFilterAudio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotImportFrame.ThotFilterMedia.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotImportFrame.ThotFilterPicture.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotImportFrame.ThotFilterText.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotImportFrame.ThotFilterVideo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotImportFrame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotTable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotTableModel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotText.MyHighlightPainter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotText.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotTextAreaEditor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/ThotTypeEvent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/Thot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotButtonEditor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotChooseTypeEvent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotConcept.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotDescription.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotGrammar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotImportFrame.ThotFilterAudio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotImportFrame.ThotFilterMedia.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotImportFrame.ThotFilterPicture.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotImportFrame.ThotFilterText.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotImportFrame.ThotFilterVideo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotImportFrame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotTable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotTableModel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotText.MyHighlightPainter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotText.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotTextAreaEditor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/class-use/ThotTypeEvent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/irit/elipse/project/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/annotated.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/annotated_dup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/bc_s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/bdwn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_button_editor-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_button_editor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_button_editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_button_editor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_choose_type_event-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_choose_type_event.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_choose_type_event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_choose_type_event.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_concept-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_concept.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_concept.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_description-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_description.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_grammar-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_grammar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_grammar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_audio-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_audio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_audio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_audio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_media-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_media.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_media.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_picture-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_picture.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_picture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_picture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_text-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_text.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_text.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_video-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_video.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_video.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table_model-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table_model.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table_model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table_model.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_1_1_my_highlight_painter-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_1_1_my_highlight_painter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_1_1_my_highlight_painter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_1_1_my_highlight_painter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_area_editor-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_area_editor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_area_editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_area_editor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/closed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/dir_39a4edbb5d12d15a04e1d7371f48d32c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/dir_66b40a8291f0118196581fc0e9ec4c7f.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/dir_7c50da26c66a1489251781ccec3e79d5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/doc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/doxygen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/doxygen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/dynsections.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/enumfr_1_1irit_1_1elipse_1_1project_1_1_thot_type_event-members.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/enumfr_1_1irit_1_1elipse_1_1project_1_1_thot_type_event.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/enumfr_1_1irit_1_1elipse_1_1project_1_1_thot_type_event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/folderclosed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/folderopen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/functions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/functions_func.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/hierarchy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/hierarchy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/menudata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/namespacefr_1_1irit_1_1elipse_1_1project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/namespacefr_1_1irit_1_1elipse_1_1project.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/namespaces.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/namespaces_dup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/nav_f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/nav_g.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/nav_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/navtree.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/navtree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/navtreedata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/navtreeindex0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_b.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/all_c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/classes_0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/classes_0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/classes_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/classes_1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/functions_a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/mag_sel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/namespaces_0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/namespaces_0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/nomatches.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/search_l.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/search_m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/search_r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/search/searchdata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/splitbar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/sync_off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/sync_on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/tab_a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/tab_b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/tab_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/tab_s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/html/tabs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/annotated.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_button_editor.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_button_editor.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_choose_type_event.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_choose_type_event.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_concept.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_description.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_grammar.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_audio.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_audio.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_media.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_media.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_picture.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_picture.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_text.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_text.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_video.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_import_frame_1_1_thot_filter_video.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table_model.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_table_model.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_1_1_my_highlight_painter.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_1_1_my_highlight_painter.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_area_editor.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/classfr_1_1irit_1_1elipse_1_1project_1_1_thot_text_area_editor.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/doxygen.sty" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/enumfr_1_1irit_1_1elipse_1_1project_1_1_thot_type_event.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/hierarchy.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/make.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/namespacefr_1_1irit_1_1elipse_1_1project.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/namespaces.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/latex/refman.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotButtonEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotChooseTypeEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotConcept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotConcept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotDescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotGrammar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotImportFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTextAreaEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTypeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/irit/elipse/project/ThotTypeEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../reconnaissance_vocale/bin/grammar.grxml" beforeDir="false" afterPath="$PROJECT_DIR$/../reconnaissance_vocale/bin/grammar.grxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin1/" />
@@ -39,15 +342,24 @@
     <favorites_list name="GUI" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="302" column="9" selection-start-line="302" selection-start-column="9" selection-end-line="302" selection-end-column="9" />
+            <state relative-caret-position="6559">
+              <caret line="442" column="4" selection-start-line="442" selection-start-column="4" selection-end-line="442" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#1048#1072#0" expanded="true" />
+                <element signature="e#3265#3453#0" expanded="true" />
+                <element signature="e#3452#3453#0" expanded="true" />
+                <element signature="e#5176#5789#0" expanded="true" />
+                <element signature="e#5788#5789#0" expanded="true" />
+                <element signature="e#6236#6338#0" expanded="true" />
+                <element signature="e#6337#6338#0" expanded="true" />
+                <element signature="e#9017#9018#0" expanded="true" />
+                <element signature="e#9047#9048#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,11 +427,14 @@
       </list>
     </option>
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="src:fr.irit.elipse.project.*||src:fr.irit.elipse.project..*" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-304" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="1840" />
+    <option name="y" value="131" />
+    <option name="width" value="1552" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -129,6 +444,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -152,16 +468,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558969333180" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../testJEE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -169,7 +485,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -236,7 +552,14 @@
       <workItem from="1560416191116" duration="7634000" />
       <workItem from="1560433607284" duration="217000" />
       <workItem from="1566319233433" duration="299000" />
-      <workItem from="1566580526449" duration="1412000" />
+      <workItem from="1566580526449" duration="3788000" />
+      <workItem from="1566850110496" duration="257000" />
+      <workItem from="1567541574108" duration="209000" />
+      <workItem from="1568122258277" duration="1502000" />
+      <workItem from="1568562541689" duration="1359000" />
+      <workItem from="1568568974010" duration="1252000" />
+      <workItem from="1568573645899" duration="171000" />
+      <workItem from="1568576006246" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de la position d'un mot">
       <created>1558965383890</created>
@@ -378,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560432684280</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary=":zap: Changement de l'encodage de la grammaire de UTF-8 en ISO-8859-1">
+      <created>1566582222187</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1566582222187</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62663000" />
+    <option name="totallyTimeSpent" value="70405000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -395,9 +725,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-321" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49666667" visible="true" weight="0.1705757" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49666667" visible="true" weight="0.11673774" />
       <window_info id="Structure" order="1" sideWeight="0.50333333" side_tool="true" weight="0.16320294" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -405,18 +734,18 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50333333" side_tool="true" weight="0.16564792" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.28602383" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.28602383" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49755502" weight="0.3281075" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49755502" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32922733" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5012225" side_tool="true" weight="0.22732362" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4987775" weight="0.3281075" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4987775" weight="0.32719395" />
       <window_info anchor="bottom" id="Duplicates" order="13" weight="0.32922733" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32922733" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -511,7 +840,9 @@
     <MESSAGE value=":sparkles: Make Info Page" />
     <MESSAGE value=":zap: Ajout de la generation du CSV" />
     <MESSAGE value=":zap:" />
-    <option name="LAST_COMMIT_MESSAGE" value=":zap:" />
+    <MESSAGE value=":zap: Changement de l'encodage de la grammaire de UTF-8 en ISO-8859-1" />
+    <MESSAGE value=":memo: Add Documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value=":memo: Add Documentation" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -797,37 +1128,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.26.28/grammar.csv">
+    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.26.28/grammar.csv" />
+    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.26.28/grammar0.grxml" />
+    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.31.59/grammar0.grxml" />
+    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.31.59/grammar.csv" />
+    <entry file="file://$PROJECT_DIR$/data/23-08-2019_20.07.51/grammar0.grxml" />
+    <entry file="file://$PROJECT_DIR$/data/30-08-2019_16.42.08/grammar0.grxml" />
+    <entry file="file://$PROJECT_DIR$/data/10-09-2019_15.36.45/grammar0.grxml" />
+    <entry file="file://$PROJECT_DIR$/data/10-09-2019_15.40.03/grammar0.grxml" />
+    <entry file="file://$PROJECT_DIR$/doc/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="80">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.26.28/grammar0.grxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="34" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.31.59/grammar0.grxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/23-08-2019_19.31.59/grammar.csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/irit/elipse/project/Thot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="302" column="9" selection-start-line="302" selection-start-column="9" selection-end-line="302" selection-end-column="9" />
+        <state relative-caret-position="6559">
+          <caret line="442" column="4" selection-start-line="442" selection-start-column="4" selection-end-line="442" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1048#1072#0" expanded="true" />
+            <element signature="e#3265#3453#0" expanded="true" />
+            <element signature="e#3452#3453#0" expanded="true" />
+            <element signature="e#5176#5789#0" expanded="true" />
+            <element signature="e#5788#5789#0" expanded="true" />
+            <element signature="e#6236#6338#0" expanded="true" />
+            <element signature="e#6337#6338#0" expanded="true" />
+            <element signature="e#9017#9018#0" expanded="true" />
+            <element signature="e#9047#9048#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -917,6 +1248,21 @@
               </list>
             </option>
           </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Unnamed</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="Unnamed" />
+          </order>
         </settings>
       </state>
     </states>

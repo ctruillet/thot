@@ -1,10 +1,17 @@
 /**
-* @author Clement Truillet (clement.Truillet@univ-tlse3.fr)
-* @version 0.1 du 13/05/2019
+* @author Clement Truillet (Clement.Truillet@univ-tlse3.fr)
+* @version 0.7 du 15/09/2019
+* 
 */
 
 package fr.irit.elipse.project;
 
+/**
+ * 
+ * Enumeration des types d'evenements possible pour un mot-balise
+ * @author Clement Truillet (Clement.Truillet@univ-tlse3.fr)
+ *
+ */
 public enum ThotTypeEvent {
 	Retranscription,    //Affichage d'une chaine de caractere
 	Media, 				//Image (.png/.jpeg) + Son (.wav/.aif) + Video (.mov)

@@ -1,6 +1,8 @@
 /**
-* @author Clement Truillet (clement.truillet@univ-tlse3.fr)
-* @version 0.1 du 20/05/2019
+* @author Clement Truillet (Clement.Truillet@univ-tlse3.fr)
+* @version 0.7 du 15/09/2019
+* @see ThotTypeEvent
+* @see JComboBox
 */
 
 package fr.irit.elipse.project;
@@ -9,6 +11,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Classe de selection du type d'evenement d'un mot-balise 
+ * @author Clement Truillet (Clement.Truillet@univ-tlse3.fr)
+ * @see ThotTypeEvent
+ * @see JComboBox
+ */
 public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 	//Attributs
 	protected ThotTypeEvent value = ThotTypeEvent.Retranscription;
@@ -41,7 +49,12 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		}
 	}
 	
-	//Méthodes
+	//MÃ©thodes
+	
+	/**
+	 * Change le TypeEvent choisit par l'utilisateur
+	 * @param e ActionEvent
+	 */
 	public void actionPerformed(ActionEvent e) {
 		this.value = (ThotTypeEvent) (this.getSelectedItem());
 		this.motBalise.setTypeEvent(this.value);
@@ -65,6 +78,12 @@ public class ThotChooseTypeEvent extends JComboBox implements ActionListener{
 		Table.fireTableDataChanged();
 	}
 	
+	
+	/**
+	 * Retourne la valeur du bouton
+	 * @return value ThotTypeEvent
+	 * @see ThotTypeEvent
+	 */
 	public ThotTypeEvent getChoice() {
 		return (this.value);
 	}

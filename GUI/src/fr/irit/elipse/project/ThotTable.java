@@ -1,7 +1,7 @@
 /**
-* @author Clement Truillet (clement@ctruillet.eu)
-* @version 0.1 du 21/05/2019
-*/
+ * @author Antonin Miloudi (miloudi.miloudi@univ-tlse3.fr)
+ * @version 0.3 du 13/06/2019
+ */
 
 package fr.irit.elipse.project;
 
@@ -11,8 +11,14 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Tableau des mot-balises
+ * @author Antonin Miloudi (miloudi.miloudi@univ-tlse3.fr)
+ * @see JTable
+ * @see ThotGrammar
+ *
+ */
 public class ThotTable extends JTable{
-	//enlever word ou mot
 	//Attributs
 	protected ThotTableModel model;
 	protected ArrayList<ThotGrammar> liste;
@@ -62,13 +68,18 @@ public class ThotTable extends JTable{
 		ListeText.add(0);
 	}
 
+	/**
+	 * Ajoute un mot dans le tableau
+	 * @param position
+	 * @param mot
+	 */
 	public void add(int position, String mot) {
 		this.position=position;
 		boolean flag=true;
 		ThotGrammar t = new ThotGrammar(position, mot);
 		this.t=t;
 		this.mot=mot;
-		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t,this)); //Nouveau Menu déroulant
+		DefaultCellEditor  dce = new DefaultCellEditor (new ThotChooseTypeEvent(t,this)); //Nouveau Menu dï¿½roulant
 		int i=0;
 		while((i<this.liste.size()) && flag) {
 			if(t.getPosition()<liste.get(i).getPosition()) {
@@ -98,10 +109,14 @@ public class ThotTable extends JTable{
 		this.fireTableDataChanged();
 	}
 
-		//Surchage de la méthode de JTable
-	public TableCellEditor getCellEditor(int row, int column) {
+	/**
+	 * Surchage de la mÃ©thode de JTable
+	 * @return TableCellEditor
+	 * @param row 
+	 * @param column 
+	 */
 
-		
+	public TableCellEditor getCellEditor(int row, int column) {	
 		if(row<this.liste.size() && column==1) {
 			return editor.get(row);
 		}else if (row<this.liste.size() && column==2) {
@@ -112,20 +127,32 @@ public class ThotTable extends JTable{
 		return super.getCellEditor(row, column);
 	}
 	
-	//Envoit une alerte au modele quand un evenement a lieu
+	/**
+	 * Envoi une alerte au modele quand un evenement a lieu
+	 */
 	public void fireTableDataChanged() {
 		this.model.fireTableDataChanged();
 	}
 	
+	
 	public int getRowCount() {
-		
 		return (this.model.getRowCount());
 	}
 
+	/**
+	 * Renvoit la liste des ThotGrammar
+	 * @return ArrayList<ThotGrammar>
+	 * @see ThotGrammar
+	 */
 	public ArrayList<ThotGrammar> getListe(){
 		return (this.liste);
 	}
 
+	/**
+	 * MÃ©thode toString de ThotTable
+	 * @see ThotTable
+	 * @return String
+	 */
 	public String toString() {
 		StringBuilder s= new StringBuilder();
 		
@@ -135,10 +162,19 @@ public class ThotTable extends JTable{
 		return s.toString();
 	}
 	
+	/**
+	 * Retourne la ligne selectionnÃ©e
+	 * @return int
+	 */
 	public int SelectedRow() {
 		return this.getSelectedRow();
 	}
 	
+	/**
+	 * 
+	 * @param value
+	 * @see ThotTypeEvent
+	 */
 	public void append(ThotTypeEvent value) {
 		text.typeEvent.add(value);
 		boolean flag=true;
@@ -161,19 +197,25 @@ public class ThotTable extends JTable{
 		text.highlight(mot,value,posmin,posmax);
 	}
 	
+	
+	/**
+	 * @see ThotTypeEvent
+	 * @param value
+	 * @param rowSelected
+	 */
 	public void updateText(ThotTypeEvent value,int rowSelected) {
 		word = text.allOccurency.get(rowSelected);
 		text.allOccurency.set(rowSelected,word);
 		text.typeEvent.set(rowSelected,value);
-		text.Remove(rowSelected,word,liste,listePos,ListeText);
+		text.remove(rowSelected,word,liste,listePos,ListeText);
 	}
 	
-	//si c'est un registre alors:
-	//aussi s'occupé de la suprresion
+	/**
+	 * 
+	 */
 	public void separation() {
 		int i=0;
 		boolean flag=true;
-		System.out.println("la position ajouté est : fin normalmeent"+listePos.get(SelectedRow()));
 		while(i<ListeText.size()&&flag) {
 			if(listePos.get(SelectedRow())<ListeText.get(i)) {
 				ListeText.add(i,listePos.get(SelectedRow()));
