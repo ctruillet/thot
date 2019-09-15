@@ -2,7 +2,7 @@
 THOT project with Compagnie Jean Séraphin and [IRIT](https://www.irit.fr/)'s lab.
 
 ## Documentation
-You can find the documentation [here](github.ctruillet.eu/thot/doc/index.html).
+You can find the documentation [here](https://github.ctruillet.eu/thot/doc/index.html).
 
 
 ## Download
